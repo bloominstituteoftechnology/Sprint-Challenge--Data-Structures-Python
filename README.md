@@ -1,6 +1,6 @@
-# Sprint Challenge: Data Structures and Algorithms
+# Sprint Challenge: Data Structures
 
-In this week's Sprint you explored and implemented some classic algorithmic approaches and used them to solve novel problems. You also implemented some classic and fundamental data structures and learned about how to go about evaluating their respective runtimes and performance. This Sprint Challenge aims to assess your comfort with these topics through exercises that build on the data structures you implemented and the algorithmic intuition you've started to build up.
+In this week's Sprint you implemented some classic and fundamental data structures and learned about how to go about evaluating their respective runtimes and performance. This Sprint Challenge aims to assess your comfort with these topics through exercises that build on the data structures you implemented and the algorithmic intuition you've started to build up.
 
 ## Instructions
 
@@ -18,15 +18,14 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 ## Description
 
-This Sprint Challenge is split into two separate parts: a data structures portion and an algorithms portion.
+This Sprint Challenge is split into two separate parts: writing an algorithm to search a data structure and analyzing the performance of that algorithm.
 
-### Data Structures
+### Minimum Viable Product
 
-It is recommended that you allot about 1 and a half hours for this portion of the Sprint Challenge. 
 
 #### Task 1. Implement Depth-First or Breadth-First Traversal on the Binary Search Tree Class 
 
-Navigate into the `ex1` directory in the `data_structures` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
+Navigate into the `search` directory in the `data_structures` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
 
    * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first in-order fashion (as opposed to pre-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
 
@@ -48,21 +47,10 @@ Navigate into the `ex1` directory in the `data_structures` directory. Inside, yo
 
 > Note that it is not your job to worry about what the callback function being passed in is doing. That is up to the user of your traversal method. All you care about when implementing the traversal method is to call the passed-in callback in either depth-first or breadth-first order, depending on which traversal method you're implementing. 
 
-#### Task 2. Implement Heapsort
 
-Inside the `ex2` directory you'll find the `heap.py` file with a working implementation of the heap class. Your second task is to implement a sorting method called [heapsort](https://en.wikipedia.org/wiki/Heapsort) that uses the heap data structure in order to sort an array of numbers. Your `heapsort` function should return a new list containing all of the sorted data.
+#### Task 2. Analyze some runtimes
 
-Run `python test_heap.py` to run the tests for your `heapsort` function to ensure that your implementation is correct.
-
-#### Task 3. Analyze some runtimes
-
-Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. Make sure you answer the heapsort questions as well!
-
-### Algorithms
-
-It is recommended that you allot about 1 and a half hours for this portion of the sprint challenge.
-
-For the algorithms portion of the sprint challenge, you'll be answering questions posed in the `Algorithms_Questions.md` document inside the `algorithms` directory. Write down your answer and also write down a justification for _why_ you put down that answer. This could net you some partial credit if your justification is sound but the answer you put down turns out to not be correct. Add your answers to the questions in the `Algorithms_Answers.md` file.
+Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
 
 ### Stretch Problems
 
