@@ -19,7 +19,7 @@ f.close()
 #         if name_1 == name_2:              O(1)
 #             duplicates.append(name_1)     O(1)
 
-# TOTAL                                     O(2**n)
+# TOTAL                                     O(n**2)
 # nested for runtime    6.037697076797485 seconds
 
 
