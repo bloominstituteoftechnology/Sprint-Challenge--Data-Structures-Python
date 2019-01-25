@@ -17,7 +17,7 @@ Add your answers to the questions below.
     A: O(1) because it is not dependent on the number of names in the list, but on whether the names match.
 
 7. What is the runtime complexity of your optimized code in `names.py`?
-    A: I believe it is O(n^2), do to the list comprehension pulling out one name from the first list and then having to iterate through the names in the second list for comparison before the name being added to the duplicates list. Do, it depends on the number of names in each list.
+    A: I believe it is O(n^2), due to the list comprehension pulling out one name from the first list and then having to iterate through the names in the second list for comparison before the name being added to the duplicates list. So, it depends on the number of names in list_one * list_two.
 
 8. What is the space complexity of your optimized code in `names.py`?
     A: O(1) because it is not dependent on the number of names in the list, but on whether the names match.
