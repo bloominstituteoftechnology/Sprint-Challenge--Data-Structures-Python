@@ -18,7 +18,7 @@ duplicates = []
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# I'm imagining that they are expecting me to use binary search. 
+# I'm imagining that they are expecting me to use binary search... O(n log n). 
 # But I think that a hash table is more efficient.
 
 for name in names_1:
@@ -38,4 +38,4 @@ end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
-# Less than one hundredth of a second. Total time is O(n)
+# Clock time ios less than one hundredth of a second. Time and space complexities: O(n)
