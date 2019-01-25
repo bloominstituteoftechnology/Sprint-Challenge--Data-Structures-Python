@@ -5,6 +5,14 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
+    # invoke cb 
+    cb(self.value)
+    # recursively invoke depth_first search_for_each() on the left
+    if self.left:
+      self.left.depth_first_for_each(cb)
+    # recursively invoke depth_first search_for_each on the right
+    if self.right:
+      self.right.depth_first_for_each(cb)
     
 
   def breadth_first_for_each(self, cb):
