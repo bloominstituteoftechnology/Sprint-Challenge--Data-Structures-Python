@@ -8,7 +8,24 @@ class BinarySearchTree:
         pass
 
     def breadth_first_for_each(self, cb):
-        pass
+        q = Queue()
+        q.enqueue(self.value)
+
+        def rec(current_node):
+            cb(q.dequeue())
+            if current_node.left is None and current_node.right is None:
+                return
+            if current_node.left is not None:
+                q.enqueue(current_node.left.value)
+            if current_node.right is not None:
+                q.enqueue(current_node.right.value)
+
+            if current_node.left is not None:
+                rec(current_node.left)
+            if current_node.right is not None:
+                rec(current_node.right)
+
+        rec(self)
 
     def insert(self, value):
         new_tree = BinarySearchTree(value)
@@ -60,15 +77,3 @@ class Queue:
             return
         self.size += -1
         return self.storage.pop(0)
-
-
-q = Queue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-q.dequeue()
-q.dequeue()
-print(q.dequeue())
-
-
-print(q.storage)
