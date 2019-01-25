@@ -17,8 +17,7 @@ f.close()
 #         if name_1 == name_2: # O(1)
 #             duplicates.append(name_1) # O(1)
 
-# I beleive the following is O(n^2) runtime solution. But the time went from 6 seconds to 1 second.
-
+# I beleive the following is still a O(n^2) runtime solution. But the time went from 6 seconds to 1 second.
 duplicates = [name for name in names_1 if name in names_2]
 
 
