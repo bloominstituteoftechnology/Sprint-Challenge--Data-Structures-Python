@@ -5,10 +5,20 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
-        # check if tree has root
-        return
+        cb(self.value)
+        if self.left:
+            self.left.depth_first_for_each(cb)
+        elif self.right:
+            self.right.depth_first_for_each(cb)
 
     def breadth_first_for_each(self, cb):
+        # Create an empty queue
+        # add root node to the queue
+        # while the queue is not empty
+            # dequeue the first item in the queue
+            # mark node as visited by calling 'cb'
+            # if left is not none, put the left child in the queue
+            # if right is not none, put the right child in the queue
         pass
 
     def insert(self, value):
