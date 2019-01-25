@@ -1,3 +1,6 @@
+from queue import Queue
+
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
@@ -5,30 +8,34 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
+        # Callback on value
         cb(self.value)
-        if self.left is not None:
+        # Recursively go down left side
+        if self.left:
             self.left.depth_first_for_each(cb)
-        if self.right is not None:
+        # Once down going left go back up tree and go down right side
+        if self.right:
             self.right.depth_first_for_each(cb)
 
     def breadth_first_for_each(self, cb):
-        open_set = []
-        closed_set = []
-        open_set.append(self)
-        while open_set:
-            for node in open_set:
-                print("open", node.value)
-                cb(node.value)
-                closed_set.append(node)
-                open_set.pop(0)
+        # create queue
+        queue = Queue()
+        # put first node in queue
+        queue.put(self)
 
-            for node in closed_set:
-                print("closed", node.value)
-                if node.left is not None:
-                    open_set.append(node.left)
-                if node.right is not None:
-                    open_set.append(node.right)
-                closed_set.pop(0)
+        # while queue is not empty
+        while not queue.empty():
+            # Retrieve and remove first item in queue
+            node = queue.get()
+            # Callback function on value
+            cb(node.value)
+
+            # add left node to queue
+            if node.left:
+                queue.put(node.left)
+            # add right item to queue
+            if node.right:
+                queue.put(node.right)
 
     def insert(self, value):
         new_tree = BinarySearchTree(value)
