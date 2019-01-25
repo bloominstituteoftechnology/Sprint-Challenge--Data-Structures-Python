@@ -13,14 +13,31 @@ class BinarySearchTree:
             if self.right is not None:
                 self.right.depth_first_for_each(cb)
         else:
-            return []
+            pass
 
     def breadth_first_for_each(self, cb):
         pass
+        # start from the bottom of the tree
+            #How do we start from the bottom of the tree?
+        # traverse our way upward calling cb on each node
+        # return that array'
+        # c = BinarySearchTree.copy_tree(self)
+        # for item in c:
+        #     cb(item)
+        # return c
+
+    def copy_tree(self, copied=[]):
+        if self.value is not None:
+            copied.append(self.value)
+            if self.left is not None:
+                self.left.copy_tree(copied)
+            if self.right is not None:
+                self.right.copy_tree(copied)
+        return copied
 
     def insert(self, value):
         new_tree = BinarySearchTree(value)
-        if (value < self.value):
+        if value < self.value:
             if not self.left:
                 self.left = new_tree
             else:
