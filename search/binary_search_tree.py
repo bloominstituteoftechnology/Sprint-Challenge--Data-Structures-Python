@@ -11,7 +11,6 @@ class BinarySearchTree:
         visited = []
         queue = [self]
         # visited is our cb function
-
         while queue:
             node = queue.pop(0)
             if node.value:

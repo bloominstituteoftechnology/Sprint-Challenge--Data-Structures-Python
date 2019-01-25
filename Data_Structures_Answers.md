@@ -5,14 +5,14 @@ Add your answers to the questions below.
 2. What is the space complexity of your `depth_first_for_each` function?
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
-
+   O(n)
 4. What is the space complexity of your `breadth_first_for_each` method?
+   O(n) because we utilize a queue
 
+5) What is the runtime complexity of the provided code in `names.py`?
+   O(n^2)
+6) What is the space complexity of the provided code in `names.py`?
+   O(n) because we create a duplicates list
+7) What is the runtime complexity of your optimized code in `names.py`?
 
-5. What is the runtime complexity of the provided code in `names.py`?
-
-6. What is the space complexity of the provided code in `names.py`?
-
-7. What is the runtime complexity of your optimized code in `names.py`?
-
-8. What is the space complexity of your optimized code in `names.py`?
+8) What is the space complexity of your optimized code in `names.py`?
