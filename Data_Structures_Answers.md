@@ -4,7 +4,7 @@ Add your answers to the questions below.
    O(n)
 
 2. What is the space complexity of your `depth_first_for_each` function?
-   O(n)
+   O(1)
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
    O(n)
