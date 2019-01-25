@@ -16,8 +16,15 @@ Add your answers to the questions below.
 
 5) What is the runtime complexity of the provided code in `names.py`?
 
+   - O(n^2) because there are nested for loops and each for loop has a runtime complexity of O(n). It took 7.971049785614014 seconds to run it in my terminal.
+
 6) What is the space complexity of the provided code in `names.py`?
+
+   - O(n^2) since we're comparing two lists
 
 7) What is the runtime complexity of your optimized code in `names.py`?
 
+   - O(n) because even though sets are O(1) in python, lists are O(n) in average runtime. It took 0.006497859954833984 seconds to run it in my terminal.
+
 8) What is the space complexity of your optimized code in `names.py`?
+   - O(n) since we store the duplicated names in a list
