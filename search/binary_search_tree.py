@@ -122,14 +122,14 @@ class BinarySearchTree:
     #while queue exists
     while queue:
       #FIFO removal from queue
-      current_node = dequeue(0) #0? empty?
+      current_node = queue.pop(0) #0? empty?
       #callback
       cb(current_node.value)
       #add to queue
       if current_node.left:
-        enqueue(current_node.left)
+        queue.append(current_node.left)
       if current_node.right:
-        enqueue(current_node.right)
+        queue.append(current_node.right)
 
 
 
