@@ -13,14 +13,12 @@ f.close()
 cache = {}
 duplicates = []
 def cachefunc(cache = {}, duplicates = []):
-    for name_1 in names_1:
-        for name_2 in names_2:
-            if name_1 == name_2:
-                duplicates.append(name_1)
-    if name_2 or name_1 in cache:
-        return cache[name_2] and cache[name_1]
+    for i in range(0, len(names_1)):
+        if names_1[i] == names_2[i]:
+            duplicates.append(names_1)
     return duplicates
-    
+
+print(cachefunc())
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
