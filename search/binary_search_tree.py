@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
@@ -9,13 +12,13 @@ class BinarySearchTree:
 
     def breadth_first_for_each(self, cb):
         # create queue
-        queue = []
+        queue = deque()
         # add first el to queue
         queue.append(self)
         # while queue is not empty
         while queue:
             # remove from front of queue
-            popped = queue.pop(0)
+            popped = queue.popleft()
             # pass into callback
             cb(popped.value)
             # add children to queue
