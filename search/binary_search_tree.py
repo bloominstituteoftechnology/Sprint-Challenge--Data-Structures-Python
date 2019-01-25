@@ -5,7 +5,14 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
+    stack = [self]
+    while stack:
+      visited_node = stack.pop()
+      if visited_node.right:
+        stack.append(visited_node.right)
+      if visited_node.left:
+        stack.append(visited_node.left)
+      cb(visited_node.value)
 
   def breadth_first_for_each(self, cb):
     pass
