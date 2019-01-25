@@ -29,11 +29,11 @@ class BinarySearchTree:
         queue.append(self)
         # while queue is not empty
         while queue:
-                # remove from front of queue
+            # remove from front of queue
             popped = queue.popleft()
             # pass into callback
             cb(popped.value)
-            # add children to queue
+            # if children (left and right) exist, add to queue
             if popped.left:
                 queue.append(popped.left)
             if popped.right:
