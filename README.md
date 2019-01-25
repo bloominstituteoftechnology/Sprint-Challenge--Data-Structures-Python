@@ -20,7 +20,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 This Sprint Challenge is split into three parts:
 
-1. Writing an algorithm to search through a binary search tree
+1. Writing an algorithm to traverse through a binary search tree
 2. Optimizing some inefficient code
 3. Analyzing time and space complexities from parts 1 and 2
 
