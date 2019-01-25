@@ -96,6 +96,6 @@ Also, include the runtime and space complexities of the original code and your o
 
 #### GRADING
 
-* _3_: 28+
-* _2_: 20-17
-* _1_: 0-19
+* *3*: 28+
+* *2*: 20-17
+* *1*: 0-19
