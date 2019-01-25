@@ -1,3 +1,5 @@
+from queue import Queue
+
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
@@ -12,9 +14,18 @@ class BinarySearchTree:
       self.right.depth_first_for_each(cb)
     return 
    
-
   def breadth_first_for_each(self, cb):
-    pass
+    queue = Queue()  # FIFO
+    queue.enqueue(self)
+    while queue:
+      node = queue.dequeue()
+      cb(node.value)
+      if node.left:
+          queue.enqueue(node.left)
+      if node.right:
+          queue.enqueue(node.right)
+      if queue.len() == 0:
+          return 
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
