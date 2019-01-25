@@ -8,10 +8,9 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
-
     queue = [self]
-    while queue:
-      vertex = queue.pop(0)
+    while queue: # O(n)
+      vertex = queue.pop(0) 
       if vertex.value:
         cb(vertex.value)
         if vertex.right:
@@ -21,21 +20,7 @@ class BinarySearchTree:
           else:
             queue.append(vertex.right)
     return
-
-    # queue = []
-    # if self.value:
-    #   queue.append(self.value) # O(1)
-    # while queue: 
-    #   print('queue = ', queue)
-    #   vertex = queue.pop(0)
-    #   if self.left:
-    #     queue.append(self.left)
-    #   if self.right:
-    #     queue.append(self.right)
-    # for i in queue:
-    #   return cb(i.value)
-
-
+    
   def insert(self, value):
     new_tree = BinarySearchTree(value)
     if (value < self.value):
