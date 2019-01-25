@@ -5,7 +5,16 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
+    return self.value
+    # check if left has path
+    if self.left is not None:
+      # if so recursive on left path
+      self.left.depth_first_for_each(cb)
+    # check if right has path
+    if self.right is not None:
+      # if so resursive on right path
+      self.right.depth_first_for_each(cb)
+    pass
 
   def breadth_first_for_each(self, cb):
     pass
