@@ -17,5 +17,7 @@ Add your answers to the questions below.
 6. What is the space complexity of the provided code in `names.py`?
 
 7. What is the runtime complexity of your optimized code in `names.py`?
+<br> O(1) because python's 'set' is implemented as a hash table, and the lookup/insert/delete functions of a hash table are O(1)
 
 8. What is the space complexity of your optimized code in `names.py`?
+<br> O(n) because the hash table grows with the size of the data 
