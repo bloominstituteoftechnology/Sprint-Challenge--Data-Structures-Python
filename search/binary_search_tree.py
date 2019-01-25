@@ -1,3 +1,4 @@
+from collections import deque
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
@@ -21,7 +22,7 @@ class BinarySearchTree:
       visited.append(node.value)
       
       cb(node.value)
-      
+
       #add its children to the stack, check if left child has value
       # if it does, do recursive call on its left value
       if self.left:
@@ -34,8 +35,22 @@ class BinarySearchTree:
     # print(stack)
     return visited
 
-  def breadth_first_for_each(self, cb):
-    pass
+  def breadth_first_for_each(self, cb, queue=deque(), visited=[]):
+    print(list(queue))
+    if len(queue) == 0:
+      if self not in visited:
+        queue.appendleft(self)
+    if len(queue) > 0:
+      node = queue.pop()
+      visited.append(node.value)
+      cb(node.value)
+      if self.left:
+        queue.appendleft(self.left)
+        self.left.depth_first_for_each(cb, queue, visited)
+      if self.right:
+        queue.appendleft(self.right)
+        self.right.depth_first_for_each(cb, queue,visited)
+    return visited
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
@@ -74,14 +89,14 @@ class BinarySearchTree:
       current = current.right
     return max_value
 
-# bst = BinarySearchTree(5)
-# bst.insert(3)
-# bst.insert(4)
-# bst.insert(10)
-# bst.insert(9)
-# bst.insert(11)
+bst = BinarySearchTree(5)
+bst.insert(3)
+bst.insert(4)
+bst.insert(10)
+bst.insert(9)
+bst.insert(11)
 
-# arr = []
-# cb = lambda x: arr.append(x)
+arr = []
+cb = lambda x: arr.append(x)
 
-# print(bst.depth_first_for_each(cb))
+print(bst.breadth_first_for_each(cb))
