@@ -18,13 +18,31 @@ class BinarySearchTree:
         stack.append(current_node)
       if current_node.left is None:
         if len(stack) <= 0:
+
           break
         current_node = stack.pop().right
       else:
         current_node = current_node.left
 
   def breadth_first_for_each(self, cb):
-    pass
+    # Add the current node to the stack
+    # Remove the last item from the stack
+    # Add the last item's children to the stack
+
+    stack = []
+    layer = []
+    current_node = self
+
+    while True:
+      cb(current_node.value)
+      if current_node.left is not None:
+        stack.append(current_node.left)
+      if current_node.right is not None:
+        stack.append(current_node.right)
+      if len(stack) <= 0:
+        break
+      else:
+        current_node = stack.pop(0)
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
