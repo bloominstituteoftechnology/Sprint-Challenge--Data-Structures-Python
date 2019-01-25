@@ -1,4 +1,5 @@
 from queue import Queue
+from stack import Stack
 
 class BinarySearchTree:
   def __init__(self, value):
@@ -7,7 +8,18 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
+    stack = Stack()
+    stack.push(self)
+
+    while stack.size() > 0:
+        node = stack.pop()
+        cb(node.value)
+
+        if node.right is not None:
+            stack.push(node.right)
+
+        if node.left is not None:
+            stack.push(node.left)  
 
   def breadth_first_for_each(self, cb):
     queue = Queue()
