@@ -9,26 +9,19 @@ class BinarySearchTree:
 
     def breadth_first_for_each(self, cb):
         visited = []
-        queue = [self.value]
+        queue = [self]
         # visited is our cb function
 
         while queue:
-            print("my queue: ", queue)
-            print("my visited: ", visited)
             node = queue.pop(0)
-
-            if node not in visited:
-                visited.append(node)
-                if self.right.value is not None:
-                    if self.left.value is not None:
-                        branch = [self.left.value, self.right.value]
+            if node.value:
+                cb(node.value)
+                if node.right is not None:
+                    if node.left is not None:
+                        queue.append(node.left)
+                        queue.append(node.right)
                     else:
-                        branch = [self.right.value]
-
-                for branch in branch:
-                    queue.append(branch)
-        for visited in visited:
-            cb(visited)
+                        queue.append(node.right)
 
         pass
 
