@@ -72,3 +72,30 @@ Also, include the runtime and space complexities of the original code and your o
 
 2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
 
+
+### Rubric
+
+#### SEARCH
+
+- DFS or BFS pass tests: 10 points
+
+#### NAMES
+
+- Optimize with an O(n log n) runtime solution: 8 points
+- Optimize with an O(n) runtime solution: 10 points
+
+#### COMPLEXITY
+
+- One point each: 8 points
+
+#### STRETCH
+
+- Both DFS and BFS pass tests: 2 points
+- `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 2 points
+
+
+#### GRADING
+
+* _3_: 28+
+* _2_: 20-17
+* _1_: 0-19
