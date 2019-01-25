@@ -5,7 +5,19 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
-        pass
+        def rec(current_node):
+            if current_node.left is None and current_node.right is None:
+                return current_node.value
+            if current_node.left is not None:
+                cb(current_node.left.value)
+            if current_node.right is not None:
+                cb(current_node.right.value)
+
+            if current_node.left is not None:
+                rec(current_node.left)
+            if current_node.right is not None:
+                rec(current_node.right)
+        rec(self)
 
     def breadth_first_for_each(self, cb):
         q = Queue()
@@ -77,3 +89,14 @@ class Queue:
             return
         self.size += -1
         return self.storage.pop(0)
+
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
