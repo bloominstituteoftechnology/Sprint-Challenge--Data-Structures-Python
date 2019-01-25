@@ -111,11 +111,7 @@ class BinarySearchTree:
         # start from the bottom of the tree
             #How do we start from the bottom of the tree?
         # traverse our way upward calling cb on each node
-        # return that array'
-        # c = BinarySearchTree.copy_tree(self)
-        # for item in c:
-        #     cb(item)
-        # return c
+        # return that array / change current array
         queue = Queue()
         queue.enqueue(self)
         while queue.storage.head:
