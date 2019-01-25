@@ -16,7 +16,9 @@ class BinarySearchTree:
   def breadth_first_for_each(self, cb):
     queue = Queue()
     queue.enqueue(self)
+    # print('1', queue.size)
     while queue.size != 0:
+      print(queue.size)
       self = queue.dequeue()
       cb(self.value)
       if self.left:

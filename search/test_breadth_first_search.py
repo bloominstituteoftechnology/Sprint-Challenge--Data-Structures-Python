@@ -22,9 +22,15 @@ class BinarySearchTreeTests(unittest.TestCase):
     self.bst.insert(10)
     self.bst.insert(9)
     self.bst.insert(11)
+    # self.bst.insert(3)
+    # self.bst.insert(4)
+    # self.bst.insert(10)
+    # self.bst.insert(9)
+    # self.bst.insert(11)
     self.bst.breadth_first_for_each(cb)
 
     self.assertEqual(arr, [5, 3, 10, 4, 9, 11])
+    # self.assertEqual(arr, [5, 3, 10, 4, 9, 11, 3, 4, 9, 10, 11])
 
 
 if __name__ == '__main__':
