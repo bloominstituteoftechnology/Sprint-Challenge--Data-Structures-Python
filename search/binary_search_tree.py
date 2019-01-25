@@ -5,7 +5,17 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
+    # Apply cb to value
+    cb(self.value)
+    # if both left and right are None then return
+    if self.left is None and self.right is None:
+      return
+    # if left exists, then call depth_first on left
+    if self.left is not None:
+      self.left.depth_first_for_each(cb)
+    # if right exists, then call depth_first on right
+    if self.right is not None:
+      self.right.depth_first_for_each(cb)
 
   def breadth_first_for_each(self, cb):
     pass
