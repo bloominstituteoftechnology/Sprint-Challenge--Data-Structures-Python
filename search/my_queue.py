@@ -17,7 +17,6 @@ class Queue:
     self.storage.remove_head()
     self.size -= 1
     return dq_val
-    
 
   def len(self):
     return self.size
