@@ -24,10 +24,6 @@ for name in names_1:
 
 for name in names_2:
     if name in name_dict:
-        name_dict[name] += 1
-
-for name in name_dict:
-    if name_dict[name]:
         duplicates.append(name)
 
 end_time = time.time()
