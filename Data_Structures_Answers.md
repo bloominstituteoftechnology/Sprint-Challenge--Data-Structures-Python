@@ -13,8 +13,11 @@ Add your answers to the questions below.
 
 
 5. What is the runtime complexity of the provided code in `names.py`?
+<br>
+O(N4) 4 nested loops, each growing by the size of the input, since they are nested - they are multiplied. 
 
 6. What is the space complexity of the provided code in `names.py`?
+<br>  O(n) as the size of the duplicates array will grow in proportion to the names inputs
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 <br> O(1) because python's 'set' is implemented as a hash table, and the lookup/insert/delete functions of a hash table are O(1)

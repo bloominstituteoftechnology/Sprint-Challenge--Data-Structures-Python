@@ -20,10 +20,10 @@ duplicates = list(set(names_1) & set(names_2))
 #check all the names in names2
 #if any name matches in names1 and names2, add to duplicate array
 
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+for name_1 in names_1: O(n)
+    for name_2 in names_2:O(n)
+        if name_1 == name_2: O(n)
+            duplicates.append(name_1)O(n)
 '''
 
 end_time = time.time()
