@@ -64,7 +64,7 @@ Six seconds is an eternity so you've been tasked with speeding up the code. Can 
 
 Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
 
-Also, include the runtimes of the original code and your optimized solution in `names.py`.
+Also, include the runtime complexities of the original code and your optimized solution from `names.py`.
 
 ### Stretch Problems
 
