@@ -21,4 +21,4 @@ Add your answers to the questions below.
     O(1) for 'set' call because it uses a hash table implementation. O(n) for intersection.  Overall, O(n).
 
 8. What is the space complexity of your optimized code in `names.py`?
-    O(n) for 'set' because it is a hash table implementation. O(n) for duplicates.  Overall, O(n).
+    O(n) for 'set' because it is a hash table implementation. O(n) for names_2 and duplicates.  Overall, O(n).
