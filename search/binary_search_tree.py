@@ -8,6 +8,36 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
+    left_tree = BinarySearchTree(self.left)
+    right_tree = BinarySearchTree(self.right)
+    if self.value is None:
+        return cb(None)
+    if not self.left:
+      return cb(self.value)
+    if self.value:
+      cb(self.value)
+    if self.left:
+        cb(self.left.value)
+    if self.right:
+        cb(self.right.value)
+        self.left = left_tree
+        print("is it 4", self.value)
+    if self.left.left:
+        print("is it 4", self.value)
+        cb(self.left.right.value)
+    if self.left.right:
+        print("is it 4", self.left.right)
+        cb(self.left.right.value)
+        self.right = right_tree
+    if self.right.left:
+        cb(self.right.left.value)
+    if self.right.right:
+        cb(self.right.right.value)
+    
+    
+    
+
+
     pass
 
   def insert(self, value):
