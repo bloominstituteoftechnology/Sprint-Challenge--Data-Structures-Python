@@ -26,31 +26,29 @@ This Sprint Challenge is split into three parts:
 
 ### Minimum Viable Product
 
-
-#### Task 1. Implement Depth-First or Breadth-First Traversal on the Binary Search Tree Class 
+#### Task 1. Implement Depth-First or Breadth-First Traversal on the Binary Search Tree Class
 
 Navigate into the `search` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
 
-   * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first in-order fashion (as opposed to pre-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
+- `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first in-order fashion (as opposed to pre-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order.
 
-   * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
-   
-     _HINT_: In order to achieve depth-first order, you'll probably want to utilize a Stack data structure. 
+- Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
 
-     * Run `python test_depth_first_search.py` to test your depth-first search implementation.
+  _HINT_: In order to achieve depth-first order, you'll probably want to utilize a Stack data structure.
 
-   * `breadth_first_for_each(cb)` receives a callback function as a parameter. It should then execute the anonymous function on each node in the tree in [breadth-first](https://en.wikipedia.org/wiki/Breadth-first_search) order. Your task is to implement the logic to traverse the tree in left-to-right breadth-first fashion.
-   
-   * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
-   
-     _HINT_: In order to achieve breadth-first order, you'll probably want to utilize a Queue data structure.
+  - Run `python test_depth_first_search.py` to test your depth-first search implementation.
 
-     * Run `python test_breadth_first_search.py` to test your breadth-first search implementation.
+- `breadth_first_for_each(cb)` receives a callback function as a parameter. It should then execute the anonymous function on each node in the tree in [breadth-first](https://en.wikipedia.org/wiki/Breadth-first_search) order. Your task is to implement the logic to traverse the tree in left-to-right breadth-first fashion.
+
+- Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
+
+  _HINT_: In order to achieve breadth-first order, you'll probably want to utilize a Queue data structure.
+
+  - Run `python test_breadth_first_search.py` to test your breadth-first search implementation.
 
 > Note that in Python, anonymous functions are referred to as "lambda functions". When passing in an anonymous function as input to either `depth_first_for_each` or `breadth_first_for_each`, you'll want to define them as lambda functions. For more information on lambda functions, check out this documentation: [https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
 
-> Note that it is not your job to worry about what the callback function being passed in is doing. That is up to the user of your traversal method. All you care about when implementing the traversal method is to call the passed-in callback in either depth-first or breadth-first order, depending on which traversal method you're implementing. 
-
+> Note that it is not your job to worry about what the callback function being passed in is doing. That is up to the user of your traversal method. All you care about when implementing the traversal method is to call the passed-in callback in either depth-first or breadth-first order, depending on which traversal method you're implementing.
 
 #### Task 2. Runtime Optimization
 
@@ -62,7 +60,7 @@ Six seconds is an eternity so you've been tasked with speeding up the code. Can 
 
 #### Task 3. Analyze some runtimes
 
-Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
+Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal.
 
 Also, include the runtime and space complexities of the original code and your optimized solution from `names.py`.
 
@@ -71,7 +69,6 @@ Also, include the runtime and space complexities of the original code and your o
 1. Implement the other tree traversal algorithm that you didn't implement on the `BinarySearchTree` class. Run the appropriate test file to test your implementation's correctness. Then go back to the `Data_Structures_Answers.md` file and answer the time and space complexity questions pertaining to the traveral method you just implemented.
 
 2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
-
 
 ### Rubric
 
@@ -93,9 +90,8 @@ Also, include the runtime and space complexities of the original code and your o
 - Both DFS and BFS pass tests: 2 points
 - `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 2 points
 
-
 #### GRADING
 
-* *3*: 28+
-* *2*: 20-17
-* *1*: 0-19
+- _3_: 28+
+- _2_: 20-17
+- _1_: 0-19
