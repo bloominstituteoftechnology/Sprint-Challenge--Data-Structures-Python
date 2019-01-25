@@ -13,6 +13,23 @@ class BinarySearchTree:
     # recursively invoke depth_first search_for_each on the right
     if self.right:
       self.right.depth_first_for_each(cb)
+  '''
+  Instructor Pseudo Code:
+    - mark node as visited by valling 'cb'
+    - if left is not None, call DFS on left
+      - self.left.depth_first_for_each(cb)
+    - if left is not None, call DFS on left
+      - self.right.depth_first_for_each(cb)
+
+  Instructor Second Pseudo Code:
+    - create empty stack
+    - push root node to the stack
+    - while stack is not empty
+      - pop the firt item in the stack
+      - mark node as visited by calling 'cb'
+      - if left is not None, put the left chld in the stack
+      - if right is not None, put the right chld in the stack
+  '''
     
 
   def breadth_first_for_each(self, cb):
@@ -30,6 +47,16 @@ class BinarySearchTree:
       # checks right node value and if it exist it gets added to queue
       if curr_node.right:
         queue.append(curr_node.right)
+  '''
+  Instructor Pseudo Code:
+    - create empty queue
+    - add root node to the queue
+    - while queue is not empty
+      - dequeue the firt item in the queue
+      - mark node as visited by calling 'cb'
+      - if left is not None, put the left chld in the queue
+      - if right is not None, put the right chld in the queue
+  '''
 
     
 
