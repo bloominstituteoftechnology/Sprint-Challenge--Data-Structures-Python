@@ -14,5 +14,6 @@ Add your answers to the questions below.
 6) What is the space complexity of the provided code in `names.py`?
    O(n) because we create a duplicates list
 7) What is the runtime complexity of your optimized code in `names.py`?
-
+   O(n) because we loop through and check the keys between the 2 dicts
 8) What is the space complexity of your optimized code in `names.py`?
+   O(2n) because we make two dicts with key value pairs that are copies of name_1 and name_2
