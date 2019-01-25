@@ -19,8 +19,8 @@ bst = BinarySearchTree("")
 
 set_1 = set(names_1)
 
-for name in names_2:
-    if name in set_1:
+for name in names_2: # O(n)
+    if name in set_1: # O(1)
         duplicates.append(name)
 
 end_time = time.time()
