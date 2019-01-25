@@ -12,7 +12,10 @@ Add your answers to the questions below.
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
+   - O(n) because bfs touches every node just once.
+
 4. What is the space complexity of your `breadth_first_for_each` method?
+   - O(n) because every time each node that is being appended in the array grows in linear time.
 
 5) What is the runtime complexity of the provided code in `names.py`?
 
@@ -20,7 +23,7 @@ Add your answers to the questions below.
 
 6) What is the space complexity of the provided code in `names.py`?
 
-   - O(n^2) since we're comparing two lists
+   - O(2n) => O(n) since we're comparing two lists
 
 7) What is the runtime complexity of your optimized code in `names.py`?
 
