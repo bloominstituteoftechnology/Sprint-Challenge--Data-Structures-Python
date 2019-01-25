@@ -13,10 +13,22 @@ ____
 __Answer__: `O(n)` because `n` is the total number of nodes in the tree.
 ____
 
-5. What is the runtime complexity of the provided code in `names.py`?
+5. What is the runtime complexity of the provided code in `names.py`? 
+
+__Answer__: `O(n^2)`
+____
 
 6. What is the space complexity of the provided code in `names.py`?
 
+__Answer__: `O(n)` because the max additional space required is dependent on `n`
+____
+
 7. What is the runtime complexity of your optimized code in `names.py`?
 
+__Answer__: `O(n)`
+____
+
 8. What is the space complexity of your optimized code in `names.py`?
+
+__Answer__: `O(n)`
+____
