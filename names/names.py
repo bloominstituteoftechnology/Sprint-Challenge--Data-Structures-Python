@@ -14,7 +14,6 @@ set1 = set(names_1)
 set2 = set(names_2)
 duplicates = set1.intersection(set2)
 
-
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
