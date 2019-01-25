@@ -12,10 +12,10 @@ f.close()
 
 name_1_dict = {}
 duplicates = []
-for name_1 in names_1:
+for name_1 in names_1:  # O(n)
     name_1_dict[name_1] = True
 
-for name_2 in names_2:
+for name_2 in names_2:  # O(n)
     if name_1_dict.get(name_2, None):
         duplicates.append(name_2)
 
