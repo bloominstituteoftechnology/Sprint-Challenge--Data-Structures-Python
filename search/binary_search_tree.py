@@ -5,8 +5,8 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
-        storage = []
-        return storage.append(cb(self.value))
+        # check if tree has root
+        return
 
     def breadth_first_for_each(self, cb):
         pass
