@@ -24,8 +24,7 @@ for name_2 in names_2:
 
 for key in name_1_dict.keys():
     if name_2_dict.get(key):
-        duplicates.append(key)
-
+        duplicates.append(name_1_dict.get(key))
 end_time = time.time()
-print(f"{len(duplicates)} duplicates:\n\n{', '}\n\n")
+print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
