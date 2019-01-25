@@ -8,6 +8,7 @@ Add your answers to the questions below.
 
    <!-- Space complexity is O(1). There is no stack taking up space it  -->
    Implicit stack would be O(log n) the length of the tree.
+   But worse case is O(n) since it could be a completely imbalanced tree.
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
