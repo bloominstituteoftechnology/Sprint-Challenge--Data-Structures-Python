@@ -8,7 +8,6 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
-    
     que = [self]
     visited = []
 
