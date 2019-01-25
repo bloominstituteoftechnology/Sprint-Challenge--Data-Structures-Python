@@ -18,7 +18,7 @@ Add your answers to the questions below.
 
 5) What is the runtime complexity of the provided code in `names.py`?
 
-   - The run time complexity of the provided nested for loop solution is O(2\*\*n).
+   - The run time complexity of the provided nested for loop solution is O(n\*\*2).
      the nested portion of the for loop becomes a power factor to the next operation.
 
 ```
