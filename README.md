@@ -1,4 +1,4 @@
-# Sprint Challenge: Data Structures
+## Sprint Challenge: Data Structures
 
 In this week's Sprint you implemented some classic and fundamental data structures and learned about how to go about evaluating their respective runtimes and performance. This Sprint Challenge aims to assess your comfort with these topics through exercises that build on the data structures you implemented and the algorithmic intuition you've started to build up.
 
