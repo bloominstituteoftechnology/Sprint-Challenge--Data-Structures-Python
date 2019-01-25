@@ -10,6 +10,9 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
+#found built-in list and set modules for python, while researching duplicates strategies 
+#underlying datastructure is hashing
+
 duplicates = list(set(names_1) & set(names_2))
     
 '''
