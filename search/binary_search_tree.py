@@ -36,7 +36,6 @@ class BinarySearchTree:
     return visited
 
   def breadth_first_for_each(self, cb, queue=deque(), visited=[]):
-    print(list(queue))
     if len(queue) == 0:
       if self not in visited:
         queue.appendleft(self)
@@ -44,12 +43,12 @@ class BinarySearchTree:
       node = queue.pop()
       visited.append(node.value)
       cb(node.value)
-      if self.left:
-        queue.appendleft(self.left)
-        self.left.depth_first_for_each(cb, queue, visited)
-      if self.right:
-        queue.appendleft(self.right)
-        self.right.depth_first_for_each(cb, queue,visited)
+      if node.left:
+        queue.appendleft(node.left)
+        node.left.depth_first_for_each(cb, queue, visited)
+      if node.right:
+        queue.appendleft(node.right)
+        node.right.depth_first_for_each(cb, queue,visited)
     return visited
 
   def insert(self, value):
