@@ -1,6 +1,3 @@
-from linked_list import LinkedList
-from my_queue import Queue
-
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
