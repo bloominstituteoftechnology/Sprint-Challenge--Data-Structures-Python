@@ -20,7 +20,9 @@ duplicates = []
 """
 Having a loop inside a loop (above) is not very good for big O.
 The best way is to bring the second loop out, and use a set() to store the names then check the set() to see if it contains the name_item that we're looking for.
-If it does, then we add the name to duplicates_array.
+If it does, then we add the name to duplicates.
+
+** Also, take a look at the "stretch_goal_for_names.py" for a solution that uses an array (like the instructions stated).
 """            
 
 name_lookup = set()		# O(1)
