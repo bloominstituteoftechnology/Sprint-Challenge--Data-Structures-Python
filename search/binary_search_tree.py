@@ -13,12 +13,10 @@ class BinarySearchTree:
       vertex = queue.pop(0) 
       if vertex.value:
         cb(vertex.value)
+        if vertex.left:
+          queue.append(vertex.left)
         if vertex.right:
-          if vertex.left:
-            queue.append(vertex.left)
-            queue.append(vertex.right)
-          else:
-            queue.append(vertex.right)
+          queue.append(vertex.right)          
     return
     
   def insert(self, value):
