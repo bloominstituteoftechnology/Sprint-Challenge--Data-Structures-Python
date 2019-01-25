@@ -70,5 +70,5 @@ Also, include the runtime and space complexities of the original code and your o
 
 1. Implement the other tree traversal algorithm that you didn't implement on the `BinarySearchTree` class. Run the appropriate test file to test your implementation's correctness. Then go back to the `Data_Structures_Answers.md` file and answer the time and space complexity questions pertaining to the traveral method you just implemented.
 
-2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime.
+2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
 
