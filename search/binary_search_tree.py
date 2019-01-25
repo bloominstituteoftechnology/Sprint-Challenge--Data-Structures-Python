@@ -17,6 +17,19 @@ class BinarySearchTree:
     pass
 
   def breadth_first_for_each(self, cb):
+    q = []
+    cb(self.value)
+    if self.left is not None:
+      q.append(self.left)
+    if self.right is not None:
+      q.append(self.right)
+    while len(q) > 0:
+      next_q = q.pop(0)
+      cb(next_q.value)
+      if next_q.left is not None:
+        q.append(next_q.left)
+      if next_q.right is not None:
+        q.append(next_q.right)        
     pass
 
   def insert(self, value):
