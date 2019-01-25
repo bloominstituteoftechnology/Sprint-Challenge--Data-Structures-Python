@@ -25,7 +25,7 @@ This Sprint Challenge is split into two separate parts: writing an algorithm to 
 
 #### Task 1. Implement Depth-First or Breadth-First Traversal on the Binary Search Tree Class 
 
-Navigate into the `search` directory in the `data_structures` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
+Navigate into the `search` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
 
    * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first in-order fashion (as opposed to pre-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
 
@@ -48,10 +48,23 @@ Navigate into the `search` directory in the `data_structures` directory. Inside,
 > Note that it is not your job to worry about what the callback function being passed in is doing. That is up to the user of your traversal method. All you care about when implementing the traversal method is to call the passed-in callback in either depth-first or breadth-first order, depending on which traversal method you're implementing. 
 
 
-#### Task 2. Analyze some runtimes
+#### Task 2. Runtime Optimization
+
+Navigate into the `names` directory. Here you will find two text files containing 10,000 names each, along with a program `names.py` that compares the two files and prints out duplicate name entries. Try running the code with `python3 names.py`. Be patient because it might take a while: approximately six seconds on my laptop. What is the runtime complexity of this code?
+
+Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? How about under one hundredth of a second?
+
+(Hint: You might try importing a data structure you built during the week)
+
+#### Task 3. Analyze some runtimes
 
 Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
 
+Also, include the runtimes of the original code and your optimized solution in `names.py`.
+
 ### Stretch Problems
 
-Implement the other tree traversal algorithm that you didn't implement on the `BinarySearchTree` class. Run the appropriate test file to test your implementation's correctness. Then go back to the `Data_Structures_Answers.md` file and answer the time and space complexity questions pertaining to the traveral method you just implemented.
+1. Implement the other tree traversal algorithm that you didn't implement on the `BinarySearchTree` class. Run the appropriate test file to test your implementation's correctness. Then go back to the `Data_Structures_Answers.md` file and answer the time and space complexity questions pertaining to the traveral method you just implemented.
+
+2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime.
+
