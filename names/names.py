@@ -2,20 +2,23 @@ import time
 
 start_time = time.time()
 
+# Time complexity
+# O(2n) where n is total number of names in names_1 and names_2
+
 f = open('names_1.txt', 'r')
-names_1 = f.read().split("\n")  # List containing 10000 names
+names_1 = f.read().split("\n")  # List containing 10000 names - O(n/2)
 f.close()
 
 f = open('names_2.txt', 'r')
-names_2 = f.read().split("\n")  # List containing 10000 names
+names_2 = f.read().split("\n")  # List containing 10000 names - O(n/2)
 f.close()
 
 name_1_dict = {}
 duplicates = []
-for name_1 in names_1:  # O(n)
+for name_1 in names_1:  # O(n/2)
     name_1_dict[name_1] = True
 
-for name_2 in names_2:  # O(n)
+for name_2 in names_2:  # O(n/2)
     if name_1_dict.get(name_2, None):
         duplicates.append(name_2)
 
