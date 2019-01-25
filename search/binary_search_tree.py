@@ -9,9 +9,9 @@ class BinarySearchTree:
 
   def breadth_first_for_each(self, cb):
     left_tree = BinarySearchTree(self.left)
-    left_mega_tree = BinarySearchTree(self.left.left)
+    # left_mega_tree = BinarySearchTree(self.left.left)
     right_tree = BinarySearchTree(self.right)
-    right_mega_tree = BinarySearchTree(self.right.right)
+    # right_mega_tree = BinarySearchTree(self.right.right)
     if self.value is None:
         return cb(None)
     if not self.left:
@@ -33,20 +33,18 @@ class BinarySearchTree:
         # cb(self.left.right.value)
     if self.left.right:
         print("is it 4!?!?!", self.left.right.value)
-        self.right = right_tree
+        # self.right = right_tree
         # self.left = left_tree
         cb(self.left.right.value)
         print(self.right)
+    self.left = left_tree
+    # print("test: ", self.left.value)
+    # print("test: ", self.left)
+    cb(self.right.left.value)
+    cb(self.right.right.value)
+    # print("test1: ", self.left.left.value)
 
-    if self.right.left:
-        self.left = left_tree
-        cb(self.right.left.value)
-        print("is it???",self.right.left.value)
-    if self.right.right:
-        cb(self.right.right.value)
-        # self.right.right = right_mega_tree
-        print("is it???",self.right.value)
-    
+
     
     
 
