@@ -8,26 +8,32 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
-    visited = []
-    queue = []
-    if self.value:
-      queue.append(self.value)
+
+    queue = [self]
     while queue:
-      print('queue = ', queue)
-      print('visited = ', visited)
-      if queue[0]
       vertex = queue.pop(0)
-      if vertex not in visited:
-        # if vertex.value:
-        #   visited.append(vertex.value)
-        # else:
-        visited.append(vertex)
-        if self.left:
-          queue.append(self.left)
-        if self.right:
-          queue.append(self.right)
-    for i in visited:
-      return cb(i)
+      if vertex.value:
+        cb(vertex.value)
+        if vertex.right:
+          if vertex.left:
+            queue.append(vertex.left)
+            queue.append(vertex.right)
+          else:
+            queue.append(vertex.right)
+    return
+
+    # queue = []
+    # if self.value:
+    #   queue.append(self.value) # O(1)
+    # while queue: 
+    #   print('queue = ', queue)
+    #   vertex = queue.pop(0)
+    #   if self.left:
+    #     queue.append(self.left)
+    #   if self.right:
+    #     queue.append(self.right)
+    # for i in queue:
+    #   return cb(i.value)
 
 
   def insert(self, value):
@@ -66,26 +72,21 @@ class BinarySearchTree:
     return max_value
 
 
-bst = BinarySearchTree(5)
-bst.insert(3)
-bst.insert(4)
-bst.insert(10)
-bst.insert(9)
-bst.insert(11)
-
-print(bst.contains(5))
-print(bst.contains(3))
-print(bst.contains(4))
-
-arr = []
-cb = lambda x: arr.append(x)
-
-bst.breadth_first_for_each(cb)
-print(arr)
-
+# bst = BinarySearchTree(5)
 # bst.insert(3)
 # bst.insert(4)
 # bst.insert(10)
 # bst.insert(9)
 # bst.insert(11)
+
+# print(bst.contains(5))
+# print(bst.contains(3))
+# print(bst.contains(4))
+
+# arr = []
+# cb = lambda x: arr.append(x)
+
+# bst.breadth_first_for_each(cb)
+# print(arr)
+
 
