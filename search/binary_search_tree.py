@@ -5,7 +5,23 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
+    
+    """
+    The basic algorithm of Pre-order traversal is to visit the root, traverse the left subtree, then traverse the right subtree.
+    Here, we're going to check the left or right, and recursively call the depth_first method, while passing in cb.
+    cb is the closure (lambda in Python) that will hold on to the value so it can be used in the test file.
+    """
+    
+    # Calling the callback with the current parent
+    cb(self.value)
+    
+    # Traverse the left side
+    if self.left is not None:
+      self.left.depth_first_for_each(cb)
+    
+    if self.right is not None:
+      self.right.depth_first_for_each(cb)
+    
 
   def breadth_first_for_each(self, cb):
     pass
