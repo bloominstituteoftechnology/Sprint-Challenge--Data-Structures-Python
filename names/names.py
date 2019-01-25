@@ -13,14 +13,10 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names - O(n/2)
 f.close()
 
-name_1_dict = {}
-duplicates = []
-for name_1 in names_1:  # O(n/2)
-    name_1_dict[name_1] = True
+first = set(names_1)  # O(n/2) to copy the list to a set
+second = set(names_2)  # O(n/2)
 
-for name_2 in names_2:  # O(n/2)
-    if name_1_dict.get(name_2, None):
-        duplicates.append(name_2)
+duplicates = first.intersection(second)  # O(min(len(first), len(second))) = O(n/2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
@@ -30,4 +26,4 @@ print (f"runtime: {end_time - start_time} seconds")
     # runtime: 10.559283018112183 seconds
 
 # Without nested for loops:
-    # runtime: 0.008630990982055664 seconds
+    # runtime: 0.005473136901855469 seconds
