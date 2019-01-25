@@ -107,7 +107,6 @@ class BinarySearchTree:
             pass
 
     def breadth_first_for_each(self, cb):
-        pass
         # start from the bottom of the tree
             #How do we start from the bottom of the tree?
         # traverse our way upward calling cb on each node
