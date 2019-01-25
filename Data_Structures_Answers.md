@@ -4,9 +4,9 @@ Add your answers to the questions below.
 
 2. What is the space complexity of your `depth_first_for_each` function?
 **On(n)**
-3. What is the runtime complexity of your `breadth_first_for_each` method?
+3. What is the runtime complexity of your `breadth_first_for_each` method? **O(n) because of the while loop.**
 
-4. What is the space complexity of your `breadth_first_for_each` method?
+4. What is the space complexity of your `breadth_first_for_each` method? **O(n)**
 
 
 5. What is the runtime complexity of the provided code in `names.py`? **O(n^2) because there are two for loops calling 'n'.**
