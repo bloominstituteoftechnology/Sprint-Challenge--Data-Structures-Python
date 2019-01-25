@@ -5,7 +5,7 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    return self.value
+    cb(self.value)
     # check if left has path
     if self.left is not None:
       # if so recursive on left path
