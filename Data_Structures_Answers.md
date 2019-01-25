@@ -7,10 +7,10 @@ O(n)
 O(1)
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
-
+O(n)
 
 4. What is the space complexity of your `breadth_first_for_each` method?
-
+O(n) -> since all items are stored in a queue.
 
 5. What is the runtime complexity of the provided code in `names.py`?
 O(n^2)
