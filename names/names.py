@@ -61,8 +61,6 @@ f.close()
 
 duplicates = []
 for name in names_2:
-    print(name)
-    print(bst_1.contains(name))
     if bst_1.contains(name):        
         duplicates.append(name)
 
