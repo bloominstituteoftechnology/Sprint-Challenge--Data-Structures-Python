@@ -8,7 +8,21 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
-        pass
+        # create stack
+        stack = deque()
+        # add value to stack
+        stack.append(self.value)
+        while stack:
+            # add to stack (pre-order)
+            cb(stack.pop())
+
+            # check the left
+            if self.left:
+                self.left.depth_first_for_each(cb)
+
+            # check the right
+            if self.right:
+                self.right.depth_first_for_each(cb)
 
     def breadth_first_for_each(self, cb):
         # create queue
@@ -17,7 +31,7 @@ class BinarySearchTree:
         queue.append(self)
         # while queue is not empty
         while queue:
-            # remove from front of queue
+                # remove from front of queue
             popped = queue.popleft()
             # pass into callback
             cb(popped.value)
