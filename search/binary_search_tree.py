@@ -1,4 +1,4 @@
-mport sys
+import sys
 #need import os?
 
 # sys.path.append('../linked_list')
@@ -117,11 +117,21 @@ class BinarySearchTree:
 
   #anonymous function is called on every node in correct order
   def breadth_first_for_each(self, cb):
-    Queue.enqueue(self)
-    if self.value is None:
-      return None
-    while Queue.size() > 0: 
-      if 
+    queue =[]
+    queue.append(self)
+    #while queue exists
+    while queue:
+      #FIFO removal from queue
+      current_node = dequeue(0) #0? empty?
+      #callback
+      cb(current_node.value)
+      #add to queue
+      if current_node.left:
+        enqueue(current_node.left)
+      if current_node.right:
+        enqueue(current_node.right)
+
+
 
     
 
