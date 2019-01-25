@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
@@ -85,3 +89,9 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+
+
+end_time = time.time()
+
+print (f"runtime: {end_time - start_time} seconds")
