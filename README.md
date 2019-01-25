@@ -18,7 +18,11 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 ## Description
 
-This Sprint Challenge is split into two separate parts: writing an algorithm to search a data structure and analyzing the performance of that algorithm.
+This Sprint Challenge is split into three parts:
+
+1. Writing an algorithm to search through a binary search tree
+2. Optimizing some inefficient code
+3. Analyzing time and space complexities from parts 1 and 2
 
 ### Minimum Viable Product
 
@@ -52,7 +56,7 @@ Navigate into the `search` directory. Inside, you'll see the `binary-search-tree
 
 Navigate into the `names` directory. Here you will find two text files containing 10,000 names each, along with a program `names.py` that compares the two files and prints out duplicate name entries. Try running the code with `python3 names.py`. Be patient because it might take a while: approximately six seconds on my laptop. What is the runtime complexity of this code?
 
-Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? How about under one hundredth of a second?
+Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? Under one hundredth of a second?
 
 (Hint: You might try importing a data structure you built during the week)
 
