@@ -31,7 +31,9 @@ class BinarySearchTree:
 
     def insert(self, value):
         new_tree = BinarySearchTree(value)
-        if (value < self.value):
+        if self.value == value:
+            duplicates.append(value)
+        elif (value < self.value):
             if not self.left:
                 self.left = new_tree
             else:
@@ -66,19 +68,18 @@ class BinarySearchTree:
 
 
 duplicates = []
+names_1_set = set(names_1)
+names_2_set = set(names_2)
 
-firstName = names_1.pop(0)
+firstName = names_1_set.pop()
 
 bst = BinarySearchTree(firstName)
-for name in names_1:
+for name in names_1_set:
     bst.insert(name)
 
-for name in names_2:
-    if bst.contains(name):
-        duplicates.append(name)
+for name in names_2_set:
+    bst.insert(name)
 
-
-print(bst.duplicates)
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
