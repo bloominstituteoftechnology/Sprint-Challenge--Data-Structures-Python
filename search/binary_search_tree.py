@@ -8,7 +8,24 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
-    pass
+    queue = Queue()
+    queue.put_in_queue(self.value)
+
+    def recursion(curr_node):
+        cb(queue.remove_from_queue())
+        if curr_node.left is None and curr_node.right is None:
+            return
+        if curr_node.left is not None:
+            queue.put_in_queue(curr_node.left.value)
+        if curr_node.right is not None:
+            queue.put_in_queue(curr_node.right.value)
+
+        if curr_node.left is not None:
+            recursion(curr_node.left)
+        if curr_node.right is not None:
+            recursion(curr_node.right)
+
+    recursion(self)
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
@@ -44,3 +61,18 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+class Queue:
+    def __init__(self):
+        self.size = 0
+        self.storage = []
+
+    def put_in_queue(self, item):
+        self.storage.append(item)
+        self.size += 1
+
+    def remove_from_queue(self):
+        if self.storage is None:
+            return
+        self.size += -1
+        return self.storage.pop(0)
