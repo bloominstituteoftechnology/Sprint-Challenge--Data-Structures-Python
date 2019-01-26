@@ -8,7 +8,7 @@ class BinarySearchTree:
     stack = [self]
 
     while len(stack):
-        node = stock.pop()
+        node = stack.pop()
         cb(node.value)
 
         if node.right:
@@ -18,7 +18,17 @@ class BinarySearchTree:
             stack.append(node.left)  
 
   def breadth_first_for_each(self, cb):
-    pass
+    queue = [self]
+
+    while len(queue):
+        node = queue.pop(0)
+        cb(node.value)
+
+        if node.left:
+            queue.append(node.left)
+
+        if node.right:
+            queue.append(node.right)
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
