@@ -12,6 +12,16 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []
+thisset = set(names_2)
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+for name in names_1:
+    if name in thisset:
+        duplicates.append(name)
 
 
 end_time = time.time()
