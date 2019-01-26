@@ -113,7 +113,12 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass
+    #test is actually for pre order not in order like instructions say
+    #mark node as visited by calling cb
+    #using recursion call dfs on left then right
+    #self.left.depth_first_for_each(cb)
+    #self.right.depth_first_for_each(cb)
+    #also have to make sure left and right is not none
 
   #anonymous function is called on every node in correct order
   def breadth_first_for_each(self, cb):
@@ -122,7 +127,7 @@ class BinarySearchTree:
     #while queue exists
     while queue:
       #FIFO removal from queue
-      current_node = queue.pop(0) #0? empty?
+      current_node = queue.pop(0) #pop 0 index value
       #callback
       cb(current_node.value)
       #add to queue
@@ -131,7 +136,11 @@ class BinarySearchTree:
       if current_node.right:
         queue.append(current_node.right)
 
-
+#create empty queue, add first node(root) to queue
+#deque first item in queue
+#then while queue not empty mark node as visited by calling cb
+#then put all children in queue left first then right
+#also null check if right or left is none
 
     
 

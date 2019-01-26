@@ -11,7 +11,7 @@ Add your answers to the questions below.
 
 5. What is the runtime complexity of the provided code in `names.py`? O(n^2) because nest for loop
 
-6. What is the space complexity of the provided code in `names.py`? O(1)
+6. What is the space complexity of the provided code in `names.py`? O(n)
 
 7. What is the runtime complexity of your optimized code in `names.py`? make it not a for loop to reduce it to O(n)
 
