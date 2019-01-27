@@ -5,18 +5,20 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
-        def rec(current_node):
-            if current_node.left is None and current_node.right is None:
-                return current_node.value
-            if current_node.left is not None:
-                cb(current_node.left.value)
-            if current_node.right is not None:
-                cb(current_node.right.value)
+        s = Queue()
+        s.enqueue(self.value)
 
+        def rec(current_node):
+            cb(s.dequeue())
+            if current_node.left is None and current_node.right is None:
+                return
             if current_node.left is not None:
+                s.enqueue(current_node.left.value)
                 rec(current_node.left)
             if current_node.right is not None:
+                s.enqueue(current_node.right.value)
                 rec(current_node.right)
+
         rec(self)
 
     def breadth_first_for_each(self, cb):
