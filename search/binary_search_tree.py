@@ -8,8 +8,17 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
-    pass
-
+    queue = [self]
+    while queue: # O(n)
+      vertex = queue.pop(0) 
+      if vertex.value:
+        cb(vertex.value)
+        if vertex.left:
+          queue.append(vertex.left)
+        if vertex.right:
+          queue.append(vertex.right)          
+    return
+    
   def insert(self, value):
     new_tree = BinarySearchTree(value)
     if (value < self.value):
@@ -44,3 +53,23 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+
+# bst = BinarySearchTree(5)
+# bst.insert(3)
+# bst.insert(4)
+# bst.insert(10)
+# bst.insert(9)
+# bst.insert(11)
+
+# print(bst.contains(5))
+# print(bst.contains(3))
+# print(bst.contains(4))
+
+# arr = []
+# cb = lambda x: arr.append(x)
+
+# bst.breadth_first_for_each(cb)
+# print(arr)
+
+
