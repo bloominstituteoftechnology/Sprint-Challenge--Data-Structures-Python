@@ -31,7 +31,7 @@ This Sprint Challenge is split into three parts:
 
 Navigate into the `search` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
 
-   * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first in-order fashion (as opposed to pre-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
+   * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first pre-order fashion (as opposed to in-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
 
    * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
    
