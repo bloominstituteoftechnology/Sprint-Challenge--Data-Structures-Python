@@ -16,11 +16,16 @@ duplicates = []
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
-names_first = Counter(names_1)
-names_second = Counter(names_2)
-for key in names_first:
-    if key in names_second:
-        duplicates.append(key)
+
+# names_first = Counter(names_1)
+# names_second = Counter(names_2)
+# for key in names_first:
+#     if key in names_second:
+#         duplicates.append(key) - fastest solution
+
+for name in names_1:
+  if name in names_2:
+    duplicates.append(name) # slower stretch solution using only arrays
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
