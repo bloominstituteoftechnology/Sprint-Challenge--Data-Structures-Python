@@ -3,9 +3,30 @@ class BinarySearchTree:
     self.value = value
     self.left = None
     self.right = None
+    self.visited = []
 
   def depth_first_for_each(self, cb):
-    pass    
+    '''
+    if self:
+      cb(self.value)
+      if self.left:
+        self.left.depth_first_for_each(cb)
+      if self.right:
+        self.right.depth_first_for_each(cb)
+    '''
+    print(self.visited)
+    stack = []
+    stack.append(self)
+    while len(stack) != 0:
+      self = stack.pop()
+      cb(self.value)
+      if self not in self.visited:
+        self.visited.append(self)
+        if self.right:
+          stack.append(self.right)
+        if self.left:
+          stack.append(self.left)
+
 
   def breadth_first_for_each(self, cb):
     pass

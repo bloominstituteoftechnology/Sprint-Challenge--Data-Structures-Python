@@ -12,7 +12,7 @@ class BinarySearchTreeTests(unittest.TestCase):
     self.bst.depth_first_for_each(cb)
 
     self.assertEqual(arr, [5])
-
+  
   def test_depth_first_traversal_2(self):
     arr = []
     cb = lambda x: arr.append(x)
