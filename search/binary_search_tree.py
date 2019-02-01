@@ -5,11 +5,18 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
+    stack = []
     visited = []
-    if self.left != None:
-      self.left.depth_first_for_each(cb)
-    if self.right != None:
-      self.right.depth_first_for_each(cb)
+    while stack != None:
+      
+      if self.left != None:
+        self.left.depth_first_for_each(cb)
+        print(cb)
+        visited.push(cb)
+      if self.right != None:
+        self.right.depth_first_for_each(cb)
+        print(cb)
+        visited.push(cb)
 
 
   def breadth_first_for_each(self, cb):
