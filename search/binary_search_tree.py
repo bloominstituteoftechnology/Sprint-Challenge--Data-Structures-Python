@@ -17,7 +17,25 @@ class BinarySearchTree:
 
 
   def breadth_first_for_each(self, cb):
-    pass
+    parent_node = self
+    left_node = self.left
+    right_node = self.left
+    cb(parent_node.value)
+    if left_node is not None:
+      cb(left_node.value)
+    if right_node is not None:
+      cb(right_node.value)
+
+    if hasattr(left_node, "left") and left_node.left is not None:
+      left_node.left.breadth_first_for_each(cb)
+    if hasattr(left_node, "right") and left_node.right is not None:
+      left_node.right.breadth_first_for_each(cb)
+    if hasattr(right_node, "left") and right_node.left is not None:
+      right_node.left.breadth_first_for_each(cb)
+    if hasattr(right_node, "right") and right_node.right is not None:
+      right_node.right.breadth_first_for_each(cb)
+      
+    
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
