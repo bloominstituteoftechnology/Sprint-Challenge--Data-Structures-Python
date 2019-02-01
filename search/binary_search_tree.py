@@ -1,24 +1,69 @@
+from collections import deque
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
     self.left = None
     self.right = None
 
-  def depth_first_for_each(self, cb):
-    pass    
+  def depth_first_for_each(self, cb, stack=[], visited=[]):
+    #Preorder (Root, Left, Right)
+    # stack = []
+    # visited = []
 
-  def breadth_first_for_each(self, cb):
-    pass
+    if len(stack) == 0:
+      if self not in visited:
+        stack.append(self)
+
+    if len(stack) > 0:
+      #pop last item from stack
+      node = stack.pop()
+    
+      #add to visited
+      visited.append(node.value)
+      
+      cb(node.value)
+
+      #add its children to the stack, check if left child has value
+      # if it does, do recursive call on its left value
+      if self.left:
+        stack.append(self.left)
+        self.left.depth_first_for_each(cb, stack, visited)
+      # if it does not, do recursive call on its right child
+      if self.right:
+        stack.append(self.right)
+        self.right.depth_first_for_each(cb, stack,visited)
+    # print(stack)
+    return visited
+
+  def breadth_first_for_each(self, cb, queue=deque(), visited=[]):
+    # print(list(queue))
+    if len(queue) == 0:
+      if self not in visited:
+        queue.appendleft(self)
+    while len(queue) > 0:
+        node = queue.pop()
+        visited.append(node.value)
+        cb(node.value)
+        if node.left:
+          if node.left.value:   # --- need to check if not added to visited list ----
+            queue.appendleft(node.left)
+        if node.right: 
+          if node.right.value:   # --- need to check if not added to visited list ----
+            queue.appendleft(node.right)
+   
+    return visited
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
     if (value < self.value):
       if not self.left:
+        #print(f'{value} is less than {self.value}. inserting in left side of {self.value}')
         self.left = new_tree
       else:
         self.left.insert(value)
     elif value >= self.value:
       if not self.right:
+        #print(f'{value} is greater than {self.value}. inserting in right side of {self.value}')
         self.right = new_tree
       else:
         self.right.insert(value)
@@ -44,3 +89,15 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+bst = BinarySearchTree(5)
+bst.insert(3)
+bst.insert(4)
+bst.insert(10)
+bst.insert(9)
+bst.insert(11)
+
+arr = []
+cb = lambda x: arr.append(x)
+
+print(bst.breadth_first_for_each(cb))
