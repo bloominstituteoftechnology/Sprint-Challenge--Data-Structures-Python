@@ -1,4 +1,9 @@
 class BinarySearchTree:
+  # breath first search use a queue goes by layers
+  # depth first search use a stack
+    # preorder - the root node is visited first
+    # then the left subtree and finally the right subtree
+  # log based 2
   def __init__(self, value):
     self.value = value
     self.left = None
