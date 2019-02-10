@@ -12,7 +12,22 @@ class BinarySearchTree:
     if this is not possible, go to the previous node
     from previous node, go down the right path until no longer possible, then the left path
     when these paths are complete, go back to previous node again and repeat
-    """    
+    """
+
+    stack = [] # BFS uses stack structures rather than queue
+    current = self
+    # might need previous node variable, will test without one
+
+    while True:
+      cb(current.value)
+
+      if current.right is not None: # add right trees to the stack where applicable
+        stack.append(current)
+      if current.left is None: # if no more left trees exist and the stack is clear, we are done
+        if len(stack) == 0:
+          break
+        current = stack.pop().right # otherwise, we pop the right value or set it to the left tree if left values exist
+      else: current = current.left    
 
   def breadth_first_for_each(self, cb):
     pass
