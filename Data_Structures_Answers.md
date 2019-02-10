@@ -2,7 +2,11 @@ Add your answers to the questions below.
 
 1. What is the runtime complexity of your `depth_first_for_each` method?
 
+This should also be O(n), since the primary logic of the solution is to run through each node in the tree once by using the callback function via cb(current.value). This performs one value-related check so it does not scale exponentially like a solution that uses nested loops. 
+
 2. What is the space complexity of your `depth_first_for_each` function?
+
+The space complexity is O(n) because you'll need to eventually run over every item in the stack in order to eliminate all existing left and right paths to view each node. Your storage space requirement should therefore be equal to the number of nodes you'll need to work with for each time BinarySearchTree is used.
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
