@@ -38,6 +38,10 @@ for name in single_names:
     if single_names[name] > 1:
         duplicates.append(name) # check the set to see multiple appearances of the same name and append to duplicates list
 
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
+
 ###### OLDER CODE ######
 # trying to implement a binary search class to help with duplicate searching
 # class BST:
