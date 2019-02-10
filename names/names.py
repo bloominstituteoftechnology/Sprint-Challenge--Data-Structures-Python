@@ -16,9 +16,9 @@ f.close()
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+# end_time = time.time()
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"runtime: {end_time - start_time} seconds")
 
 # trying to implement a binary search class to help with duplicate searching
 
@@ -53,3 +53,23 @@ class BST:
             if self.right.contains(target):
                 return True
         return False
+
+# testing and returns
+
+duplicates = []
+
+first = names_1.pop(0)
+
+binarySearch = BST(first)
+for name in names_1:
+    binarySearch.insert(name)
+for name in names_2:
+    if binarySearch.contains(name):
+        duplicates.append(name)
+
+print(binarySearch)
+print(binarySearch.duplicates)
+
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
