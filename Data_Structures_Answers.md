@@ -11,7 +11,19 @@ Add your answers to the questions below.
 
 5. What is the runtime complexity of the provided code in `names.py`?
 
+The original runtime complexity here is O(n ^ 2) due to the nested loop:
+
+duplicates = []
+    for name_1 in names_1:
+        for name_2 in names_2:
+            if name_1 == name_2:
+                duplicates.append(name_1)
+
+With the way this is set up, we have to check our names_2 list for every single time we iterate through the names_1 list in order to check for equivalency. Thus, for every new entry into our input, we'll have to run two checks: one to iterate through names_1 and a second to perform the equivalency check via names_2.
+
 6. What is the space complexity of the provided code in `names.py`?
+
+The space complexity is the same as the optimized version of the code, O(n). The required storage space will scale linearly with the number of entries. It will not scale exponentially like the runtime since there are no further operations to be performed.
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
