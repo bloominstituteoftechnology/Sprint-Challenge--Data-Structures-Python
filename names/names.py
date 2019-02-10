@@ -21,3 +21,4 @@ print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
 # still having computer issues
+# initial commit for resubmit after computer issues fixed
