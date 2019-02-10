@@ -66,3 +66,20 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+# creating a Queue class for use with BFS solution
+
+class Queue:
+  def __init__(self):
+    self.size = 0
+    self.storage = []
+
+  def enqueue(self, value):
+    self.storage.append(value)
+    self.size += 1
+
+  def queue(self):
+    if self.storage is None:
+      return
+    self.size -= 1
+    return self.storage.pop(0)
