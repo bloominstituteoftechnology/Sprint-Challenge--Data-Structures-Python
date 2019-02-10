@@ -30,7 +30,15 @@ class BinarySearchTree:
       else: current = current.left    
 
   def breadth_first_for_each(self, cb):
-    pass
+   """
+   use a queue rather than a stack for BFS
+   enqueue the initial value
+   once again we'll call the function on every node and check left/right, use dequeue to maintain FIFO ordering
+   if there are no nodes in either direction, that level is complete and we can return
+   for left and right values that are found, we enqueue those values next
+   we can call this method recursively for further left/right nodes
+   """
+   
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
