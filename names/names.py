@@ -20,5 +20,24 @@ end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
-# still having computer issues
-# initial commit for resubmit after computer issues fixed
+# trying to implement a binary search class to help with duplicate searching
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        self.duplicates = []
+
+    def insert(self, value):
+        new = BST(value)
+        if (value < self.value):
+            if not self.left:
+                self.left = new
+            else:
+                self.left.insert(value)
+        elif (value >= self.value):
+            if not self.right:
+                self.right = new
+            else:
+                self.right.insert(value)
