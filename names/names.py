@@ -20,56 +20,78 @@ f.close()
 # print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 # print (f"runtime: {end_time - start_time} seconds")
 
-# trying to implement a binary search class to help with duplicate searching
-
-class BST:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
-        self.duplicates = []
-
-    def insert(self, value):
-        new = BST(value) # set up a new value to store certain nodes
-        if (value < self.value): # comparing each value, moving it to the left if it is the smaller value
-            if not self.left:
-                self.left = new
-            else:
-                self.left.insert(value)
-        elif (value >= self.value): # if the value is larger, move it to the right
-            if not self.right:
-                self.right = new
-            else:
-                self.right.insert(value)
-    
-    def contains(self, target):
-        # checks to see if value is equal to target, uses this recurisvely for left and right trees as well
-        if self.value == target:
-            return True
-        if self.left:
-            if self.left.contains(target):
-                return True
-        if self.right:
-            if self.right.contains(target):
-                return True
-        return False
-
-# testing and returns
+# maybe a hash table would be a better solution since these are simple comparisons
 
 duplicates = []
+single_names = {} # since sets use hash tables, we can do index matching quickly regardless of the number of entries
 
-first = names_1.pop(0)
+for name in names_1: 
+    single_names[name] = 1 # add names from the first name list to single_names set
 
-binarySearch = BST(first)
-for name in names_1:
-    binarySearch.insert(name)
 for name in names_2:
-    if binarySearch.contains(name):
-        duplicates.append(name)
+    try:
+        single_names[name] += 1 # add the names from the second name list as well
+    except: # until all the names have been added
+        pass
 
-print(binarySearch)
-print(binarySearch.duplicates)
+for name in single_names: 
+    if single_names[name] > 1:
+        duplicates.append(name) # check the set to see multiple appearances of the same name and append to duplicates list
 
-end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+###### OLDER CODE ######
+# trying to implement a binary search class to help with duplicate searching
+# class BST:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
+#         self.duplicates = []
+
+#     def insert(self, value):
+#         new = BST(value) # set up a new value to store certain nodes
+#         if self.value == value:
+#             duplicates.append(value)
+#         if (value < self.value): # comparing each value, moving it to the left if it is the smaller value
+#             if not self.left:
+#                 self.left = new
+#             else:
+#                 self.left.insert(value)
+#         elif (value >= self.value): # if the value is larger, move it to the right
+#             if not self.right:
+#                 self.right = new
+#             else:
+#                 self.right.insert(value)
+    
+#     def contains(self, target):
+#         # checks to see if value is equal to target, uses this recurisvely for left and right trees as well
+#         if self.value == target:
+#             return True
+#         if self.left:
+#             if self.left.contains(target):
+#                 return True
+#         if self.right:
+#             if self.right.contains(target):
+#                 return True
+#         return False
+
+# # testing and returns
+
+# duplicates = []
+
+# first = names_1.pop(0)
+
+# binarySearch = BST(first)
+# for name in names_1:
+#     binarySearch.insert(name)
+# for name in names_2:
+#     if binarySearch.contains(name):
+#         duplicates.append(name)
+
+# print(binarySearch)
+# print(binarySearch.duplicates)
+
+# end_time = time.time()
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"runtime: {end_time - start_time} seconds")
+
+###### END OLDER CODE ######
