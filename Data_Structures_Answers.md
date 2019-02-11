@@ -10,8 +10,13 @@ The space complexity is O(n) because you'll need to eventually run over every it
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
+As with the DFS solution this should be O(n) because the method is simply taking each tree node and running a simple comparative operation to check whether or not right and/or left values exist and can be added to the queue. Once again there is no nesting of loops and no extra operations being performed beyond the left and right comparisons, so this should not be exponential.
+
+I solved this recurisvely and I don't believe that should negatively impact the runtime but I'm not positive on that.
+
 4. What is the space complexity of your `breadth_first_for_each` method?
 
+Space complexity should again be O(n) because the fundamental idea is to run the anonymous function for every node in the tree. The requirement here would again be equal to the number of nodes in a given tree.
 
 5. What is the runtime complexity of the provided code in `names.py`?
 
