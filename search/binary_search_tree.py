@@ -106,7 +106,7 @@ class Queue:
     self.storage.append(value)
     self.size += 1
 
-  def queue(self):
+  def dequeue(self):
     if self.storage is None:
       return
     self.size -= 1
