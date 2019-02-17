@@ -5,10 +5,61 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
+    # invokes cb which adds to arr in test
+    cb(self.value)
+    # recursively invoke depth_first search_for_each() on the left
+    if self.left:
+      self.left.depth_first_for_each(cb)
+    # recursively invoke depth_first search_for_each on the right
+    if self.right:
+      self.right.depth_first_for_each(cb)
+  '''
+  Instructor Pseudo Code:
+    - mark node as visited by valling 'cb'
+    - if left is not None, call DFS on left
+      - self.left.depth_first_for_each(cb)
+    - if left is not None, call DFS on left
+      - self.right.depth_first_for_each(cb)
+
+  Instructor Second Pseudo Code:
+    - create empty stack
+    - push root node to the stack
+    - while stack is not empty
+      - pop the firt item in the stack
+      - mark node as visited by calling 'cb'
+      - if left is not None, put the left chld in the stack
+      - if right is not None, put the right chld in the stack
+  '''
+    
 
   def breadth_first_for_each(self, cb):
-    pass
+    # start value
+    queue = [self]
+    # checking that queue is not empty
+    while queue:
+      # removes first value in queue and stores it in curr_node
+      curr_node = queue.pop(0)
+      # invokes cb which adds to arr in test
+      cb(curr_node.value)
+      # checks left node value and if it exist it gets added to queue
+      if curr_node.left:
+        queue.append(curr_node.left)
+      # checks right node value and if it exist it gets added to queue
+      if curr_node.right:
+        queue.append(curr_node.right)
+  '''
+  Instructor Pseudo Code:
+    - create empty queue
+    - add root node to the queue
+    - while queue is not empty
+      - dequeue the firt item in the queue
+      - mark node as visited by calling 'cb'
+      - if left is not None, put the left chld in the queue
+      - if right is not None, put the right chld in the queue
+  '''
+
+    
+
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
