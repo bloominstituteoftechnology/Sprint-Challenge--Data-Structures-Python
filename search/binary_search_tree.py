@@ -5,12 +5,16 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
+    visited=[]
     def helper (node, cb):
+      nonlocal visited  
       if node.left:
         cb(node.value)
+        visited.append(node)
         helper(node.left,cb)
       if node.right:
-        cb(node.value)
+        if node not in visited:
+            cb(node.value)
         helper(node.right,cb)
       if not node.right and not node.left:
         cb(node.value)
