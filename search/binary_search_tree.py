@@ -30,9 +30,12 @@ class BinarySearchTree:
 
         if left and left.left is not None:
             left.left.breadth_first_for_each(cb)
-
+        if left and left.right is not None:
+            left.right.breadth_first_for_each(cb)
         if right and right.right is not None:
             right.right.breadth_first_for_each(cb)
+        if right and right.left is not None:
+            right.left.breadth_first_for_each(cb)
 
     def insert(self, value):
         new_tree = BinarySearchTree(value)
