@@ -11,12 +11,20 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 # merge names to single list
-names = names_1 + names_2 
+# names = names_1 + names_2 
 
-duplicates = set()
+duplicates = set() 
 # counter dict to keep track of previously encountered names
 counter = {}
 
+for name in names_1:
+    counter[name] = 1
+
+for name in names_2:
+    if name in counter:
+        duplicates.add(name)
+
+"""
 for name in names:
     # if name isn't in dict, initialize key to value of 1
       if not name in counter:
@@ -26,6 +34,7 @@ for name in names:
       else:
           counter[name] += 1
           duplicates.add(name)
+"""
 
 end_time = time.time()
 
