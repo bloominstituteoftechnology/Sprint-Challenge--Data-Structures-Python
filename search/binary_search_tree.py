@@ -22,7 +22,22 @@ class BinarySearchTree:
 
 
   def breadth_first_for_each(self, cb):
-    pass
+    visited=[]
+    cb(self.value)
+    def helper (node, cb):
+        nonlocal visited
+        current_node=node
+        if node.left is not None:
+          cb(node.left.value)
+          visited.append(node.left)
+          cb(node.right.value)
+          visited.append(node.right)
+          helper(current_node.left,cb)
+        if node.right is not None:
+          if node.right not in visited:
+            cb(node.right.value)
+          helper(current_node.right,cb) 
+    helper(self, cb)
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
