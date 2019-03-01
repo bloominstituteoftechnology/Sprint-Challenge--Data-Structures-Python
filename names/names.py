@@ -17,14 +17,18 @@ f.close()
 duplicates = []
 
 # tuples take up less space and are faster to run than lists but aren't immutable
-[names1, names2] = (names_1), (names_2)
+# [names1, names2] = (names_1), (names_2)
 
-m = names1
-n = names2
+# for name in names1:
+#     if name in names2:
+#         duplicates.append(name)
 
-for name in m:
-    if name in n:
+# using python set seems faster.. very weird
+names1Set = set(names_1)
+for name in names_2:
+    if name in names1Set:
         duplicates.append(name)
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
