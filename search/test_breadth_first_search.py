@@ -1,6 +1,10 @@
 import unittest
 from binary_search_tree import BinarySearchTree
 
+import time
+
+start_time = time.time()
+
 class BinarySearchTreeTests(unittest.TestCase):
   def setUp(self):
     self.bst = BinarySearchTree(5)
@@ -25,6 +29,10 @@ class BinarySearchTreeTests(unittest.TestCase):
     self.bst.breadth_first_for_each(cb)
 
     self.assertEqual(arr, [5, 3, 10, 4, 9, 11])
+
+end_time = time.time()
+
+print (f"runtime: {end_time - start_time} seconds")
 
 
 if __name__ == '__main__':
