@@ -25,8 +25,7 @@ for name in names:
     # add name to duplicates array
       else:
           counter[name] += 1
-          if name not in duplicates:
-              duplicates.add(name)
+          duplicates.add(name)
 
 end_time = time.time()
 
