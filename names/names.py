@@ -16,17 +16,17 @@ f.close()
 #             duplicates.append(name_1)
 duplicates = []
 
-# tuples take up less space and are faster to run than lists but aren't immutable
+# tuples take up less space and are faster to run than lists but aren't immutable gets 0.93621
 # [names1, names2] = (names_1), (names_2)
 
 # for name in names1:
 #     if name in names2:
 #         duplicates.append(name)
 
-# using python set seems faster.. very weird
-names1Set = set(names_1)
+# using python set seems faster.. very weird gets 0.00499
+setFirst = set(names_1)
 for name in names_2:
-    if name in names1Set:
+    if name in setFirst:
         duplicates.append(name)
 
 
