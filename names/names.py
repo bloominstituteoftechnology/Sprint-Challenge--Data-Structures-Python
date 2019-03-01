@@ -10,13 +10,32 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
+non_duplicates = {}
 duplicates = []
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+# I'm imagining that they are expecting me to use binary search... O(n log n). 
+# But I think that a hash table is more efficient.
+
+for name in names_1:
+    non_duplicates[name] = 1
+
+for name in names_2:
+    try:
+        non_duplicates[name] += 1
+    except: 
+        pass
+
+for name in non_duplicates:
+    if non_duplicates[name] > 1:
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
+# Clock time ios less than one hundredth of a second. Time and space complexities: O(n)
