@@ -10,11 +10,22 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
+# merge names to single list
+names = names_1 + names_2 
+
 duplicates = []
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# counter dict to keep track of previously encountered names
+counter = {}
+
+for name in names:
+    # if name isn't in dict, initialize key to value of 1
+      if not name in counter:
+          counter[name] = 1
+    # if name _is_ in dict, increase value by 1
+    # add name to duplicates array
+      else:
+          counter[name] += 1
+          duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
