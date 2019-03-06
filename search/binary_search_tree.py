@@ -1,11 +1,25 @@
+#starting assignment here
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
     self.left = None
     self.right = None
 
+
   def depth_first_for_each(self, cb):
-    pass    
+    #starting at root, go down left side recursively 
+    #then right side recursively 
+
+    #root
+    cb(self.value)
+
+    #left subtree
+    if self.left:
+      self.left.depth_first_for_each(cb)
+    
+    #right subtree
+    if self.right:
+      self.right.depth_first_for_each(cb)
 
   def breadth_first_for_each(self, cb):
     pass
