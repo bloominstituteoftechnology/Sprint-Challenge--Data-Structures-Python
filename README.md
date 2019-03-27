@@ -26,31 +26,33 @@ This Sprint Challenge is split into three parts:
 
 ### Minimum Viable Product
 
+#### Task 1. Implement a Ring Buffer Data Structure
 
-#### Task 1. Implement Depth-First or Breadth-First Traversal on the Binary Search Tree Class 
+A ring buffer is a non-growable buffer with a fixed size. When the ring buffer is full and a new element is inserted, the oldest element in the ring buffer is overwritten with the newest element. This kind of data structure is very useful for use cases such as storing logs and history information, where you typically want to store information up until it reaches a certain age, after which you don't care about it anymore and don't mind seeing it overwritten by newer data.
 
-Navigate into the `search` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
+Implement this behavior in the RingBuffer class. RingBuffer has two methods, `append` and `get`. The `append` method adds elements to the buffer. The `get` method returns all of the elements in the buffer ordered from oldest to newest. In other words, least-recently added elements first, then most-recently added elements.
 
-   * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first pre-order fashion (as opposed to in-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
+For example:
 
-   * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
-   
-     _HINT_: In order to achieve depth-first order, you'll probably want to utilize a Stack data structure. 
+```python
+buffer = RingBuffer(3)
 
-     * Run `python test_depth_first_search.py` to test your depth-first search implementation.
+buffer.append('a')
+buffer.append('b')
+buffer.append('c')
 
-   * `breadth_first_for_each(cb)` receives a callback function as a parameter. It should then execute the anonymous function on each node in the tree in [breadth-first](https://en.wikipedia.org/wiki/Breadth-first_search) order. Your task is to implement the logic to traverse the tree in left-to-right breadth-first fashion.
-   
-   * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
-   
-     _HINT_: In order to achieve breadth-first order, you'll probably want to utilize a Queue data structure.
+buffer.get()   # should return ['a', 'b', 'c']
 
-     * Run `python test_breadth_first_search.py` to test your breadth-first search implementation.
+# 'd' overwrites the oldest value in the ring buffer, which is 'a'
+buffer.append('d')
 
-> Note that in Python, anonymous functions are referred to as "lambda functions". When passing in an anonymous function as input to either `depth_first_for_each` or `breadth_first_for_each`, you'll want to define them as lambda functions. For more information on lambda functions, check out this documentation: [https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
+buffer.get()   # should return ['d', 'b', 'c']
 
-> Note that it is not your job to worry about what the callback function being passed in is doing. That is up to the user of your traversal method. All you care about when implementing the traversal method is to call the passed-in callback in either depth-first or breadth-first order, depending on which traversal method you're implementing. 
+buffer.append('e')
+buffer.append('f')
 
+buffer.get()   # should return ['d', 'e', 'f']
+```
 
 #### Task 2. Runtime Optimization
 
@@ -60,7 +62,7 @@ Six seconds is an eternity so you've been tasked with speeding up the code. Can 
 
 (Hint: You might try importing a data structure you built during the week)
 
-#### Task 3. Analyze some runtimes
+#### Task 3. Analyze Some Runtimes
 
 Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
 
@@ -75,26 +77,26 @@ Also, include the runtime and space complexities of the original code and your o
 
 ### Rubric
 
-#### SEARCH
+#### Ring Buffer
 
-- DFS or BFS pass tests: 10 points
+- Ring buffer implementation passes the tests: 10 points total
 
-#### NAMES
+#### Names
 
-- Optimize with an O(n log n) runtime solution: 8 points
-- Optimize with an O(n) runtime solution: 10 points
+- Optimize with an O(n log n) runtime solution: 8 points total
+- Optimize with an O(n) runtime solution: 10 points total
 
-#### COMPLEXITY
+#### Complexity
 
-- One point each: 8 points
+- One point each: 8 points total
 
-#### STRETCH
+#### Stretch
 
 - Both DFS and BFS pass tests: 2 points
 - `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 2 points
 
 
-#### GRADING
+#### Grading
 
 * *3*: 28+
 * *2*: 20-27
