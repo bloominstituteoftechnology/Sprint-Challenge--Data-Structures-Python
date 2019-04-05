@@ -30,12 +30,14 @@ This Sprint Challenge is split into three parts:
 
 A ring buffer is a non-growable buffer with a fixed size. When the ring buffer is full and a new element is inserted, the oldest element in the ring buffer is overwritten with the newest element. This kind of data structure is very useful for use cases such as storing logs and history information, where you typically want to store information up until it reaches a certain age, after which you don't care about it anymore and don't mind seeing it overwritten by newer data.
 
-Implement this behavior in the RingBuffer class. RingBuffer has two methods, `append` and `get`. The `append` method adds elements to the buffer. The `get` method returns all of the elements in the buffer ordered from oldest to newest. In other words, least-recently added elements first, then most-recently added elements.
+Implement this behavior in the RingBuffer class. RingBuffer has two methods, `append` and `get`. The `append` method adds elements to the buffer. The `get` method returns all of the elements in the buffer in a list in their given order. It should not return any `None` values in the list even if they are present in the ring buffer.
 
 For example:
 
 ```python
 buffer = RingBuffer(3)
+
+buffer.get()   # should return []
 
 buffer.append('a')
 buffer.append('b')
@@ -70,9 +72,7 @@ Also, include the runtime and space complexities of the original code and your o
 
 ### Stretch Problems
 
-1. Implement the other tree traversal algorithm that you didn't implement on the `BinarySearchTree` class. Run the appropriate test file to test your implementation's correctness. Then go back to the `Data_Structures_Answers.md` file and answer the time and space complexity questions pertaining to the traveral method you just implemented.
-
-2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
+1. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
 
 
 ### Rubric
@@ -92,8 +92,7 @@ Also, include the runtime and space complexities of the original code and your o
 
 #### Stretch
 
-- Both DFS and BFS pass tests: 2 points
-- `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 2 points
+- `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 4 points
 
 
 #### Grading
