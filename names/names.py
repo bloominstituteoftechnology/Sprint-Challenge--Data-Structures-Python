@@ -16,11 +16,8 @@ duplicates = []
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-my_arr = []
-for name_1 in names_1:
-    my_arr.append(name_1)
 
-sorted_arr = sorted(my_arr)
+sorted_arr = sorted(names_1)
 
 
 def binary_search(arr, target):
