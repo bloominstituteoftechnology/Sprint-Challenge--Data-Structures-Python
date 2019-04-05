@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="001b8910-b885-46aa-bf3b-fcce0d3545f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/names/names.py" beforeDir="false" afterPath="$PROJECT_DIR$/names/names.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures_Answers.md" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Structures_Answers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ring_buffer/ring_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ring_buffer/ring_buffer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +13,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Sprint_Challenge__Data_Structures_Python$names.coverage" NAME="names Coverage Results" MODIFIED="1554476596904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/names" />
+    <SUITE FILE_PATH="coverage/Sprint_Challenge__Data_Structures_Python$ring_buffer.coverage" NAME="ring_buffer Coverage Results" MODIFIED="1554477669953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ring_buffer" />
+    <SUITE FILE_PATH="coverage/Sprint_Challenge__Data_Structures_Python$Unittests_in_test_ring_buffer_py.coverage" NAME="Unittests in test_ring_buffer.py Coverage Results" MODIFIED="1554477546705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ring_buffer" />
+    <SUITE FILE_PATH="coverage/Sprint_Challenge__Data_Structures_Python$names.coverage" NAME="names Coverage Results" MODIFIED="1554476626718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/names" />
+    <SUITE FILE_PATH="coverage/Sprint_Challenge__Data_Structures_Python$Unittests_for_test_ring_buffer_RingBufferTests_test_ring_buffer.coverage" NAME="Unittests for test_ring_buffer.RingBufferTests.test_ring_buffer Coverage Results" MODIFIED="1554477675095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ring_buffer" />
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -26,18 +30,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/names/names.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ring_buffer/ring_buffer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="354">
+              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ring_buffer/ring_buffer.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ring_buffer/test_ring_buffer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -49,6 +59,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/names/names.py" />
+        <option value="$PROJECT_DIR$/Data_Structures_Answers.md" />
+        <option value="$PROJECT_DIR$/ring_buffer/ring_buffer.py" />
       </list>
     </option>
   </component>
@@ -70,11 +82,6 @@
             <path>
               <item name="Sprint-Challenge--Data-Structures-Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sprint-Challenge--Data-Structures-Python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sprint-Challenge--Data-Structures-Python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint-Challenge--Data-Structures-Python" type="462c0819:PsiDirectoryNode" />
-              <item name="names" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sprint-Challenge--Data-Structures-Python" type="b2602c69:ProjectViewProjectNode" />
@@ -105,7 +112,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Unittests for test_ring_buffer.RingBufferTests.test_ring_buffer">
     <configuration name="names" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Sprint-Challenge--Data-Structures-Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,8 +135,63 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ring_buffer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Sprint-Challenge--Data-Structures-Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ring_buffer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ring_buffer/ring_buffer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_ring_buffer.RingBufferTests.test_ring_buffer" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Sprint-Challenge--Data-Structures-Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ring_buffer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_ring_buffer.RingBufferTests.test_ring_buffer&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_ring_buffer.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Sprint-Challenge--Data-Structures-Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ring_buffer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/ring_buffer/test_ring_buffer.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_ring_buffer.RingBufferTests.test_ring_buffer" />
+        <item itemvalue="Python.ring_buffer" />
+        <item itemvalue="Python tests.Unittests in test_ring_buffer.py" />
         <item itemvalue="Python.names" />
       </list>
     </recent_temporary>
@@ -144,12 +206,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554475751948</updated>
-      <workItem from="1554475753391" duration="796000" />
+      <workItem from="1554475753391" duration="1700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="796000" />
+    <option name="totallyTimeSpent" value="1700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="35" width="1260" height="737" extended-state="0" />
@@ -182,11 +244,25 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ring_buffer/ring_buffer.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/names/names_1.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/names/names.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data_Structures_Answers.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="180">
+            <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -196,10 +272,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/names/names.py">
+    <entry file="file://$PROJECT_DIR$/ring_buffer/ring_buffer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="354">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ring_buffer/test_ring_buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
