@@ -20,7 +20,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 This Sprint Challenge is split into three parts:
 
-1. Implement a data structure called a ring buffer (description in the README in the `ring_buffer` directory
+1. Implement a data structure called a ring buffer (more details below)
 2. Optimizing some inefficient code
 3. Analyzing time and space complexities from parts 1 and 2
 
@@ -66,9 +66,7 @@ Six seconds is an eternity so you've been tasked with speeding up the code. Can 
 
 #### Task 3. Analyze Some Runtimes
 
-Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
-
-Also, include the runtime and space complexities of the original code and your optimized solution from `names.py`.
+Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions/data structures you just implemented. Also include the runtime and space complexities of the original code and your optimized solution from `names.py`.
 
 ### Stretch Problems
 
