@@ -12,8 +12,4 @@ class RingBuffer:
     self.current = self.current % len(self.storage)
 
   def get(self):
-    array_to_return = []
-    for index in self.storage:
-      if index != None:
-        array_to_return.append(index)
-    return array_to_return 
+    return [index for index in self.storage if index != None]

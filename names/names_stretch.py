@@ -12,19 +12,8 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 all_names = names_1 + names_2
-cache = dict()
-duplicates = []
 
-for name in all_names:
-    try: 
-        if cache[name] == 1:
-            cache[name] += 1
-            duplicates.append(name)
-        elif cache[name] > 1:
-            continue
-    except KeyError as e:
-        cache[name] = 1
-        continue
+duplicates = [name for name in names_1 if names_1.count(name) > 1]
 
 end_time = time.time()
 print (f"runtime: {end_time - start_time} seconds")
