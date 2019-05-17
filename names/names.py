@@ -26,8 +26,8 @@ duplicates = []
 
 
 # the best performance shows set(). 0.005 seconds
-# duplicates = set(names_1) & set(names_2)
 
+# duplicates = set(names_1) & set(names_2)
 duplicates = set(names_1).intersection(names_2)
 
 end_time = time.time()
