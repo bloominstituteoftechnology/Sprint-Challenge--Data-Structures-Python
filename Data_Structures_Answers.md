@@ -19,4 +19,4 @@ Only one if statment O(1)
 7. What is the runtime complexity of your optimized code in `names.py`?
      0.005 on my MacBook, O(n)
 8. What is the space complexity of your optimized code in `names.py`?
-    O(n)
+     O(n)
