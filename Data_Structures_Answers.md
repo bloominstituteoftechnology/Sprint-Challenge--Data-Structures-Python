@@ -21,7 +21,7 @@ where n is name in names_1, and m is name in names_2.
 O(n)
 
 7. What is the runtime complexity of your optimized code in `names.py`?
-O(n)
+At worst case it would be O(n^2)
 
 8. What is the space complexity of your optimized code in `names.py`?
 O(n)
