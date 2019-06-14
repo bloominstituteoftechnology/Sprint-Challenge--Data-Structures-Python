@@ -23,7 +23,33 @@ class BinarySearchTree:
         return self._node
 
     def delete(self, value):
+        # if self.parent is None:
+        #     if self.left is not None:
+        #         if self.left.right is None:
+        #             self.left.right = self.right
+        #             self.right = self.right.right
+        #             return
+        #     if self.right is None:
+        #         if self.right.left is None:
+        #             self.right.left = self.left
+        #             self.left = self.left.left
+        #             return 
+        #     left = self.right.left
+        #     self.right.left = self.left
+        #     self.left = self.left.left
+        #     self.insert(left.value)
+        #     return
+        # if self.value < self.parent.value:
+        #     self.parent.left = self.left
+        #     if self.right is not None:
+        #         if self.left is not None:
+        #             self.left.right = self.right
+                
+        # else:
+        #     self.parent.right = self.right
+        # return
         pass
+
 
     def insert(self, value):
         if self.node is None:
