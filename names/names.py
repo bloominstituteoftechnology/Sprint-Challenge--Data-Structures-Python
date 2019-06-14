@@ -16,31 +16,31 @@ f.close()
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# duplicates = []
-# name_dict = {}
-# for name_1 in names_1:
-#     name_dict[name_1] = True
-# for name_2 in names_2:
-#     if name_2 in name_dict:
-#         duplicates.append(name_2)
-
 duplicates = []
-def binary_search(item, arr):
-    l = 0
-    h = len(arr)
-    while True:
-        m = (h + l) // 2
-        if item == arr[m]:
-            return True
-        if h - l == 1:
-            return False
-        if arr[m] > item:
-            h = m
-        else:
-            l = m
+name_dict = {}
+for name_1 in names_1:
+    name_dict[name_1] = True
+for name_2 in names_2:
+    if name_2 in name_dict:
+        duplicates.append(name_2)
 
-names_1 = sorted(names_1)
-duplicates = [x for x in names_2 if binary_search(x, names_1)]
+# duplicates = []
+# def binary_search(item, arr):
+#     l = 0
+#     h = len(arr)
+#     while True:
+#         m = (h + l) // 2
+#         if item == arr[m]:
+#             return True
+#         if h - l == 1:
+#             return False
+#         if arr[m] > item:
+#             h = m
+#         else:
+#             l = m
+
+# names_1 = sorted(names_1)
+# duplicates = [x for x in names_2 if binary_search(x, names_1)]
 
 
 end_time = time.time()
