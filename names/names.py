@@ -19,9 +19,17 @@ for name_2 in names_2:
     if name_2 in names_dict:
         duplicates.append(name_2)
 
+
+# Stretch
+for name_1 in names_1:
+    duplicates.append(name_1)
+duplicates = [i for i in names_2 if i in duplicates ]
+
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
+
 
 
 
