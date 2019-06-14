@@ -76,14 +76,14 @@ print(f"runtime list only: {end_time - start_time} seconds")
 duplicates = []
 
 def merge(arrA, arrB):
-    elements = len(arrA) + len(arrB)
-    merged_arr = [0] * elements
-    mi = 0
+    # elements = len(arrA) + len(arrB)
+    # merged_arr = [0] * elements
+    # mi = 0
     while len(arrA) and len(arrB):
         while len(arrA) > 0 and len(arrB) > 0:
             if arrA[0] <= arrB[0]:
-                merged_arr[mi] = arrA[0]
-                mi += 1
+                # merged_arr[mi] = arrA[0]
+                # mi += 1
                 if arrA[0] == arrB[0]:
                     duplicates.append(arrA[0])
                 arrA = arrA[1:]
@@ -93,8 +93,8 @@ def merge(arrA, arrB):
 
         while len(arrB) > 0 and len(arrA) > 0:
             if arrB[0] <= arrA[0]:
-                merged_arr[mi] = arrB[0]
-                mi += 1
+                # merged_arr[mi] = arrB[0]
+                # mi += 1
                 if arrA[0] == arrB[0]:
                     duplicates.append(arrA[0])
                 arrB = arrB[1:]
