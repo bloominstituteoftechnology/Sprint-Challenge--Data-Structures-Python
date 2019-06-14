@@ -16,5 +16,4 @@ class RingBuffer:
         else:
             self.current = 0
   def get(self):
-    return_value = [i for i in self.storage if i != None]
-    return return_value
+    return [i for i in self.storage if i != None]
