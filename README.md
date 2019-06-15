@@ -1,4 +1,4 @@
-# Sprint Challenge: Data Structures
+# Sprint Challenge: Data Structures - A. Franklin
 
 In this week's Sprint you implemented some classic and fundamental data structures and learned about how to go about evaluating their respective runtimes and performance. This Sprint Challenge aims to assess your comfort with these topics through exercises that build on the data structures you implemented and the algorithmic intuition you've started to build up.
 
@@ -59,6 +59,7 @@ buffer.get()   # should return ['d', 'e', 'f']
 #### Task 2. Runtime Optimization
 
 Navigate into the `names` directory. Here you will find two text files containing 10,000 names each, along with a program `names.py` that compares the two files and prints out duplicate name entries. Try running the code with `python3 names.py`. Be patient because it might take a while: approximately six seconds on my laptop. What is the runtime complexity of this code?
+
 
 Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? Under one hundredth of a second?
 
