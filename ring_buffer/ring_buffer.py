@@ -7,6 +7,5 @@ class RingBuffer:
   def append(self, item):
     pass
 
-  
   def get(self):
     pass
