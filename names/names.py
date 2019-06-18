@@ -1,7 +1,7 @@
 import time
-from functools import lru_cache
+#from functools import lru_cache
 
-@lru_cache(maxsize=0)
+#@lru_cache(maxsize=0)
 def namez():
     start_time = time.time()
 
@@ -14,7 +14,7 @@ def namez():
     f.close()
       
     
-    def match(arr, name1, leftIndex, rightIndex):
+    def match(arr, name_1, leftIndex, rightIndex):
         # Base case 
         if leftIndex >= rightIndex:
             return leftIndex
@@ -23,21 +23,22 @@ def namez():
         midpoint = leftIndex + (rightIndex - leftIndex) // 2
 
         # Go right if index and value match
-        if arr[midpoint] < name1:
+        if arr[midpoint] < name_1:
             return match(arr, name_1, midpoint + 1, rightIndex)
 
         # Go left if index and value do not match
-        elif arr[midpoint] > name1:
+        elif arr[midpoint] > name_1:
            return match(arr, name_1, leftIndex, midpoint - 1)
 
         else:
-          duplicates.append(name_1)  
+          if arr[midpoint] == name_1:
+            duplicates.append(name_1)  
     
     duplicates = []
-    names_1.sort()
+    #names_1.sort()
     names_2.sort()
     for name_1 in names_1:
-        match(names_2, name_1, 0, len(names_2))
+        match(names_2, name_1, 0, len(names_2) - 1)
    
     end_time = time.time()
     print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
