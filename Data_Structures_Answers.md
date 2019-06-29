@@ -21,9 +21,10 @@ Add your answers to the questions below.
 6. What is the space complexity of the provided code in `names.py`?
    > The provided code shows complexity of O(n)
 7. What is the runtime complexity of your optimized code in `names.py`?
-   > Since this is very optimized solution it is O(1) at worse it would be O(n)
+   > Since this is very optimized solution it is O(1) at worse it would be O(n).
+   > Because I am using Set function it is a way to guarantee that we get time complexity as constant time.
 8. What is the space complexity of your optimized code in `names.py`?
    > Again space here is O(1) would be at worse O(n)
-
-For all time complexities on the List() function I checked the https://wiki.python.org/moin/TimeComplexity
-This shows that At Worst the Set(Item) is O(n)
+   > Due to using the sets and intersection the space complexity at worse is O(m + n)
+   > For all time complexities on the List() function I checked the https://wiki.python.org/moin/TimeComplexity
+   > This shows that At Worst the Set(Item) is O(n)
