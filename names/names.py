@@ -28,15 +28,19 @@ duplicates = []
 
 #Try 3:
 # My code below here: -- This one is under 0.006 seconds.
-# name_dictionary = {}
+name_dictionary = {}
+for name_1 in names_1:
+    name_dictionary[name_1] = True
+for name_2 in names_2:
+    if name_2 in name_dictionary:
+        duplicates.append(name_2)    
+
+
+# Try 4:
+# Stretch Solution - 1.157 seconds
 # for name_1 in names_1:
-#     name_dictionary[name_1] = True
-# for name_2 in names_2:
-#     if name_2 in name_dictionary:
-#         duplicates.append(name_2)    
-
-
-
+#     if name_1 in names_2:
+#         duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
