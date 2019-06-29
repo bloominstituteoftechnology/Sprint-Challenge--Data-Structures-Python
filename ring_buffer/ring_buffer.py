@@ -13,14 +13,22 @@ class RingBuffer:
 
   def append(self, item):
     # Add the value
-    self.storage[current] = item
+    self.storage[self.current] = item
     # Increment the value we're currently inserting at
     self.current += 1
     # If we're now trying to insert outside of the capacity
     # of our storage reset it.
-    if (self.current > self.capacity): 
+    if (self.current >= self.capacity): 
       self.current = 0
-    pass
 
   def get(self):
     pass
+
+myRingBuffer = RingBuffer(3)
+myRingBuffer.append(5)
+myRingBuffer.append(6)
+myRingBuffer.append(8)
+myRingBuffer.append(9)
+myRingBuffer.append(1)
+myRingBuffer.append(3)
+print(myRingBuffer.storage)
