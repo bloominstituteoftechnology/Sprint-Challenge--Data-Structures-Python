@@ -12,7 +12,7 @@ class RingBuffer:
 # the array
     if len(self.storage) < self.current:
       self.current = 0
-    print(self.current)
+    
     
     # should take care of all None's
     # if self.storage[self.current]
@@ -24,7 +24,7 @@ class RingBuffer:
     if self.storage[self.current] == None:
       self.storage[self.current] = item
       self.current += 1
-      print(self.current)
+      
     else:
       if self.current == 0:
         self.storage[0] = item
@@ -64,4 +64,3 @@ buffer.append(5)
 buffer.append(6)
 buffer.append(7)
 buffer.append(8)
-buffer.get()
