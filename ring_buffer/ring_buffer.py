@@ -8,4 +8,12 @@ class RingBuffer:
     pass
 
   def get(self):
-    pass
+    # Create store
+    store_list = list(self.storage)
+    # check to see if None exists
+    i = 0
+    for i in store_list:
+      # Remove any nones found
+      if i is None:
+        store_list.remove(None)
+    return store_list
