@@ -17,9 +17,13 @@ Add your answers to the questions below.
    > Because of using a loop this complexity will be O(n)
 
 5. What is the runtime complexity of the provided code in `names.py`?
-
+   > Since we used python because I am setting the item the time complexity is only O(1)
 6. What is the space complexity of the provided code in `names.py`?
-
+   > Same for space complexity we are using Set which on Average is O(1) worst is O(1)
 7. What is the runtime complexity of your optimized code in `names.py`?
-
+   > Since this is very optimized solution it is O(1)
 8. What is the space complexity of your optimized code in `names.py`?
+   > Again space here is O(1)
+
+For all time complexities on the List() function I checked the https://wiki.python.org/moin/TimeComplexity
+This shows that At Worst the Set(Item) is O(n)
