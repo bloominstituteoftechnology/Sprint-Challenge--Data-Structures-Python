@@ -16,7 +16,11 @@ duplicates = []
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+
+
 duplicates = list(set(names_1).intersection(names_2))
+
+
 
 end_time = time.time()
 
