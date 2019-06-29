@@ -13,16 +13,21 @@ class RingBuffer:
 
   def append(self, item):
     # Add the value
-    self.storage[self.current] = item
+    self.storage[self.current] = item #O(1)
     # Increment the value we're currently inserting at
-    self.current += 1
+    self.current += 1 #O(1)
     # If we're now trying to insert outside of the capacity
     # of our storage reset it.
-    if (self.current >= self.capacity): 
-      self.current = 0
+    if (self.current >= self.capacity): #O(1)
+      self.current = 0 #O(1)
 
   def get(self):
-    pass
+    retBuffer = []
+    # Looping through the entire storage array so this is O(n)
+    for item in self.storage: #O(n)
+      if item is not None:
+        retBuffer.append(item)
+    return retBuffer
 
 myRingBuffer = RingBuffer(3)
 myRingBuffer.append(5)
@@ -30,5 +35,6 @@ myRingBuffer.append(6)
 myRingBuffer.append(8)
 myRingBuffer.append(9)
 myRingBuffer.append(1)
-myRingBuffer.append(3)
+myRingBuffer.append(None)
 print(myRingBuffer.storage)
+print(myRingBuffer.get())
