@@ -5,7 +5,9 @@ class RingBuffer:
     self.storage = [None]*capacity
 
   def append(self, item):
+      #adds element to queue
     pass
 
   def get(self):
+      #returns all elements in queue
     pass

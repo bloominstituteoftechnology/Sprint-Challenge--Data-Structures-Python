@@ -1,4 +1,4 @@
-Add your answers to the questions below.
+Add your answers to the questions below 
 
 1. What is the runtime complexity of your ring buffer's `append` method?
 
