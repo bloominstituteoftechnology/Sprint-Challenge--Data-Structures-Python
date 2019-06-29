@@ -5,10 +5,18 @@ class RingBuffer:
     self.storage = [None]*capacity
 
   def append(self, item):
+    # Base case for self.current
+    if self.current == self.capacity:
+      self.current = 0
     # If self.storage at index is none remove
     if self.storage[self.current] == None:
       self.storage.pop(self.current)
       self.storage.insert(self.current, item)
+      self.current += 1
+    else:
+      self.storage.pop(self.current)
+      self.storage.insert(self.current, item)
+      self.current += 1
 
 
 
