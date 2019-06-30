@@ -19,14 +19,16 @@ class RingBuffer:
   def get(self):
     # make sure you are not returning none
     # iterate through array
+     return [x for x in self.storage if x is not None]
 
-    arr = []
-    if None in self.storage:
-      for x in self.storage:
-       if x != None:
-        arr.append(x)
 
-    return arr
+    # arr = []
+    # if None in self.storage:
+    #   for x in self.storage:
+    #    if x != None:
+    #     arr.append(x)
+
+    # return arr
 
 
 #Keep this in mind
