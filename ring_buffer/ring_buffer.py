@@ -5,13 +5,17 @@ class RingBuffer:
     self.storage = [None]*capacity
 
   def append(self, item):
-    #check to see if current is too large
-    #pop old item off end
-    #insert new item at currents position
+    #check to see if current is too large if so reset to 0
     if self.current >= self.capacity:
       self.current = 0
-    self.storage.pop()
-    self.storage.insert(self.current, item)
+    #check to see if the list has none values if so simple insert
+    if None in self.storage:
+      self.storage.pop()
+      self.storage.insert(self.current, item)
+    #else remove the old value at currents position and replace it with a new value
+    else:
+      self.storage.remove(self.storage[self.current])
+      self.storage.insert(self.current, item)
     self.current +=1
 
   def get(self):
@@ -24,5 +28,9 @@ print(buffer.get())
 buffer.append("a")
 buffer.append("b")
 buffer.append("c")
+
+print(buffer.get())
+
+buffer.append("d")
 
 print(buffer.get())
