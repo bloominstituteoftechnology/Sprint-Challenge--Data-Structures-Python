@@ -18,8 +18,16 @@ O(n) since it will be as big as the ring buffer since it needs to return each el
 
 5. What is the runtime complexity of the provided code in `names.py`?
 
+0=n^2
+
 6. What is the space complexity of the provided code in `names.py`?
+
+O = n 
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
+O = n the runtime is now around 0.03 seconds, greatly improved.
+
 8. What is the space complexity of your optimized code in `names.py`?
+
+O =n 
