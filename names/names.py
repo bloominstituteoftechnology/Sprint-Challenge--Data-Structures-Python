@@ -9,10 +9,11 @@ f.close()
 f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
-
+#intersection to find duplicates
 name_set = set(names_1).intersection(set(names_2))
 duplicates=[]
 for i in name_set:
+#finds the smaller of the two lists
     num = (min(names_1.count(i), names_2.count(i)))
     for j in range(num):
         duplicates.append(i)

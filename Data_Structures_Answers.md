@@ -26,7 +26,7 @@ O = n
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
-O = n the runtime is now around 0.03 seconds, greatly improved.
+the runtime O = (len1)log(len2) which is better than what it was before.
 
 8. What is the space complexity of your optimized code in `names.py`?
 
