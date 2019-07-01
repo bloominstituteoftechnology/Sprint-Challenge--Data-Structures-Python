@@ -11,5 +11,6 @@ class RingBuffer:
     if self.current >= self.capacity:
       self.current = 0
 
-  def get(self):
-    pass
+  def get(self): #returns all current values in ring buffer
+    return [i for i in self.storage if i != None]
+    # should not return any `None` values in the list even if they are present in the ring buffer
