@@ -16,6 +16,8 @@ for name_1 in names_1:
         if name_1 == name_2:
             duplicates.append(name_1)
 
+duplicates = set(names_1).intersection(name_2)
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
