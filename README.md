@@ -21,7 +21,9 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 This Sprint Challenge is split into three parts:
 
 1. Implement a data structure called a ring buffer (more details below)
+
 2. Optimizing some inefficient code
+
 3. Analyzing time and space complexities from parts 1 and 2
 
 ### Minimum Viable Product
@@ -72,7 +74,6 @@ Open up the `Data_Structures_Answers.md` file. This is where you'll jot down you
 
 1. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
 
-
 ### Rubric
 
 #### Ring Buffer
@@ -92,9 +93,8 @@ Open up the `Data_Structures_Answers.md` file. This is where you'll jot down you
 
 - `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 4 points
 
-
 #### Grading
 
-* *3*: 28+
-* *2*: 20-27
-* *1*: 0-19
+- _3_: 28+
+- _2_: 20-27
+- _1_: 0-19
