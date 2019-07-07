@@ -89,6 +89,7 @@ class LinkedList:
             current = current.get_next()
         return max_val
 
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
