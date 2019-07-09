@@ -10,11 +10,12 @@ class RingBuffer:
       self.current = 0
     else:
       self.current += 1
-    
+    #O(1) using indexing
 
 
   def get(self):
-    return [item for item in self.storage if item is not None]
+    return [item for item in self.storage if item is not None] 
+    #O(n) using loop
 
 KeepTheyHeadsRinging = RingBuffer(4)
 KeepTheyHeadsRinging.append("Ice Cube")
