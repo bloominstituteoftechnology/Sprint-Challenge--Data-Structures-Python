@@ -22,3 +22,5 @@ Add your answers to the questions below.
 
 8. What is the space complexity of your optimized code in `names.py`?
 0(n)
+
+Checking
