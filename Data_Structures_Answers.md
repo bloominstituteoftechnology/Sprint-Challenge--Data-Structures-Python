@@ -26,9 +26,20 @@ Add your answers to the questions below.
    variable. 
 
 5. What is the runtime complexity of the provided code in `names.py`?
+   `O((j+k)+(j*k)) = O(n*m)` - As we have two lists of arbitrary size where for each
+   element in one, we iterate through the other list entirely, and each is 
+   being read in from a file. We have to read through a file of variables size
+   `j` and another of variable size `k`.
 
 6. What is the space complexity of the provided code in `names.py`?
+   `O(j+k) = O(n)` - The programs size in memory varys wrt to the data loaded
+   in from the files, hence we have linear space complexity. 
 
 7. What is the runtime complexity of your optimized code in `names.py`?
+   `O(n)` - Because search a trie has (average) time complexity of `O(n)`
+   where `n` is the length of the string, and insertion into a trie has
+   time complexity of `O(m)` because - again - we're only doing as many
+   operations as there are characters in a string of length `m`. 
 
 8. What is the space complexity of your optimized code in `names.py`?
+   `O(n)`
