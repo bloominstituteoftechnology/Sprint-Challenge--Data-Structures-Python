@@ -16,6 +16,15 @@ for i in range(len(names_2) -1):
     if names_table.get(names_2[i]) == 0:
         duplicates.append(names_2[i])
 
+######
+# 
+#  Stretch attmpt at array
+#  going to be less efficient than the original  
+
+#  for i in range(len(names_2) -1):
+#     if names_1.index(names_2[i]):
+#         duplicates.append(names_2[i])
+
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
