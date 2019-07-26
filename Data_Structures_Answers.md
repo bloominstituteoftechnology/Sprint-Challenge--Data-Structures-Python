@@ -35,15 +35,27 @@ Add your answers to the questions below.
 
 6. What is the space complexity of the provided code in `names.py`?
 
-   `O(j+k) = O(n)` - The programs size in memory varys wrt to the data loaded
-   in from the files, hence we have linear space complexity. 
+   `O(j+k) = O(n)` - The program's size in memory varys wrt to the data loaded
+   in from the two files whose size we can denote with `j` and `k`. This simplifies
+   in Big-O to just `n`, hence we have linear space complexity. 
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
-   `O(n)` - Because search a trie has (average) time complexity of `O(n)`
-   where `n` is the length of the string, and insertion into a trie has
-   time complexity of `O(m)` because - again - we're only doing as many
-   operations as there are characters in a string of length `m`. 
+   `O(n)` - Because:
+     - Trie search has (average) time complexity of `O(n)`
+     - Trie insertion has time complexity of `O(m)`
+
+   where in each case only `n` operations ever occur varying with the length of 
+   the given string. And, because we iterate over `names_1` of size `j` and then
+   over `names_2` of size `k`, we get the sequential operations of 
+   `O(n) + O(m) + O(j) + O(k)` which rounds to `O(n)`.
 
 8. What is the space complexity of your optimized code in `names.py`?
-   `O(n)`
+
+   `O(j*k)` - Given that:
+     - `names_1` is of size `n`
+     - `names_2` is of size `m`
+     - A trie is of (average) size `j*k`, for `j` words and an average word length of `k` 
+
+    We can deteremine that the code has a space complexity of: `O(n) + O(m) + O(j*k)` for
+    an average complexity of `O(j*k)` 
