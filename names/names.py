@@ -10,13 +10,19 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = []
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# duplicates = []
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+duplicates = set(names_1) & set(names_2) 
+
+#  I used sets to refactor because they are implemented as a hash table and incredibly fast.
+#  Average time complexity is O(n) https://www.geeksforgeeks.org/sets-in-python/
+#  Starting runtime was 6.36 seconds, ending runtime was .004 seconds
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
-
