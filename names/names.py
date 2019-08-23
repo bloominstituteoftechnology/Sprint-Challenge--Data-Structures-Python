@@ -21,12 +21,9 @@ for name_1 in names_1:
 duplicates = []
 
 namesTree1 = BinarySearchTree(names_1[0])
-namesTree2 = BinarySearchTree(names_2[0])
 
 for x in names_1:
     namesTree1.insert(x)
-#for y in names_2:
-#    namesTree2.insert(y)
 
 for name in names_2:
     if namesTree1.contains(name):
