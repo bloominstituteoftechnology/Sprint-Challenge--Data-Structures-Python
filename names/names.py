@@ -17,9 +17,21 @@ f.close()
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# runt time is now 0.012 secs
-names_1 = set(names_1)
-duplicates = [x for x in names_2 if x in names_1]
+# run time is now 0.012 secs if using set BUT since we're not allowed to use set in this case.
+# names_1 = set(names_1)
+# duplicates = [x for x in names_2 if x in names_1]
+
+# run time is now average around 0.015 secs
+duplicates = []
+names_dictionary = {}
+
+for name in names_1:
+    names_dictionary[name] = 'original'
+
+for name in names_2:
+    if name in names_dictionary:
+        duplicates.append(name)
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
