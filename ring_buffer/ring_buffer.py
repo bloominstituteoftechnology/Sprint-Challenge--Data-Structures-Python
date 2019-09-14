@@ -9,6 +9,9 @@ class RingBuffer:
     # if self.current <= self.capacity:
     # self.storage.pop(self.current)
     # self.storage.insert(self.current, item)
+
+        # tried doing a pop and insert method but i realized that might be too dangerous and if something breaks inbetween then the the origional element is lost and might loop to never reaching the capactiy.  So i used an assignment line instead and boggled it down to one line of code rather then two
+
     self.storage[self.current] = item
     if self.current == len(self.storage) - 1:
       self.current = 0
