@@ -12,6 +12,9 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 #end time = 10.247 seconds
+
+#Runtime complexity of original code is O(n^2) as it runs through two for loops from 0 to n (size of loop)
+
 # duplicates = []
 # for name_1 in names_1:
 #     for name_2 in names_2:
