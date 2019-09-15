@@ -1,5 +1,5 @@
-class BinarySearchTree:
-    
+class BinarySearch:
+
   def __init__(self, value):
     self.value = value
     self.left = None
