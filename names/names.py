@@ -34,7 +34,7 @@ duplicates = []
 
 ########### Stretch ##########
 
-duplicates = [names_2[x] for x in range(len(names_2)) if names_1[x] in names_2]
+duplicates = [names_2[x] for x in range(len(names_2)) if names_2[x] in names_1]
 
 # average runtime 0.9 - 1.0 seconds
 
