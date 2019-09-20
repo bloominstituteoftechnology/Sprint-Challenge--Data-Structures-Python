@@ -20,10 +20,12 @@ f.close()
 
 #compares names in list 2 to list 1 as it pulls them and adds duplicates
 duplicates = []
+setName = set(names_1) #builds collection of names in list 1 to compare before comparing
 for name in names_2:
-    if name in names_1:
+    if name in setName:
         duplicates.append(name)
-#runtime: 1.406482219696045 seconds
+#first runtime: 1.406482219696045 seconds
+#second runtime: 0.009005546569824219 seconds
 
 
 end_time = time.time()
