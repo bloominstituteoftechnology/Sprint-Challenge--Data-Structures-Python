@@ -13,18 +13,21 @@ class RingBuffer:
     self.oldest = None
     self.newest = None
     self.next = None
+    self.prev = None
     self.replacedHead = False
   #self.tail = (self.tail + 1) % self.capacity
+
   def append(self, item):
     if len(self.holding) == self.capacity:
 
       if self.holding.head is not None:
-        # next = self.holding.head.next
-        self.holding.remove_from_head()
-        self.holding.add_to_head(item)
+        self.prev.value = item
+        self.prev = self.prev.next
 
 
     else:
+      self.next = self.holding.head
+      self.prev = self.next
       self.holding.add_to_tail(item)
 
   """
