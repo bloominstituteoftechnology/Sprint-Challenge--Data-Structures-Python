@@ -120,3 +120,4 @@ class DoublyLinkedList:
                 max_val = current.value
             current = current.next
         return max_val
+

@@ -3,6 +3,27 @@ import sys
 sys.path.append('../ring_buffer')
 from ring_buffer import DoublyLinkedList
 
+class Stack:
+    def __init__(self):
+        self.size = 0
+        # Why is our DLL a good choice to store our elements?
+        self.storage = DoublyLinkedList()
+
+
+
+    def push(self, value):
+        self.storage.add_to_tail(value)
+        self.size += 1
+
+    def pop(self):
+        if self.size > 0:
+            self.size -= 1
+            return self.storage.remove_from_tail()
+        else:
+            return None
+
+    def len(self):
+        return self.size
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
@@ -80,17 +101,32 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []
+"""
+O(n^2)
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
             duplicates.append(name_1)
+"""
+
+# O(log n)
+tree = BinarySearchTree('')
+for name in names_1:
+    tree.insert(name)
+tree.dft_print(tree)
+
+for name in names_2:
+    if tree.contains(name):
+        duplicates.append(name)
+
 
 end_time = time.time()
-#print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-#print (f"runtime: {end_time - start_time} seconds")
+print(("{} duplicates:\n\n{}\n\n").format(len(duplicates), ', '.join(duplicates)))
+print(("runtime: {} seconds").format(end_time - start_time))
 
 
-# LRU cache? Not textbuffer?
+
+
 
 
 
