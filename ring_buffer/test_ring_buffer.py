@@ -28,6 +28,10 @@ class RingBufferTests(unittest.TestCase):
         self.buffer.append('i')
         self.assertEqual(len(self.buffer.storage), 5)
         self.assertEqual(self.buffer.get(), ['f', 'g', 'h', 'i', 'e'])
+        
+        self.buffer.append('j')
+        self.buffer.append('k')
+        self.assertEqual(self.buffer.get(), ['k', 'g', 'h', 'i', 'j'])
 
 
 if __name__ == '__main__':
