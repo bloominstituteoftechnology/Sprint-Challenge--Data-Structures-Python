@@ -8,7 +8,7 @@ In this week's Sprint you implemented some classic and fundamental data structur
 
 This is an individual assessment. All work must be your own. Your Challenge score is a measure of your ability to work independently using the material covered throughout this sprint. You need to demonstrate proficiency in the concepts and objectives that were introduced and that you practiced in the preceding days.
 
-You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your PM and Instructor in your cohort help channel on Slack. Your submitted work reflects your proficiency in the concepts and topics that were covered this week.
+You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL and Instructor in your cohort help channel on Slack. Your submitted work reflects your proficiency in the concepts and topics that were covered this week.
 
 You have three hours to complete this Sprint Challenge. Plan your time accordingly.
 
@@ -20,82 +20,84 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 This Sprint Challenge is split into three parts:
 
-1. Writing an algorithm to traverse through a binary search tree
+1. Implement a data structure called a ring buffer (more details below)
 2. Optimizing some inefficient code
-3. Analyzing time and space complexities from parts 1 and 2
+3. Reversing the contents of a singly linked list
 
 ### Minimum Viable Product
 
+#### Task 1. Implement a Ring Buffer Data Structure
 
-#### Task 1. Implement Depth-First or Breadth-First Traversal on the Binary Search Tree Class 
+A ring buffer is a non-growable buffer with a fixed size. When the ring buffer is full and a new element is inserted, the oldest element in the ring buffer is overwritten with the newest element. This kind of data structure is very useful for use cases such as storing logs and history information, where you typically want to store information up until it reaches a certain age, after which you don't care about it anymore and don't mind seeing it overwritten by newer data.
 
-Navigate into the `search` directory. Inside, you'll see the `binary-search-tree.py` file with a complete implementation of the binary search tree class. Your first task is to implement either `depth_first_for_each` or `breadth_first_for_each` on the `BinarySearchTree` class:
+Implement this behavior in the RingBuffer class. RingBuffer has two methods, `append` and `get`. The `append` method adds elements to the buffer. The `get` method returns all of the elements in the buffer in a list in their given order. It should not return any `None` values in the list even if they are present in the ring buffer.
 
-   * `depth_first_for_each(cb)` receives an anonymous function as a parameter. It should then execute the anonymous function on each node in the tree in [depth-first](https://en.wikipedia.org/wiki/Depth-first_search) order. Your task is to implement the logic to traverse the tree in depth-first in-order fashion (as opposed to pre-order or post-order). Note that the pseudocode showcased on the Wikipedia article traverses the tree in-order. 
+For example:
 
-   * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
-   
-     _HINT_: In order to achieve depth-first order, you'll probably want to utilize a Stack data structure. 
+```python
+buffer = RingBuffer(3)
 
-     * Run `python test_depth_first_search.py` to test your depth-first search implementation.
+buffer.get()   # should return []
 
-   * `breadth_first_for_each(cb)` receives a callback function as a parameter. It should then execute the anonymous function on each node in the tree in [breadth-first](https://en.wikipedia.org/wiki/Breadth-first_search) order. Your task is to implement the logic to traverse the tree in left-to-right breadth-first fashion.
-   
-   * Remember that the anonymous function is supplied by the caller of the method. All you have to do is ensure that the anonymous function is being called on each tree node in the desired order.
-   
-     _HINT_: In order to achieve breadth-first order, you'll probably want to utilize a Queue data structure.
+buffer.append('a')
+buffer.append('b')
+buffer.append('c')
 
-     * Run `python test_breadth_first_search.py` to test your breadth-first search implementation.
+buffer.get()   # should return ['a', 'b', 'c']
 
-> Note that in Python, anonymous functions are referred to as "lambda functions". When passing in an anonymous function as input to either `depth_first_for_each` or `breadth_first_for_each`, you'll want to define them as lambda functions. For more information on lambda functions, check out this documentation: [https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
+# 'd' overwrites the oldest value in the ring buffer, which is 'a'
+buffer.append('d')
 
-> Note that it is not your job to worry about what the callback function being passed in is doing. That is up to the user of your traversal method. All you care about when implementing the traversal method is to call the passed-in callback in either depth-first or breadth-first order, depending on which traversal method you're implementing. 
+buffer.get()   # should return ['d', 'b', 'c']
 
+buffer.append('e')
+buffer.append('f')
+
+buffer.get()   # should return ['d', 'e', 'f']
+```
 
 #### Task 2. Runtime Optimization
+
+***!Important!*** If you are running this using PowerShell by clicking on the green play button, you will get an error that `names1.txt` is not found.  To resolve this, run it, get the error, then `cd` into the `names` directory in the `python` terminal that opens in VSCode.
 
 Navigate into the `names` directory. Here you will find two text files containing 10,000 names each, along with a program `names.py` that compares the two files and prints out duplicate name entries. Try running the code with `python3 names.py`. Be patient because it might take a while: approximately six seconds on my laptop. What is the runtime complexity of this code?
 
 Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? Under one hundredth of a second?
 
+*You may not use the built in Python list or set for this problem*
+
 (Hint: You might try importing a data structure you built during the week)
 
-#### Task 3. Analyze some runtimes
 
-Open up the `Data_Structures_Answers.md` file. This is where you'll jot down your answers for the runtimes of the functions you just implemented. If you implemented depth-first traversal, just answer the questions pertaining to the depth-first traversal algorithm. If you implemented breadth-first traversal, just answer the questions pertaining to breadth-first traversal. 
+#### Task 3. Reverse a Linked List
 
-Also, include the runtime and space complexities of the original code and your optimized solution from `names.py`.
+Inside of the `reverse` directory, you'll find a basic implementation of a Singly Linked List. _Without_ making it a Doubly Linked List (adding a tail attribute), complete the `reverse_list()` function within `reverse/reverse.py` reverse the contents of the list. 
 
-### Stretch Problems
+For example,
+```
+1->2->3->None
+```
+would become...
+```
+3->2->1->None
+```
 
-1. Implement the other tree traversal algorithm that you didn't implement on the `BinarySearchTree` class. Run the appropriate test file to test your implementation's correctness. Then go back to the `Data_Structures_Answers.md` file and answer the time and space complexity questions pertaining to the traveral method you just implemented.
+While credit will be given for a functional solution, only optimal solutions will earn a ***3*** on this task.
 
-2. Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
+#### Stretch 
+
+* Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
 
 
 ### Rubric
-
-#### SEARCH
-
-- DFS or BFS pass tests: 10 points
-
-#### NAMES
-
-- Optimize with an O(n log n) runtime solution: 8 points
-- Optimize with an O(n) runtime solution: 10 points
-
-#### COMPLEXITY
-
-- One point each: 8 points
-
-#### STRETCH
-
-- Both DFS and BFS pass tests: 2 points
-- `names.py` is optimized with sub-quadratic runtime complexity and tightly constrained linear space complexity: 2 points
+| OBJECTIVE | TASK | 1 - DOES NOT MEET Expectations | 2 - MEETS Expectations | 3 - EXCEEDS Expectations | SCORE |
+| ---------- | ----- | ------- | ------- | ------- | -- |
+| _Student should be able to construct a queue and stack and justify the decision to use a linked list instead of an array._ | Task 1. Implement a Ring Buffer Data Structure | Solution in `ring_buffer.py` DOES NOT run OR it runs but has multiple logical errors, failing 3 or more tests | Solution in `ring_buffer.py` runs, but may have one or two logical errors; passes at least 7/9 tests | Solution in `ring_buffer.py` has no syntax or logical errors and passes 9/9 tests | |
+| _Student should be able to construct a binary search tree class that can perform basic operations with O(log n) runtime._ | Task 2. Runtime Optimization | Student does NOT correctly identify the runtime of the starter code in `name.py` and optimize it to run in under 6 seconds | Student correctly identifies the runtime of the starter code in `name.py` and optimizes it to run in under 6 seconds, with a solution of O(n log n) or better | Student does BOTH correctly identify the runtime of the starter code in `name.py` and optimizes it to run in under 6 seconds, with a solution of O(n) or better |  |
+| _Student should be able to construct a linked list and compare the runtime of operations to an array to make the optimal choice between them._ | Task 3. Reverse the contents of a Singly Linked List | Student's solution in `reverse.py` is failing one or more tests | Student's solution in `reverse.py` is able to correctly print out the contents of the Linked List in reverse order, passing all tests, BUT, the runtime of their solution is not optimal (requires looping through the list more than once) | Student's solution in `reverse.py` is able to correctly print out the contents of the Linked List in reverse order, passing all tests AND it has a runtime of O(n) or better |  |
+| _Student should be able to write code that utilizes Python Collections_ | [STRETCH] Optimize code from Task 2, given the constraint that **only standard Python collections** may be used to store names | Level 1 solution provided | Level 2 solution provided | Level 3 solution provided |  |
+| **FINAL SCORE** | _(3 tasks + 1 STRETCH goal)_  | **0-5** | **6-9** | **10-12** |  |
 
 
-#### GRADING
-
-* *3*: 28+
-* *2*: 20-17
-* *1*: 0-19
+#### Passing the Sprint
+Score ranges for a 1, 2, and 3 are shown in the rubric above. For a student to have _passed_ a sprint challenge, they need to earn an **average of at least 2** for all items on the rubric.
