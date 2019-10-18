@@ -2,3 +2,5 @@
 node_modules
 *.pyc
 .vscode/
+.idea/
+.idea/vcs.xml
