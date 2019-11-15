@@ -1,3 +1,15 @@
+''' Inside of the `reverse` directory, you'll find a basic implementation of a Singly Linked List. _Without_ making it a Doubly Linked List (adding a tail attribute), complete the `reverse_list()` function within `reverse/reverse.py` reverse the contents of the list. 
+
+For example,
+```
+1->2->3->None
+```
+would become...
+```
+3->2->1->None
+``` '''
+
+
 class Node:
   def __init__(self, value=None, next_node=None):
     # the value at this linked list node
@@ -43,5 +55,12 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    current = self.head #references node we're currently on
+    prev = None #list is empty. Reset
+    while current:
+      temp = current.next_node #reference to next item (node) in stack
+      current.set_next(prev)
+      prev = current #setting next to previous reverse
+      current = prev #setting next to previous reverse
+      current = temp #setting next to previous reverse
+    self.head = prev
