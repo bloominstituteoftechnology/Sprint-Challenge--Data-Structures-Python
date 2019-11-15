@@ -43,49 +43,13 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    
-    # empty reverse case
-    if self.head is None:
-      return None
 
-    
-    current = self.head
-    # base case, list of one, no next return head
-    if current.get_next() is None:
-      return current
+    first = self.head
+    last = None
 
-
-    if current.get_next() is not None:
-      next = current.get_next()
-    
-      if next and next.get_next() is not None:
-
-        while next.get_next() is not None:
-          
-          new_current = next.get_next()
-          next.next_node = current
-          current = new_current
-      
-      else:
-        next.next_node = current
-
-
-    # if current.get_next() is not None:
-        
-    #   next = current.get_next()
-    #   next_next = next.get_next()
-
-    #   while next is not None:
-            
-    #     # reassign next node backwards
-    #     next.next_node = current
-    #     current.next_node = next_next
-
-    #     # increment forwards
-    #     current = next_next
-    #     next = next_next.get_next()
-
-    #     # save the pointer forward
-    #     next_next = next.get_next()
-
-      
+    while first is not None:
+      next = first.get_next()
+      first.set_next(last)
+      last = first
+      first = next
+    self.head = last
