@@ -11,8 +11,9 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-cache = LRUCache(1000)
+cache = LRUCache(10000)
 [cache.set(x, x) for x in names_2]
+print(f'names2 size {len(names_2)} and cache size {cache.current_nodes}')
 
 duplicates = []
 for name_1 in names_1:
