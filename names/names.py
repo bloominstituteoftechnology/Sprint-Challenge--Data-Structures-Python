@@ -15,19 +15,22 @@ f = open('names_2.txt', 'r')
 # [names_2.push(x) for x in f.read().split("\n")]  # List containing 10000 names
 # save it as a stack
 
-names_2 = f.read().split("\n")
+# names_2 = f.read().split("\n")
+
+duplicates = [names_1.get(x) for x in f.read().split("\n") if names_1.get(x) is not None]
 
 f.close()
 
-duplicates = []
+# duplicates = []
 
 # while names_2.len() > 0:
 #     name = names_2.pop()
 #     if names_1.get(name) is not None:
 #         duplicates.append(name)
-for name in names_2:
-    if names_1.get(name) is not None:
-        duplicates.append(name)
+
+# for name in names_2:
+#     if names_1.get(name) is not None:
+#         duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
