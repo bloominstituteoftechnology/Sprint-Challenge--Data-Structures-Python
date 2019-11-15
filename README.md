@@ -51,6 +51,7 @@ buffer.append('d')
 buffer.get()   # should return ['d', 'b', 'c']
 
 buffer.append('e')
+
 buffer.append('f')
 
 buffer.get()   # should return ['d', 'e', 'f']
