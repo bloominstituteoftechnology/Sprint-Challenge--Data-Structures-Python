@@ -1,24 +1,28 @@
 import time
 from lru_cache import LRUCache
+from dll_stack import Stack
 
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
-names_1 = f.read().split("\n")  # List containing 10000 names
+names_1 = LRUCache(10000)
+[names_1.set(x, x) for x in f.read().split("\n")] # List containing 10000 names
+#save one list as an LRU cache
 f.close()
 
 f = open('names_2.txt', 'r')
-names_2 = f.read().split("\n")  # List containing 10000 names
+names_2 = Stack()
+[names_2.push(x) for x in f.read().split("\n")]  # List containing 10000 names
+# save it as a stack
+
 f.close()
 
-cache = LRUCache(10000)
-[cache.set(x, x) for x in names_2]
-print(f'names2 size {len(names_2)} and cache size {cache.current_nodes}')
-
 duplicates = []
-for name_1 in names_1:
-    if cache.get(name_1) is not None:
-        duplicates.append(name_1)
+
+while names_2.len() > 0:
+    name = names_2.pop()
+    if names_1.get(name) is not None:
+        duplicates.append(name)
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
