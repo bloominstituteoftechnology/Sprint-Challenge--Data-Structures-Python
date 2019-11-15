@@ -6,8 +6,8 @@ class RingBuffer:
 
   def append(self, item):
 
-    print('adding ', item)
-    print("current ", self.storage)
+    # print('adding ', item)
+    # print("current ", self.storage)
     
     if self.current >= self.capacity:
       # overright the last element with the first
