@@ -11,21 +11,23 @@ names_1 = LRUCache(10000)
 f.close()
 
 f = open('names_2.txt', 'r')
-names_2 = Stack()
-[names_2.push(x) for x in f.read().split("\n")]  # List containing 10000 names
+# names_2 = Stack()
+# [names_2.push(x) for x in f.read().split("\n")]  # List containing 10000 names
 # save it as a stack
+
+names_2 = f.read().split("\n")
 
 f.close()
 
 duplicates = []
 
-while names_2.len() > 0:
-    name = names_2.pop()
+# while names_2.len() > 0:
+#     name = names_2.pop()
+#     if names_1.get(name) is not None:
+#         duplicates.append(name)
+for name in names_2:
     if names_1.get(name) is not None:
         duplicates.append(name)
-#     for name_2 in names_2:
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
