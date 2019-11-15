@@ -4,6 +4,10 @@ from dll_stack import Stack
 
 start_time = time.time()
 
+# initial runtime is O(n**2)
+
+# current runtime is O(N)
+
 f = open('names_1.txt', 'r')
 names_1 = LRUCache(10000)
 [names_1.set(x, x) for x in f.read().split("\n")] # List containing 10000 names
