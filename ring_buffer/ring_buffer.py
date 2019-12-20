@@ -59,15 +59,4 @@ class ArrayRingBuffer:
             self.current += 1
 
     def get(self):
-        return [s s for self.storage if s is not None]
-
-
-arrr = ArrayRingBuffer(5)
-print(arrr.append(5))
-print(arrr.append(4))
-print(arrr.append(3))
-print(arrr.append(2))
-print(arrr.append(1))
-print(arrr.get())
-print(arrr.append(7))
-print(arrr.get())
+        return [num for num in self.storage if num is not None]
