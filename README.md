@@ -24,7 +24,7 @@ This Sprint Challenge is split into three parts:
 2. Optimizing some inefficient code
 3. Reversing the contents of a singly linked list
 
-### Minimum Viable Product
+### Minimum Viable Product 
 
 #### Task 1. Implement a Ring Buffer Data Structure
 
