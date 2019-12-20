@@ -44,4 +44,31 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    pass
+    # Tracks for an empty list (line 22 test)
+    if self.head is None:
+        return None
+
+    # Checks for single item on the list (line 26 in test)
+    if self.head.next_node is None:
+        return self.head.value
+
+    # Longer reverse test
+    # Begins with second item (current), next set item behind current to current's next by changing the side the value is located
+    # If continued, at the end the item behind the last has the history of everything be added after it,
+    # making the last item the front(head) then sets last item as head
+
+    current = self.head.next_node # Begins on the second item
+    node_behind = self.head # Item behind the current set to start
+
+    while current is not None:
+        future_current = current.next_node # Store the item that will be checked thru next loop
+        current.set_next(node_behind) #  Now instead of N(5) -> N(4), it is N(4) -> N(5) has swapped
+        node_behind = current # Shift over one in the list
+        current = future_current # Same as above
+    self.head = node_behind # Once we hit the end, the node_behind becomes the last item  edited in the list, which now has all reversed
+
+test_list = LinkedList()
+test_list.add_to_head(1)
+test_list.add_to_head(2)
+test_list.add_to_head(10)
+test_list.reverse_list() 
