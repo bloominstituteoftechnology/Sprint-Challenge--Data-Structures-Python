@@ -1,3 +1,4 @@
+from binary_search_tree import BinarySearchTree
 import time
 
 start_time = time.time()
@@ -11,10 +12,20 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+bst = BinarySearchTree(names_1[0])
+for count, name_1 in enumerate(names_1):
+    if count == 0:
+      continue
+    bst.insert(name_1)
+print(bst.right.value)
+
+count = 0
+for name_2 in names_2:
+  if bst.contains(name_2):
+    count += 1
+print(count)
+
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

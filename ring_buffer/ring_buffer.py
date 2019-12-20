@@ -41,21 +41,6 @@ class RingBuffer:
         return list_buffer_contents
 
 
-buffer = RingBuffer(3)
-print(buffer.storage.length)
-buffer.append('a')
-buffer.append('b')
-buffer.append('c')
-print(buffer.storage.length)
-print(buffer.get())
-print("===")
-print(buffer.append('d'))
-print(buffer.append('e'))
-print(buffer.append('f'))
-print(buffer.storage.length)
-print(buffer.get())
-
-
 # ----------------Stretch Goal-------------------
 
 
