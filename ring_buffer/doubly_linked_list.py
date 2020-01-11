@@ -33,10 +33,14 @@ class ListNode:
             self.prev.next = self.next
         if self.next:
             self.next.prev = self.prev
+    
+    def __str__(self):
+        return str(self.value)
 
 
 """Our doubly-linked list class. It holds references to
 the list's head and tail nodes."""
+    
 
 
 class DoublyLinkedList:

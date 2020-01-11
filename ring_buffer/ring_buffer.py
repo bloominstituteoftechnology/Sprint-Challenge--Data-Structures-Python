@@ -24,22 +24,21 @@ class RingBuffer:
 
         if self.storage.length > self.capacity: 
             self.storage.remove_from_head()
-            self.storage.length += 1
+          
+        
            
+    # def get(self):
+    #     # Note:  This is the only [] allowed
+    #     list_buffer_contents = []
+    #     cur_node = self.storage.head
 
-           
-    def get(self):
-        # Note:  This is the only [] allowed
-        list_buffer_contents = []
-        cur_node = self.storage.head
-
-        while cur_node is not None:
-            cur_node = cur_node.next
-            list_buffer_contents.append(cur_node)
+    #     while cur_node is not None:
+    #         cur_node = cur_node.next
+    #         list_buffer_contents.append(cur_node)
             
 
         
-        return list_buffer_contents
+    #     return list_buffer_contents
 
 
 # ----------------Stretch Goal-------------------
@@ -55,7 +54,7 @@ class RingBuffer:
 #     def get(self):
 #         pass
 
-buffer = RingBuffer(4)
+buffer = RingBuffer(3)
 
 
 
@@ -64,10 +63,7 @@ buffer.append('b')
 buffer.append('c')
 buffer.append('d')
 buffer.append('e')
-buffer.append('f')
 
-
-print(buffer.get())
 
 print(buffer)
 
