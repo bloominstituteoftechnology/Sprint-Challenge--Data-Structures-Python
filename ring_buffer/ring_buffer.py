@@ -61,26 +61,42 @@ class RingBuffer:
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.current = None
+        self.storage = []
 
     def append(self, item):
-        pass
+        if len(self.storage) == self.capacity:
+            self.storage.pop(0)
+            self.storage.insert(0, item)
+        else:
+            self.storage.append(item)    
 
     def get(self):
-        pass
+        for item in self.storage:
+            print(item)
 
 
 
-rb = RingBuffer(3)
-print(rb.get())
-rb.append('a')
-# rb.append('b')
-# rb.append('c')
-print(rb.get())
 
-rb.append('d')
-print(rb.get())
+ab = ArrayRingBuffer(2)
+ab.append('a')
+ab.append('b')
 
-rb.append('e')
-print(rb.get())
+# ab.get()
+ab.append('c')
+ab.get()
+
+# rb = RingBuffer(3)
+# print(rb.get())
+# rb.append('a')
+# # rb.append('b')
+# # rb.append('c')
+# print(rb.get())
+
+# rb.append('d')
+# print(rb.get())
+
+# rb.append('e')
+# print(rb.get())
 
