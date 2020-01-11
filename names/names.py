@@ -64,11 +64,28 @@ f.close()
 
 
 # Double for loops cause a nasty complexity of O(n^2),  run takes about 6 secs 
+# duplicates = []
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
 duplicates = []
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+# set root node
+bst = BinarySearchTree(names_1[0])
+
+# add in names    - takes about .110 sec
+for i in range(1, len(names_1)):
+    bst.insert(names_1[i])
+
+# verify contains works
+print(bst.contains('Hallie Vazquez'))   # True
+print(bst.contains('I am Groot'))   # False
+
+# do compare from names_2
+
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
