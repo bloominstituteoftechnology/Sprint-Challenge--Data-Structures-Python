@@ -65,10 +65,14 @@ class ArrayRingBuffer:
         self.current = None
         self.storage = []
 
+    def __len__(self):
+        return self.length
+
     def append(self, item):
         if len(self.storage) == self.capacity:
             self.storage.pop(0)
-            self.storage.insert(0, item)
+            #  self.storage.insert(0, item)
+            self.storage.append(item)
         else:
             self.storage.append(item)    
 
@@ -83,7 +87,7 @@ ab = ArrayRingBuffer(2)
 ab.append('a')
 ab.append('b')
 
-# ab.get()
+ab.get()
 ab.append('c')
 ab.get()
 
