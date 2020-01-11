@@ -63,7 +63,7 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 
-# Double for loops cause a nasty complexity of O(n^2),  run takes about 6 secs 
+# Double for loops cause a nasty COMPLEXITY of O(n^2),  run takes about 6 secs 
 # duplicates = []
 # for name_1 in names_1:
 #     for name_2 in names_2:
@@ -72,7 +72,7 @@ f.close()
 
 duplicates = []
 
-# set root node
+# set 
 bst = BinarySearchTree(names_1[0])
 
 # add in names    - takes about .110 sec
@@ -80,11 +80,20 @@ for i in range(1, len(names_1)):
     bst.insert(names_1[i])
 
 # verify contains works
-print(bst.contains('Hallie Vazquez'))   # True
-print(bst.contains('I am Groot'))   # False
+# print(bst.contains('Hallie Vazquez'))   # True
+# print(bst.contains('I am Groot'))   # False
 
-# do compare from names_2
+# This should have a COMPLEXITY of O(log(n)) because
+# a bst with n nodes has min of O(log(n)) levels and would thus
+# require a min of O(log(n)) comparisons to find target.
+# Making tree have less levels, perhaps balancing could improve time
 
+
+
+# do compare from names_2     - NOW takes about .12 - .13 seconds
+for i in range(len(names_2)):
+    if bst.contains(names_2[i]):
+        duplicates.append(names_2[i])
 
 
 end_time = time.time()
