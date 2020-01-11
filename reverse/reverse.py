@@ -44,4 +44,22 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    pass
+    if self.head is None:
+      return None
+
+    empty_array = []
+
+    current_node = self.head
+
+    while current_node is not None:
+      empty_array.append(current_node.value)
+      current_node = current_node.next_node
+
+    current_value = empty_array.pop()
+    current_node = self.head
+    current_node.value = current_value
+    
+    while current_node.next_node is not None:
+      current_value = empty_array.pop()
+      current_node = current_node.next_node
+      current_node.value = current_value
