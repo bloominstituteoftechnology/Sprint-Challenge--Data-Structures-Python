@@ -7,7 +7,7 @@ class Node:
 
   def get_value(self):
     return self.value
-
+  
   def get_next(self):
     return self.next_node
 
@@ -15,10 +15,25 @@ class Node:
     # set this node's next_node reference to the passed in node
     self.next_node = new_next
 
+  def __str__(self):
+    return str(self.value)
+
 class LinkedList:
   def __init__(self):
     # reference to the head of the list
     self.head = None
+  
+  def __str__(self):
+    cur_node = self.head
+    output = ''
+    output += str(cur_node) + ' | '
+    if self.head == None:
+      output = "Empty"
+    else: 
+      while cur_node.get_next() is not None:
+        cur_node = cur_node.get_next()
+        output += str(cur_node) + ' | '
+    return output
 
   def add_to_head(self, value):
     node = Node(value)
@@ -43,5 +58,39 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    cur_node = self.head
+   
+    if cur_node is None:
+      return print("Empty")
+
+    # Not sure why this works 
+    while cur_node is not None:
+      temp_node = cur_node
+   
+      cur_node = cur_node.next_node
+
+      temp_node.next_node = None
+
+      self.add_to_head(cur_node)
+
+    # Gets rid of self.head = None 
+    self.head = self.head.next_node
+
+    return cur_node
+    
+      
+node = LinkedList()
+node.add_to_head(1)
+node.add_to_head(2)
+node.add_to_head(3)
+
+
+print(node)
+
+node.reverse_list()
+
+print(node)
+
+node.reverse_list()
+
+print(node)
