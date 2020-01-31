@@ -9,14 +9,17 @@ class RingBuffer:
 
     def append(self, item):
 
+        # if under capacity, add new node to tail
         if self.storage.length < self.capacity:
             self.storage.add_to_tail(item)
             self.current = self.storage.tail
-
+        
+        # if current = tail, change head value
         elif self.current == self.storage.tail:
             self.storage.head.value = item
             self.current = self.storage.head
         
+        # otherwise, change the node after current
         else:
             self.current.next.value = item
             self.current = self.current.next
