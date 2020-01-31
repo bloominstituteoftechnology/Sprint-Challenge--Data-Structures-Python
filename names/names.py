@@ -16,7 +16,7 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 # # Time Complexity: O(n^2)
-# # Comment out for accurate runtime when testing Binary Search Tree solution
+# # Comment out for accurate runtime when testing Binary Search Tree solution.
 # duplicates = []
 # for name_1 in names_1:
 #     for name_2 in names_2:
