@@ -34,3 +34,16 @@ print (f"runtime: {end_time - start_time} seconds")
 
 # use a set and check if each item is contained
 # or, if python supports it, make sets out of each list and check for the intersection of sets
+
+duplicates = []
+
+start_time = time.time()
+
+name1Set = set(names_1)
+for name in names_2:
+    if name in name1Set:
+        duplicates.append(name)
+
+end_time = time.time()
+print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print(f"runtime: {end_time - start_time} seconds")
