@@ -40,9 +40,11 @@ duplicates = []
 start_time = time.time()
 
 name1Set = set(names_1)
-for name in names_2:
-    if name in name1Set:
-        duplicates.append(name)
+name2Set = set(names_2)
+
+dupsSet = list(name1Set.intersection(name2Set))
+duplicates = [x for x in dupsSet]
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
