@@ -1,5 +1,7 @@
 import time
 
+from binary_search_tree import BinarySearchTree
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
