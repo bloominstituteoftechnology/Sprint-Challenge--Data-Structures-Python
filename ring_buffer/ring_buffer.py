@@ -13,7 +13,12 @@ class RingBuffer:
             self.storage.add_to_tail(item)
             self.current = self.storage.head
         # we have to update the current storage to accommadate the new item that we put in
-        
+        elif self.storage.length == self.capacity:
+            remove_head = self.storage.head
+        # if the ring reaches capacity, we must remove the head since its the oldest piece of info that we in the ring
+            self.storage.remove_from_head()
+            self.storage.add_to_tail(item)
+
 
 
     def get(self):
