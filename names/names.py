@@ -63,6 +63,14 @@ for name_1 in names_1:
         if name_1 == name_2:
             duplicates.append(name_1)
 
+tree = BinarySearchTree(name_1[0])
+for i in range(1, len(name_1)):
+    tree.insert(name_1[i])
+
+for i in name_2:
+    if tree.contains(i):
+        duplicates.append(i)
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
