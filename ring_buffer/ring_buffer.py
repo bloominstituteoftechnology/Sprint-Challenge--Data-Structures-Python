@@ -25,7 +25,12 @@ class RingBuffer:
         # Note:  This is the only [] allowed
         list_buffer_contents = []
 
-        # TODO: Your code here
+        c = self.current
+        list_buffer_contents.append(c.value)
+        if c.next:
+            n = c.next
+        else:
+            n = self.storage.head
 
         return list_buffer_contents
 
