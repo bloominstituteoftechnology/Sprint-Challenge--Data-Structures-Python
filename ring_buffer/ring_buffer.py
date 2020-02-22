@@ -32,6 +32,14 @@ class RingBuffer:
         else:
             n = self.storage.head
 
+        while n is not c:
+            list_buffer_contents.append(n.value)
+            if n.next:
+                n = n.next
+            else:
+                n = self.storage.head
+
+        # this loop through each node and appends the values
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
