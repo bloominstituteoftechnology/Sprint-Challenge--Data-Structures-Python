@@ -25,10 +25,6 @@ for name in names_1:
     else:
         duplicates.append(name)
 
-
-
-
-
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
