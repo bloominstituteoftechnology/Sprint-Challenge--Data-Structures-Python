@@ -30,7 +30,6 @@ class RingBuffer:
 
     def get(self):
         list_buffer_contents = []
-        # TODO: Your code here
         current_node = self.storage.head
         while current_node is not None:
             list_buffer_contents.insert(0, current_node.value)

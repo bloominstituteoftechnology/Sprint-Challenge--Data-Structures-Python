@@ -48,8 +48,8 @@ class LinkedList:
         previous = None
         # print(f'current = {current.value}')
         while current is not None:
-            new_next = current.next_node
+            original_next = current.next_node
             current.next_node = previous
             previous = current
-            current = new_next
+            current = original_next
         self.head = previous
