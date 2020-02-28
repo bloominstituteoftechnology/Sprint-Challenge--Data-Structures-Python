@@ -7,7 +7,6 @@ class RingBuffer:
         self.current = None
         self.storage = DoublyLinkedList()
 
-# ! assume head is oldest end of DLL and tail is newest
     def append(self, item):
         # * if capacity has not been reached, add item to head and set current(oldest) val to tail
         if self.storage.length < self.capacity:
@@ -25,15 +24,12 @@ class RingBuffer:
             self.current = self.storage.tail
         # * insert after the current value the item and then delete the current item, set the new current item to the previous
         else:
-            print(f'else case -- self.current.val = {self.current.value}')
             self.current.insert_after(item)
             self.current.delete()
             self.current = self.current.prev
 
     def get(self):
-        # Note:  This is the only [] allowed
         list_buffer_contents = []
-
         # TODO: Your code here
         current_node = self.storage.head
         while self.current is not None:
