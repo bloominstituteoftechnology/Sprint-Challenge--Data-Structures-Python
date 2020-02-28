@@ -27,30 +27,6 @@ class RingBuffer:
         return list_buffer_contents
 
 
-# class ArrayRingBuffer:
-#     def __init__(self, capacity):
-#         self.capacity = capacity
-#         self.storage = []
-#         self.cursor = 0
-
-#     def append(self, item):
-#         # if len(l) == self.capacity:
-#         #     l[cursor] = item
-#         # else: 
-#         #     l.append(item) #the list backwards
-#         # return l
-#         if len(self.storage) == self.capacity:
-#             if self.cursor == self.capacity:
-#                 self.cursor = 0
-#             self.storage[self.cursor] = item
-#             self.cursor += 1
-#         else:
-#             self.storage.append(item)
-
-#     def get(self):
-        
-#         return self.storage
-
 class ArrayRingBuffer:
     def __init__(self, capacity):
         self.storage = [None for i in range(capacity)]
@@ -77,37 +53,5 @@ class ArrayRingBuffer:
         return l
 
 
-buffer = ArrayRingBuffer(5)
-# buffer = RingBuffer(5)
-buffer.append('a')
-buffer.append('b')
-buffer.append('c')
-buffer.append('d')
-# buffer.append('f')
-# buffer.append('b')
-# buffer.append('c')
-# print(buffer.get())
-
-
-# # # buffer = RingBuffer(5)
-buffer.append('e')
-# # # # buffer.append('h')
-
-buffer.append('f')
-
-# # # ['f', 'b', 'c', 'd', 'e']
-
-buffer.append('g')
-buffer.append('h')
-buffer.append('i')
-# # ['f', 'g', 'h', 'i', 'e']
-
-
-# buffer.append('j')
-# buffer.append('k')
-
-
-#should be ['k', 'g', 'h', 'i', 'j']
-print(buffer.get())
 
         
