@@ -7,45 +7,44 @@ class BinarySearchTree:
 
     # Insert the given value into the tree
     def insert(self, value):
-
         node = self
         while node:
+            
             if value[1] < node.value[1]:
                 if node.left:
                     node = node.left
                 else:
                     node.left = BinarySearchTree(value)
+                    return
 
-            if value[1] >= node.value[1]:
+            elif value[1] >= node.value[1]:
                 if node.right:
                     node = node.right
                 else:
-                    node.left = BinarySearchTree(value)
+                    node.right = BinarySearchTree(value)
+                    return
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
 
-        if self is None:
-            return False
-    
-        # If target is equal to node value -> True
-        # Else -> Value is not found: return false
-        if self.value == target:
-            return True
-        
-        # If target is greater than node value -> step into right node
-        # Else -> Value is not found: Return false
-        if target[1] >= self.value[1]:
-            if self.right:
-                return self.right.contains(target)
-            else:
-                return False
+        node = self
+        while node is not None:
 
-        # If target is less than node value -> step into left node
-        # Else -> Value is not found: return False       
-        if target[1] < self.value[1]:
-            if self.left:
-                return self.left.contains(target)
-            else:
-                return False
+            if target[0] == node.value[0]:
+                
+                return True 
+            elif target[1] >= node.value[1]:
+                
+                if node.right:
+                    node = node.right 
+                else:        
+                    return False 
+            elif target[1] < node.value[1]:
+                
+                if node.left:
+                    node = node.left
+                else:
+                    return False
+
+        return False

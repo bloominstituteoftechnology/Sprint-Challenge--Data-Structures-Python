@@ -1,5 +1,5 @@
 import time
-
+from binary_search_tree import BinarySearchTree
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -21,8 +21,19 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-for name in names_1:
-    if names_2.count(name) > 0:
+
+# Using a BinarySearchTree
+# Inserting names
+root = (names_1[0], len(names_1[0]))
+tree = BinarySearchTree(root)
+for name in names_1[1:]:
+    item = (name, len(name))
+    tree.insert(item)
+
+# Searching for duplicates
+for name in names_2:
+    item = (name, len(name))
+    if tree.contains(item):
         duplicates.append(name)
 
 end_time = time.time()
@@ -34,5 +45,7 @@ print (f"runtime: {end_time - start_time} seconds")
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-
-
+# NOTE: THIS IS FOR STRETCH. Completes in 1.40923 seconds
+# for name in names_1:
+#     if names_2.count(name) > 0:
+#         duplicates.append(name)
