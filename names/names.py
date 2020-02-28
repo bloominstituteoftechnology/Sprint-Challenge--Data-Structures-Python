@@ -19,6 +19,8 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+# runtime was 9 seconds, now 0.3 seconds
+
 second_file = BinarySearchTree("")
 for name_2 in names_2: 
     second_file.insert(name_2)

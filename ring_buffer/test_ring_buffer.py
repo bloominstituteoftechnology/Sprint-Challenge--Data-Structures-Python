@@ -47,7 +47,6 @@ class ArrayRingBufferTests(unittest.TestCase):
 
     def test__array_ring_buffer(self):
         self.assertEqual(len(self.buffer.storage), 5)
-
         self.buffer.append('a')
         self.buffer.append('b')
         self.buffer.append('c')

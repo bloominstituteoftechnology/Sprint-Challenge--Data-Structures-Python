@@ -15,6 +15,7 @@ class RingBuffer:
         list_buffer_contents = []
 
         # TODO: Your code here
+        
 
         return list_buffer_contents
 
