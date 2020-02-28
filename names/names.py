@@ -1,12 +1,15 @@
 import time
+import os
+
+full_path = os.path.dirname(os.path.abspath(__file__))
 
 start_time = time.time()
-
-f = open('names_1.txt', 'r')
+names_full_path = f"{full_path}/names_1.txt"
+f = open(names_full_path, 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
 f.close()
-
-f = open('names_2.txt', 'r')
+names_full_path = f"{full_path}/names_2.txt"
+f = open(names_full_path, 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
