@@ -15,6 +15,7 @@ class Node:
     # set this node's next_node reference to the passed in node
     self.next_node = new_next
 
+
 class LinkedList:
   def __init__(self):
     # reference to the head of the list
@@ -24,7 +25,7 @@ class LinkedList:
     node = Node(value)
     if self.head is not None:
       node.set_next(self.head)
-    
+
     self.head = node
 
   def contains(self, value):
@@ -44,4 +45,11 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    pass
+    if self.head:
+      current = self.head
+      previous = None
+      while current:
+        next = current.get_next()
+        current.set_next(previous)
+        previous, current = current, next
+      self.head = previous
