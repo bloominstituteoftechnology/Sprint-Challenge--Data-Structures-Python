@@ -13,23 +13,27 @@ class RingBuffer:
             self.storage.add_to_tail(item)
         else:
             replacing = self.storage.head
+            # oldest item's position is self.current modulo 3
             for i in range(self.current % self.capacity):
                 replacing = replacing.next
             replacing.insert_before(item)
-            temp = replacing
+            # set head and tail of DLL
             if replacing == self.storage.head:
                 self.storage.head = replacing.prev
             if replacing == self.storage.tail:
                 self.storage.tail = replacing.prev
-            temp.delete()
+            replacing.delete()
         self.current += 1
 
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
-
-        # TODO: Your code here
-
+        current = self.storage.head
+        while current.next:
+            list_buffer_contents.append(current.value)
+            current = current.next
+        # append last item
+        list_buffer_contents.append(current.value)
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
@@ -37,10 +41,13 @@ class RingBuffer:
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        pass
+        self.storage = [None for x in range(capacity)]
+        self.current = 0
+        self.capacity = capacity
 
     def append(self, item):
-        pass
+        self.storage[self.current % self.capacity] = item
+        self.current += 1
 
     def get(self):
-        pass
+        return [x for x in self.storage if x != None]
