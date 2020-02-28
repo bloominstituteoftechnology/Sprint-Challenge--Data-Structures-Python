@@ -17,9 +17,12 @@ duplicates = []  # Return the list of duplicates in this data structure
 tree = BinarySearchTree(names_1[0])
 for name in names_1[0:]:
     tree.insert(name)
+max = tree.get_max()
+min = tree.get_min()
 for name in names_2:
-    if tree.contains(name):
-        duplicates.append(name)
+    if min < name < max:
+        if tree.contains(name):
+            duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

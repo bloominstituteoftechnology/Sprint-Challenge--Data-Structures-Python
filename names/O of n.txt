@@ -1,1 +1,2 @@
 Original code is O(n^2)
+initial commit is O(n)
