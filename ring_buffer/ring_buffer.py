@@ -22,7 +22,7 @@ class RingBuffer:
             self.storage.remove_from_head()
             self.storage.add_to_head(item)
             self.current = self.storage.tail
-        # * insert after the current value the item and then delete the current item, set the new current item to the previous
+        # * edge case where capacity has been achieved but current node head or tail -- insert new item after the current value the item and then delete the current item, set the new current item to the previous
         else:
             self.current.insert_after(item)
             self.current.delete()
@@ -32,7 +32,7 @@ class RingBuffer:
         list_buffer_contents = []
         # TODO: Your code here
         current_node = self.storage.head
-        while self.current is not None:
+        while current_node is not None:
             list_buffer_contents.insert(0, current_node.value)
             if current_node.next is not None:
                 current_node = current_node.next
