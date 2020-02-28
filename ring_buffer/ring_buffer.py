@@ -37,15 +37,20 @@ class RingBuffer:
         # Note:  This is the only [] allowed
         list_buffer_contents = []
         
-        # TODO: Your code here
-        if self.storage.head == None:
-            return list_buffer_contents
-        item = self.storage.head
-        list_buffer_contents.append(item.value)
-        while item.next:
-            item = item.next
+        # If list isn't empty, we'll do some stuff
+        if self.storage.head != None:
+            # Start out with head
+            item = self.storage.head
+            # and append value to list
             list_buffer_contents.append(item.value)
+            # Now iterate through list until you hit the end
+            while item.next:
+                # Increment item
+                item = item.next
+                # Append item to list
+                list_buffer_contents.append(item.value)
 
+        # If list is empty, all we'll do is return the empty list
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
