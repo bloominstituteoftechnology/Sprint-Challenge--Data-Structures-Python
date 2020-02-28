@@ -43,5 +43,21 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    # test for empty list or has only one node, if list is empty, or had only one node the only option is to return
+    if self.head is None or self.head.get_next() is None:
+      return
+    else:
+      # We will use 3 nodes to reverse the list L, C, and R
+      # We initially have to start before we start looping
+      l = self.head
+      c = l.get_next()
+      l.set_next(None)
+      # Now we loop through while c and c.next exist
+      while c and c.get_next():
+        r = c.get_next()
+        c.set_next(l)
+        l = c
+        c = r
+      # we have to do a final set next on the current, and set the head to our current node
+      c.set_next(l)
+      self.head = c
