@@ -1,5 +1,5 @@
 import time
-
+from BSearchTree import BinarySearchTree
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -13,10 +13,21 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+BST = BinarySearchTree('names')
+
+# refractoring without nested for loops, using a binarysearchtree used before this week to simplify the runtime complexity
+# I believe this is o(n) since this is linear and depends solely on the fact of however many names are inserted 
+for names_one in names_1:
+    BST.insert(names_one)
+
+for names_two in names_2:
+    if BST.contains(names_two):
+        duplicates.append(names_two)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
