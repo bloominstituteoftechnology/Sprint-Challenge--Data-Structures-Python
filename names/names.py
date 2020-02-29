@@ -16,8 +16,8 @@ for name_1 in names_1:
         if name_1 == name_2:
             duplicates.append(name_1)
 end_time = time.time()
-print (f"\n{len(duplicates)} duplicates:\n{', '.join(duplicates)}\n")
-print (f"Two for-loops runtime: {end_time - start_time} seconds\n\n")
+print (f"\n{len(duplicates)} duplicates:\n{', '.join(duplicates)}")
+print (f"Two for-loops runtime: {end_time - start_time} seconds\n")
 # Two for-loops runtime: 5.52326512336731 seconds
 
 start_time = time.time()
@@ -51,6 +51,18 @@ print (f"Binary search runtime: {end_time - start_time} seconds\n")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+start_time = time.time()
+duplicates = []
+names_3 = {k:v for v,k in enumerate(names_2)}
+for name_1 in names_1:
+    if name_1 in names_3:
+        duplicates.append(name_1)
+end_time = time.time()
+print (f"{len(duplicates)} duplicates")
+print (f"Dictionary method runtime: {end_time - start_time} seconds\n")
+# Dictionary method runtime: 0.0020265579223632812 seconds
+
 start_time = time.time()
 # duplicates = []
 # for n in names_1:
@@ -59,7 +71,7 @@ start_time = time.time()
 duplicates = [n for n in names_1 if n in names_2]
 end_time = time.time()
 print (f"{len(duplicates)} duplicates")
-print (f"Built-in method runtime: {end_time - start_time} seconds\n")
+print (f"List comprehension method runtime: {end_time - start_time} seconds\n")
 # Built-in method runtime: 0.8597457408905029 seconds
 
 # ---------- Other Methods -----------
@@ -70,3 +82,21 @@ end_time = time.time()
 print (f"{len(duplicates)} duplicates")
 print (f"Alternative method runtime: {end_time - start_time} seconds\n")
 # Alternative method runtime: 2.8357491493225098 seconds
+
+'''
+64 duplicates:
+Hallie Vazquez, Peyton Lloyd, Daphne Hamilton, Jaden Hawkins, Dulce Hines, Piper Hamilton, Marisol Morris, Josie Dawson, Giancarlo Warren, Amiah Hobbs, Jaydin Sawyer, Franklin Cooper, Diego Chaney, Carley Gallegos, Ahmad Watts, Malcolm Nelson, Malcolm Tucker, Grace Bridges, Luciana Ford, Davion Arias, Pablo Berg, Jadyn Mays, Marley Rivers, Abel Newman, Sanai Harrison, Cloe Norris, Clay Wilkinson, Salma Meza, Addison Clarke, Nelson Acevedo, Devyn Aguirre, Winston Austin, Carsen Tyler, Hayley Morgan, Aleah Valentine, Camryn Doyle, Josie Cole, Nathalie Little, Leia Foley, Jordin Schneider, Justine Soto, Lennon Hunt, Zara Suarez, Kale Sawyer, William Maldonado, Irvin Krause, Maliyah Serrano, Selah Hansen, Kameron Osborne, Alvaro Robbins, Leon Cochran, Andre Carrillo, Dashawn Green, Eden Howe, Logan Morrow, Ralph Roth, Trace Gates, Megan Porter, Aydan Calderon, Raven Christensen, Ashlee Randall, Victoria Roach, River Johnson, Ali Collier
+Two for-loops runtime: 4.23667049407959 seconds
+
+64 duplicates
+Binary search runtime: 0.05987548828125 seconds
+
+64 duplicates
+Dictionary method runtime: 0.003004789352416992 seconds
+
+64 duplicates
+List comprehension method runtime: 1.0831055641174316 seconds
+
+64 duplicates
+Alternative method runtime: 2.853367328643799 seconds
+'''
