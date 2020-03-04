@@ -9,10 +9,10 @@ class RingBuffer:
 
     def append(self, item):
         #add an element over writing the oldest one 
-        if self.capacity == self.capacity - 1
-            print('Full!')
-        self.storage.add_to_head(self.current)
-        
+        # if self.capacity == self.capacity - 1
+        #     print('Full!')
+        # self.storage.add_to_head(self.current)
+        pass
 
     def get(self):
         # Note:  This is the only [] allowed
