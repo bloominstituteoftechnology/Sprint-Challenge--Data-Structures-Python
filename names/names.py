@@ -21,7 +21,7 @@ bst = BinarySearchTree(names_1[0])
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-#loop through the names in names_1 file...
+# #loop through the names in names_1 file...
 for names_1 in names_1:
     #use insert method from bst to add the names from from names_1 file 
     bst.insert(names_1)
