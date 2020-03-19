@@ -12,20 +12,35 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 
-#### New code (0.08 seconds, complexity = O(n)) #######
-# creating empty list of duplicates
+
 duplicates = []
 
-# add all names in names_1 to lru cache
-lru = LRUCache(10000)
-for name in names_1:
-    lru.set(name, True)
+s = set()
 
-# loop through names_2 and add to duplicates if name in cache
+for name in names_1:
+    s.add(name)
+
 for name in names_2:
-    if lru.get(name) != None:
+    if name in s:
         duplicates.append(name)
-#######################################################
+
+
+
+### Original SC Solve ###
+# #### New code (0.08 seconds, complexity = O(n)) #######
+# # creating empty list of duplicates
+# duplicates = []
+
+# # add all names in names_1 to lru cache
+# lru = LRUCache(10000)
+# for name in names_1:
+#     lru.set(name, True)
+
+# # loop through names_2 and add to duplicates if name in cache
+# for name in names_2:
+#     if lru.get(name) != None:
+#         duplicates.append(name)
+# #######################################################
 
 
 #----- Old code (~ 10 seconds, complexity = O(n^2)) ------
