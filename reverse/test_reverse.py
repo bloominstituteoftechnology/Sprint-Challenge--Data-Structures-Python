@@ -22,7 +22,7 @@ class LinkedListTests(unittest.TestCase):
   def test_empty_reverse(self):
     self.list.reverse_list()
     self.assertEqual(self.list.head, None)
-    
+
   def test_single_reverse(self):
     self.list.add_to_head(1)
     self.list.reverse_list()
@@ -39,9 +39,8 @@ class LinkedListTests(unittest.TestCase):
     self.assertEqual(self.list.head.value, 1)
     self.assertEqual(self.list.head.get_next().value, 2)
     self.assertEqual(self.list.head.get_next().get_next().value, 3)
-    
 
- 
+
 
 if __name__ == '__main__':
   unittest.main()
