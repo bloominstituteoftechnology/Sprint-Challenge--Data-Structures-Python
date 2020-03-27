@@ -47,4 +47,26 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         # You must use recursion for this solution
-        pass
+        # doing this will require using 'pointers' to reverse the list
+
+        # we need to iterate through the linked list
+        # no tail because it's singly linked
+        # our pointers are going to be:
+        
+        # the previous node
+        # the current node
+        # the next node
+        
+
+        prev = None
+        current_node = self.head 
+        while(current_node is not None): 
+            # update the new node
+            newnode = current_node.get_next()
+            # set the currently inhabited node to to be the now previous node
+            # this is reversing the order
+            current_node.set_next(prev)
+            prev = current_node
+            # move current and previous nodes one step forward
+            current_node = newnode
+        self.head = prev
