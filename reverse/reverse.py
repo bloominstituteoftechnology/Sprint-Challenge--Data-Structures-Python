@@ -3,17 +3,17 @@ class Node:
         # the value at this linked list node
         self.value = value
         # reference to the next node in the list
-        self.next_node = next_node
+        self.next = next_node
 
     def get_value(self):
         return self.value
 
     def get_next(self):
-        return self.next_node
+        return self.next
 
     def set_next(self, new_next):
         # set this node's next_node reference to the passed in node
-        self.next_node = new_next
+        self.next = new_next
 
 
 class LinkedList:
@@ -47,4 +47,11 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         # You must use recursion for this solution
-        pass
+        if node == None:
+            return node
+        if node.next == None:
+            return node
+        node_next = self.reverse_list(node.next, None)
+        node.next.node = node
+        node.next = None
+        return node_next

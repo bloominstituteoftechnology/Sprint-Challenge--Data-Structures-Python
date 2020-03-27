@@ -1,5 +1,8 @@
 import time
+from lru_cache import LRUCache
 
+
+print("Complexity of original code was n^2 as a result of the nested for loops")
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -13,10 +16,11 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+lru = LRUCache(10000)
+for index, name in enumerate(names_1):
+    lru.set(name,index)
+for name_2 in names_2:
+    lru.get(name_2, duplicates)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
