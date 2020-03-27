@@ -20,8 +20,6 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        pass
-
         # if not at capacity:
         # add to the most recent
         # update current
