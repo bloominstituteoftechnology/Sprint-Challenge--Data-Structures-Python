@@ -76,49 +76,5 @@ class LinkedList:
         if self.head is not None:
             recursive_reverse(self.head)
         
-    #     if self.head is not None:
-    #     recursive_reverse(self.head)
+   
 
-    #     # liz
-    #     try:
-    #         if prev != None:
-    #             l2.add_to_head(prev)
-    #     except:
-    #         l2 = LinkedList()
-
-    #     # base: list is empty
-    #     if node == None and prev == None:
-    #         try:
-    #             return l2
-    #         except:
-    #             pass
-
-    #     # else: list is not empty
-    #     else:
-    #         print('else')
-    #         prev = node
-    #         # print('prev val:', prev.value)
-    #         if node:
-    #             node = node.get_next()
-
-    #         # print(node.value)
-            
-
-    #     return self.reverse_list(node, prev)
-
-l = LinkedList()
-l.add_to_head(1)
-l.add_to_head(2)
-l.add_to_head(3)
-l.add_to_head(4)
-l.add_to_head(5)
-l.reverse_list(l.head, None)
-cur = l.head
-print(cur.value)
-cur = cur.get_next()
-print(cur.value)
-cur = cur.get_next()
-print(cur.value)
-cur = cur.get_next()
-print(cur.value)
-# print(l.reverse_list(l.head, None))
