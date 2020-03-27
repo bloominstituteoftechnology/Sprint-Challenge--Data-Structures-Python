@@ -35,8 +35,30 @@ class RingBuffer:
         list_buffer_contents = []
 
         # TODO: Your code here
+        # First check that there are elements in the ring buffer
+        numOfElements = self.storage.length
+        if numOfElements == 0:
+            print("The RingBuffer is empty")
+            return
+        # Go to the head
+        current = self.current
+        control = current.next
+
+        while control != current:
+            list_buffer_contents.append(control.value)
+            # Check that there is another element
+           
 
 
+        # current_ele = self.current
+        # list_buffer_contents.append(current_ele.value)
+        # element = current_ele
+        # while element != current_ele:
+        #     if element.next is not None:
+        #         list_buffer_contents.append(element.value)
+
+
+        
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
