@@ -41,7 +41,6 @@ class RingBuffer:
             else:
                 self.current = self.current.next
 
-
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
