@@ -45,6 +45,36 @@ class LinkedList:
         # if we've gotten here, then the target node isn't in our list
         return False
 
-    def reverse_list(self, node, prev):
-        # You must use recursion for this solution
-        pass
+    def delete(self, value):
+        current = self.head
+        previous = None
+        found = False
+        while current and found is False:
+            if current.get_value() == data:
+                found = True
+            else:
+                previous = current
+                current = current.get_next()
+        if current is None:
+            raise ValueError("Data not in list")
+        if previous is None:
+            self.head = current.get_next()
+        else:
+            previous.set_next(current.get_next())
+
+
+    def reverse_list(self, a=None, b=None):
+        def recursive_reverse(node):
+            if node.next_node == None:
+                self.head = node
+                return
+            recursive_reverse(node.next_node)
+            temp = node.next_node
+            temp.next_node = node
+            node.next_node = None
+        
+        if self.head is not None:
+            recursive_reverse(self.head)
+        
+   
+
