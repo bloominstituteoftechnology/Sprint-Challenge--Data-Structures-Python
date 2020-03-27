@@ -18,13 +18,14 @@ class RingBuffer:
 # When the ring buffer is full and a new element is inserted, 
     def append(self, item):
         # base 
+        node = self.storage.head
 
         """append an element at the end of the buffer"""
         if self.storage.length < self.capacity:
             self.storage.add_to_tail(item)
             # declare node 
             self.current = self.storage.head
-        if self.storage.length ==  self.capacity:
+        elif self.storage.length ==  self.capacity:
         # the oldest element in the ring buffer is overwritten with the newest element.
             oldest = self.storage.head
             self.storage.remove_from_head()
