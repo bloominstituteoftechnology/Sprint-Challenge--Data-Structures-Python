@@ -32,6 +32,8 @@ class RingBuffer:
             if oldest == self.current:
                 # thats where current becomes new tail (is the head)
                 self.current = self.storage.tail
+                
+
             
             
         
@@ -44,6 +46,25 @@ class RingBuffer:
         node = self.current
         # TODO: Your code here
         list_buffer_contents.append(node.value)
+        
+                #now
+        if node.next is not None:
+            next_node = node.next
+        else:
+            next_node = self.storage.head
+            
+        # as long as there is a new node keep going until last
+        while next_node != node:
+            list_buffer_contents.append(next_node.value)
+            if next_node.next is not None:
+                next_node = next_node.next
+            else:
+                next_node = self.storage.head
+                
+                 
+            
+            
+            
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
