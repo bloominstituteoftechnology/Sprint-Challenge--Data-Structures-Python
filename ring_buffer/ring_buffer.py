@@ -20,19 +20,18 @@ class RingBuffer:
         # base 
 
         """append an element at the end of the buffer"""
-        if self.storage.length ==self.capacity:
-            self.storage.add_to_tail(item)
-            # declare node 
-            item = self.storage.head
         if self.storage.length < self.capacity:
             self.storage.add_to_tail(item)
+            # declare node 
+            self.current = self.storage.head
+        if self.storage.length ==  self.capacity:
         # the oldest element in the ring buffer is overwritten with the newest element.
             oldest = self.storage.head
             self.storage.remove_from_head()
             self.storage.add_to_tail(item)
             if oldest == self.current:
-                # thats where current becomes new head
-                self.current = self.storage.head
+                # thats where current becomes new tail (is the head)
+                self.current = self.storage.tail
             
             
         
@@ -44,7 +43,7 @@ class RingBuffer:
         list_buffer_contents = []
         node = self.current
         # TODO: Your code here
-        list_buffer_contents.append(node)
+        list_buffer_contents.append(node.value)
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
