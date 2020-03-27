@@ -6,6 +6,8 @@ from doubly_linked_list import DoublyLinkedList
 # useful for storing log and history information. 
 
 # A ring buffer is a non-growable buffer with a fixed size. 
+# A ring buffer is a buffer with a fixed size. When it fills up,
+# adding another element overwrites the oldest one that was still being kept. 
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
@@ -26,7 +28,7 @@ class RingBuffer:
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
-
+        list_buffer_contents.append(self.current)
         # TODO: Your code here
 
         return list_buffer_contents
