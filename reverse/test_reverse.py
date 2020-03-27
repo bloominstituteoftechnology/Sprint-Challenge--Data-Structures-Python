@@ -25,7 +25,7 @@ class LinkedListTests(unittest.TestCase):
     
   def test_single_reverse(self):
     self.list.add_to_head(1)
-    self.list.flip_the_switch(self.list.head, None)
+    self.list.reverse_list(self.list.head, None)
     self.assertEqual(self.list.head.value, 1)
 
   def test_longer_reverse(self):
@@ -35,7 +35,7 @@ class LinkedListTests(unittest.TestCase):
     self.list.add_to_head(4)
     self.list.add_to_head(5)
     self.assertEqual(self.list.head.value, 5)
-    self.list.flip_the_switch(self.list.head, None)
+    self.list.reverse_list(self.list.head, None)
     self.assertEqual(self.list.head.value, 1)
     self.assertEqual(self.list.head.get_next().value, 2)
     self.assertEqual(self.list.head.get_next().get_next().value, 3)

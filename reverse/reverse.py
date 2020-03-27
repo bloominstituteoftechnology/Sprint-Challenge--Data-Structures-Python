@@ -46,22 +46,6 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        # You must use recursion for this solution
-
-        
-        # prev = node.get_next()
-        # curr = node
-        # next_node = node.set_next(curr.next_node)
-
-        # self.reverse_list(next_node, previous_node)
-        self.reverse(node.get_n())
-        temp = node.get_next()
-        temp.set_next(node)
-        node.set_next(None)
-
-
-
-    def flip_the_switch(self, node, prev):
 
         previous_node = prev
         current_node = self.head
