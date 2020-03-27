@@ -11,12 +11,20 @@ class RingBuffer:
         if self.storage.length < self.capacity:
             self.storage.add_to_tail(item)
             self.current = self.storage.tail
-        elif self.storage.length >= self.capacity:
-            lru = self.storage.head
-            self.storage.remove_from_head()
-            self.storage.add_to_tail(item)
-            if lru == self.current:
-                self.current = self.storage.tail
+        if self.storage.length == self.capacity:
+            self.current.value = item
+            if self.current == self.storage.tail:
+                self.current = self.storage.head
+            else:
+                self.current = self.current.next
+            
+            
+        # elif self.storage.length == self.capacity:
+        #     lru = self.storage.head
+        #     self.storage.remove_from_head()
+        #     self.storage.add_to_tail(item)
+        #     if lru == self.current:
+        #         self.current = self.storage.tail
 
     def get(self):
         # Note:  This is the only [] allowed
@@ -29,8 +37,8 @@ class RingBuffer:
             node = node.next
 
         return list_buffer_contents
-    
-    
+
+
 # buffer = RingBuffer(3)
 
 # buffer.get()   # should return []
