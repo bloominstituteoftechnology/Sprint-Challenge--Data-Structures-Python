@@ -23,15 +23,16 @@ class RingBuffer:
         if self.storage.length ==self.capacity:
             self.storage.add_to_tail(item)
             # declare node 
-            node = self.storage.head
-        if self.storage.length <= self.capacity:
+            item = self.storage.head
+        if self.storage.length < self.capacity:
             self.storage.add_to_tail(item)
         # the oldest element in the ring buffer is overwritten with the newest element.
             oldest = self.storage.head
             self.storage.remove_from_head()
             self.storage.add_to_tail(item)
             if oldest == self.current:
-                self.current = self.storage.tail
+                # thats where current becomes new head
+                self.current = self.storage.head
             
             
         
@@ -43,7 +44,7 @@ class RingBuffer:
         list_buffer_contents = []
         node = self.current
         # TODO: Your code here
-        
+        list_buffer_contents.append(node)
         return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
