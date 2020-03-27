@@ -33,9 +33,9 @@ class RingBuffer:
         if self.current < self.capacity:
             self.storage.add_to_head(item)
             self.current += 1
-        if self.current > self.capacity:
-            self.storage.remove_from_tail()
-            self.storage.add_to_head(item)
+        if self.current == self.capacity:
+            self.storage.remove_from_head()
+            self.storage.add_to_tail(item)
 
     def get(self):
         # Note:  This is the only [] allowed

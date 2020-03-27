@@ -20,6 +20,7 @@ class LinkedList:
     def __init__(self):
         # reference to the head of the list
         self.head = None
+        self.next = None
 
     def add_to_head(self, value):
         node = Node(value)
@@ -45,13 +46,21 @@ class LinkedList:
         # if we've gotten here, then the target node isn't in our list
         return False
 
-    def reverse_list(self, node, prev):
-        # You must use recursion for this solution
-        if node == None:
-            return node
-        if node.next == None:
-            return node
-        node_next = self.reverse_list(node.next, None)
-        node.next.node = node
-        node.next = None
-        return node_next
+    # def reverse_list(self, node, prev):
+    #     # You must use recursion for this solution
+    #     if node == None:
+    #         return node
+    #     if node.next == None:
+    #         return prev
+    #     node_next = self.reverse_list(node.next, node)
+    #     node.next.node = node
+    #     node.next = None
+    #     return node_next
+    
+    def reverse_list(self, item, tail = None):
+        next_ = item.next
+        item.next = tail
+        if next_ is None:
+            return item
+        else:
+            return self.reverse_list(next_, item)
