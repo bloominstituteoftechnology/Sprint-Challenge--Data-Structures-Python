@@ -141,3 +141,9 @@ class DoublyLinkedList:
                 highest_value = current_node.value
             current_node = current_node.next
         return highest_value
+
+    def insert_after(self, node, value):
+        node.insert_after(value)
+        self.length += 1
+        if node == self.tail:
+            self.tail = self.tail.next
