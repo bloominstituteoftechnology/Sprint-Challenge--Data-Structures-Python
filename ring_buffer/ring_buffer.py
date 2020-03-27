@@ -8,15 +8,59 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        pass
+        if self.storage.length < self.capacity:
+            self.storage.add_to_tail(item)
+            self.current = self.storage.tail
+        if self.storage.length == self.capacity:
+            self.current.value = item
+            if self.current == self.storage.tail:
+                self.current = self.storage.head
+            else:
+                self.current = self.current.next
+            
+            
+        # elif self.storage.length == self.capacity:
+        #     lru = self.storage.head
+        #     self.storage.remove_from_head()
+        #     self.storage.add_to_tail(item)
+        #     if lru == self.current:
+        #         self.current = self.storage.tail
 
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
-
-        # TODO: Your code here
+        
+        node = self.storage.head
+        
+        while  node:
+            list_buffer_contents.append(node.value)
+            node = node.next
 
         return list_buffer_contents
+
+
+# buffer = RingBuffer(3)
+
+# buffer.get()   # should return []
+
+# print("Appending: a, b, c")
+# buffer.append('a')
+# buffer.append('b')
+# buffer.append('c')
+
+# print(buffer.get())   # should return ['a', 'b', 'c']
+
+# # 'd' overwrites the oldest value in the ring buffer, which is 'a'
+# print("Appending: 'd'; 'd' should overwrite 'a'")
+# buffer.append('d')
+
+# print(buffer.get())   # should return ['d', 'b', 'c']
+
+# print("Appending 'e', 'f'; Both should overwrite 'b' & 'c' respectively")
+# buffer.append('e')
+# buffer.append('f')
+
+# print(buffer.get())   # should return ['d', 'e', 'f']
 
 # ----------------Stretch Goal-------------------
 
