@@ -33,12 +33,21 @@ class RingBuffer:
 # ----------------Stretch Goal-------------------
 
 
-class ArrayRingBuffer:
-    def __init__(self, capacity):
-        pass
+# class ArrayRingBuffer:
+#     def __init__(self, capacity):
+#         self.capacity = capacity
+#         self.storage = []
+#         self.index = 0
+#         self.update_index = 0
 
-    def append(self, item):
-        pass
+#     def append(self, item):
+#         if len(self.storage) == self.capacity:
+#             if self.update_index >= len(self.storage):
+#                 self.update_index = 0
+#             self.storage[self.update_index] = item
+#         else:
+#             self.storage.append(item)
+            
 
-    def get(self):
-        pass
+#     def get(self):
+#         return self.storage

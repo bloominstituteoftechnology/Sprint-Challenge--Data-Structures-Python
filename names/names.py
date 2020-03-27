@@ -68,3 +68,6 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+# A set would be a good tool to use as it's lookup time is O(1), so add first list to the set - O(n)
+# go through second array checking if elements exist in the set, would be O(m). so O(m + n) 
