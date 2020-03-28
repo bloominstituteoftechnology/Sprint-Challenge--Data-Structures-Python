@@ -42,7 +42,7 @@ class RingBufferTests(unittest.TestCase):
 
 class ArrayRingBufferTests(unittest.TestCase):
     def setUp(self):
-        self.buffer = ArrayRingBuffer(5)
+        self.buffer = ArrayRingBuffer(5) # assumes we initialize size of array to the lemgth of capacity, reminds me of c++
         self.buffer_2 = ArrayRingBuffer(5)
 
     def test__array_ring_buffer(self):
