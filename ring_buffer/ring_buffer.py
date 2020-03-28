@@ -54,7 +54,7 @@ class ArrayRingBuffer:
     def append(self, item):
         
         self.index += 1
-        print(item, self.index, len(self.storage))
+        # print(item, self.index, len(self.storage))
         if self.index == len(self.storage):
             self.index = 0
         self.storage[self.index] = item
