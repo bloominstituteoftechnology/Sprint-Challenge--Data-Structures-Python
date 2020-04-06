@@ -8,19 +8,26 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        self.current = 0
-        if self.current < self.capacity:
+        
+        if self.storage.length == self.capacity:
+            self.storage.remove_from_head()
             self.storage.add_to_head(item)
-
+            
+        else:
+            self.storage.add_to_tail(item)
+            
+            
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
+        current_node = self.storage.head
 
-        # TODO: Your code here
-
+        while (current_node is not None):
+            list_buffer_contents.append(current_node.value)
+            current_node = current_node.next
         return list_buffer_contents
 
-# ----------------Stretch Goal-------------------
+# # ----------------Stretch Goal-------------------
 
 
 class ArrayRingBuffer:
