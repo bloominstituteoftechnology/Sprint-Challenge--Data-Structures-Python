@@ -92,6 +92,12 @@ class DoublyLinkedList:
         self.delete(self.tail)
         return value
 
+    def insert_after(self, existing_node, new_value):
+        existing_node.insert_after(new_value)
+        self.length += 1
+        if existing_node == self.tail:
+            self.tail = self.tail.next
+    
     """Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List."""
     def move_to_front(self, node):
