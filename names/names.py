@@ -22,7 +22,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# IMPROVED CODE: O(n) runtime of 0.109 seconds
+# IMPROVED CODE: O(n log(n)) runtime of 0.109 seconds
 # Put the 2nd list of names into a BST
 # Then append matches to duplicates list as before.
 names2_tree = BinarySearchTree(names_2[0])
