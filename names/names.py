@@ -1,4 +1,5 @@
 import time
+from dll_queue import Queue
 
 start_time = time.time()
 
@@ -13,10 +14,15 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+q = Queue()
+for name_2 in names_2:
+    q.enqueue(name_2)
+while q.len() > 0:
+    name = q.dequeue()
+    if name in names_1:
+        duplicates.append(name)
+
+    
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
