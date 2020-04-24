@@ -8,10 +8,12 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
+        
         if len(self.storage) < self.capacity:
             self.storage.add_to_tail(item)
             self.storage.tail.next = self.storage.head
             self.current = self.storage.head
+        
         else:
             if self.current == self.storage.head:
                 self.storage.remove_from_head()
@@ -23,12 +25,7 @@ class RingBuffer:
                 self.storage.remove_from_head()
                 self.storage.add_to_tail(item)
                 self.storage.tail.next = self.storage.head
-                
-        #     self.storage.add_to_tail(item)
-        #     self.current.pre
-        #     last_node = self.current
-        #     self.current = last_node.next
-        #     self.storage.delete(last_node)
+    
 
 
     def get(self):
@@ -49,10 +46,23 @@ class RingBuffer:
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.current = 0
+        self.full = False
+        self.storage = [0] * capacity
 
     def append(self, item):
-        pass
+        self.storage[self.current] = item
+        
+        if self.current == (self.capacity - 1):
+            self.full = True
+            self.current = 0
+        else:
+            self.current += 1
+
 
     def get(self):
-        pass
+        if self.full:
+            return self.storage
+        else:
+            return self.storage[:self.current]

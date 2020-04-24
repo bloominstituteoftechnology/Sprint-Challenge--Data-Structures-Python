@@ -1,5 +1,6 @@
 import time
 from dll_queue import Queue
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
@@ -14,15 +15,15 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-q = Queue()
+# for name_2 in names_2:
+#     if name_2 in names_1:
+#         duplicates.append(name_2)
+bst = BinarySearchTree(names_1[0])
+for name_1 in names_1:
+    bst.insert(name_1)
 for name_2 in names_2:
-    q.enqueue(name_2)
-while q.len() > 0:
-    name = q.dequeue()
-    if name in names_1:
-        duplicates.append(name)
-
-    
+    if bst.contains(name_2):
+        duplicates.append(name_2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
