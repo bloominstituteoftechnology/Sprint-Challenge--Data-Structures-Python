@@ -1,5 +1,5 @@
 # Binary Search Tree - discards duplicate values
- class BinarySearchTree:
+class BinarySearchTree:
      def __init__(self, value, parent = None):
          self.value = value
          self.left = None
