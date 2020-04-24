@@ -14,7 +14,10 @@ class RingBuffer:
         # Note:  This is the only [] allowed
         list_buffer_contents = []
 
-        # TODO: Your code here
+        node = self.storage.head
+        while node:
+            list_buffer_contents.append(node.value)
+            node = node.next
 
         return list_buffer_contents
 
