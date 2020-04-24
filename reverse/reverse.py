@@ -56,3 +56,13 @@ class LinkedList:
         self.reverse_list(node.get_next(), node)
         
         node.next_node = prev
+        
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.value)
+            current = current.next_node
+
+
+
+
