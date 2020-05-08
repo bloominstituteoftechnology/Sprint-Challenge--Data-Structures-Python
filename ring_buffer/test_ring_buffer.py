@@ -1,6 +1,5 @@
 import unittest
-from ring_buffer import RingBuffer, ArrayRingBuffer
-
+from ring_buffer import RingBuffer
 
 class RingBufferTests(unittest.TestCase):
     def setUp(self):
