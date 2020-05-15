@@ -18,14 +18,16 @@ class RingBuffer:
                 self.marker = self.storage.head
         # reached max capacity   
         else:
-        # overwrite marker value with input item
+            print(f'Overwriting Marker: {self.marker.value} with New Item: {item}')
+            # overwrite marker value with input item
             self.marker.value = item
-            # move marker to the next oldest. loop back to the head upon reaching the tail
+            # change marker to next node if exists
             if self.marker.next:
                 self.marker = self.marker.next
+            # loops back to the head of list if next is null/reached tail
             else:
                 self.marker = self.storage.head
-            # print(f'Next Marker: {self.marker}')
+            print(f'Next Marker: {self.marker}')
         
 
     def get(self):
@@ -48,6 +50,9 @@ buffer.append('d')
 buffer.get()   # should return ['d', 'b', 'c']
 
 buffer.append('e')
+
+buffer.get()   # should return ['d', 'e', 'c']
+
 buffer.append('f')
 
 buffer.get()   # should return ['d', 'e', 'f']
