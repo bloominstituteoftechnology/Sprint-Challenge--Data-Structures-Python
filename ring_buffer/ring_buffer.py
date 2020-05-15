@@ -1,9 +1,126 @@
+class DoublyLinkedList:
+    def __init__(self, node=None):
+        self.head = node
+        self.tail = node
+        self.length = 1 if node is not None else 0
+
+    def __len__(self):
+        return self.length
+
+    
+    def add_to_head(self, value):
+        self.length += 1
+        new_node = ListNode(value)
+        if not self.head and not self.tail:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            new_node.prev = new_node
+            self.head = new_node
+
+    
+    def remove_from_head(self):
+        value = self.head.value
+        self.delete(self.head)
+        return value
+
+    
+    def add_to_tail(self, value):
+        new_node = ListNode(value, None, None)
+        self.length += 1
+        #check for emtpy list
+        if not self.head and not self.tail:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
+            
+
+    
+    def remove_from_tail(self):
+        # Get the value of tail
+        value = self.tail.value
+        #Use your delete method to remove that value
+        self.delete(value)
+        #return that value
+        return value
+
+    
+    def move_to_front(self, node):
+        if node is self.head:
+            return
+        value = node.value
+        self.delete(node)
+        self.add_to_head(value)
+
+
+    
+    def move_to_end(self, node):
+        if node is self.tail:
+            return
+        value = node.value
+        self.delete(node)
+        self.add_to_tail(value)
+
+    
+    def delete(self, node):
+        self.length -= 1
+
+        if self.head is self.tail:
+            self.head = None
+            self.tail = None
+        elif node is self.head:
+            self.head = node.next
+            node.delete()
+        elif node is self.tail:
+            self.tail = node.prev
+            node.delete()
+        else:
+            node.delete()
+        
+    
+    def get_max(self):
+        value = self.head.value
+        current = self.head
+
+        while current is not None:
+            if current.value > value:
+                value = current.value
+            current = current.next
+        return value
+
+
+
+
+
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.currentValue = None
+        self.storage = DoublyLinkedList()
 
     def append(self, item):
-        pass
+        if len(self.storage) < self.capacity:
+            self.storage.add_to_tail(item)
+            self.currentValue = self.storage.tail
+        
+        else: 
+            self.currentValue == self.storage.tail:
+            self.storage.remove_from_head()
+            self.storage.add_to_head(item)
+            self.currentValue = self.storage.head
+            
+            
 
     def get(self):
-        pass
+         ring_buffer_list = []
+         
+         node = self.storage.head
+         while node:
+             ring_buffer_list.append(node.value)
+             node = node.next
+
+         return ring_buffer_list
