@@ -135,9 +135,8 @@ class RingBuffer:
             self.currentValue = self.storage.tail
         
         else: 
-           if self.currentValue == self.storage.tail:
-            self.storage.remove_from_head()
-            self.storage.add_to_head(item)
+           if not self.currentValue.next:
+            self.currentValue.value = item
             self.currentValue = self.storage.head
             
             
