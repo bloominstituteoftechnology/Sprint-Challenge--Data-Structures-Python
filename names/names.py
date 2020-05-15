@@ -33,7 +33,9 @@ duplicates = []  # Return the list of duplicates in this data structure
 # iterates through first list
 # Run Time Complexity is O(n)?
 for name in names_2:
+    # checks if name is in b tree
     if bts_1.contains(name):
+        # adds name to duplicates list if returns True
         duplicates.append(name)
 
 end_time = time.time()
