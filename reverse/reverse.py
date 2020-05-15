@@ -38,6 +38,7 @@ class LinkedList:
 
         return False
 
+
     def reverse_list(self, node, prev): 
         current = node
         if current is None:                         # checking to see if node called in the parameters is none 
@@ -49,6 +50,13 @@ class LinkedList:
         self.reverse_list(current.get_next(), node )# inputing the next node as the argument for node and the current node as the argument for previous.
         current.next_node = prev                    # this flips the pointer from the current next node to the previous node. 
 
+"""
+1->2->3->None
+```
+would become...
+```
+3->2->1->None
+"""
     # def reverse_list(self, node, prev):
     #     prev_n = prev                    # set previous to be none
     #     c_n = self.head                  # current is == self.head
@@ -76,10 +84,3 @@ class LinkedList:
         # return n_head 
 
 
-"""
-1->2->3->None
-```
-would become...
-```
-3->2->1->None
-"""
