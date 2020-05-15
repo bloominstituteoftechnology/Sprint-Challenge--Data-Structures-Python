@@ -23,6 +23,7 @@ class LinkedList:
 
     def add_to_head(self, value):
         node = Node(value)
+
         if self.head is not None:
             node.set_next(self.head)
 
