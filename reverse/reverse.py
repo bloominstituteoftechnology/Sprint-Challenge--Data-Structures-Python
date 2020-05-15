@@ -12,6 +12,7 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -39,4 +40,32 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        # the value of the current node is our first param
+        # the value of the previous node is our second param
+        # we need to do this recurisevly
+        if node is None:
+            return None
+        # ** if we are at the tail of our list --> set the tail to equal our new head
+        # ** set the next node of the new head to equal the previous value
+        if node.next_node is None:
+            self.head = node
+            node.next_node = prev
+        else:
+            # ** if we are not at the tail --> the node we pass into reverse list
+            next_node = node.next_node
+            node.next_node = prev
+            self.reverse_list(next_node, node)
+
+
+""" Inside of the `reverse` directory, you'll find a basic implementation of a Singly Linked List. _Without_ making it a Doubly Linked List (adding a tail attribute), complete the `reverse_list()` function within `reverse/reverse.py` reverse the contents of the list using recursion, *not a loop.*
+
+For example,
+```
+1->2->3->None
+```
+would become...
+```
+3->2->1->None
+```
+
+While credit will be given for a functional solution, only optimal solutions will earn a ***3*** on this task."""
