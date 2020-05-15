@@ -53,16 +53,3 @@ class RingBuffer:
         list_buffer_contents.append(cur.value)
 
         return list_buffer_contents
-
-# ----------------Stretch Goal-------------------
-
-
-class ArrayRingBuffer:
-    def __init__(self, capacity):
-        pass
-
-    def append(self, item):
-        pass
-
-    def get(self):
-        pass
