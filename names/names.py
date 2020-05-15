@@ -21,7 +21,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# O(n^n) for loop within a four loop
+# O(n^2) for loop within a four loop
 
 # O(n log n) due to bigger list its log n
 
@@ -37,6 +37,12 @@ for name in names_1: # checks if name is in list
 for name in names_2: #checks if name is in list 
     if binary.contains(name): 
         duplicates.append(name) # appends duplicates
+
+
+
+# Space complexity	O(n) + O(m)	O(n)
+
+# Time complexity	O(n) + O(m) + O(m*n)
 
 
 #stretch
