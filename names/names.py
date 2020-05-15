@@ -10,7 +10,7 @@ f.close()
 f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
-
+0
 
 
 duplicates = []  # Return the list of duplicates in this data structure
