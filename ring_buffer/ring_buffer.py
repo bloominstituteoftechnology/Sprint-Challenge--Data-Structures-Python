@@ -1,3 +1,30 @@
+class ListNode:
+    def __init__(self, value, prev=None, next=None):
+        self.value = value
+        self.prev = prev
+        self.next = next
+
+    
+    def insert_after(self, value):
+        current_next = self.next
+        self.next = ListNode(value, self, current_next)
+        if current_next:
+            current_next.prev = self.next
+
+    
+    def insert_before(self, value):
+        current_prev = self.prev
+        self.prev = ListNode(value, current_prev, self)
+        if current_prev:
+            current_prev.next = self.prev
+
+    
+    def delete(self):
+        if self.prev:
+            self.prev.next = self.next
+        if self.next:
+            self.next.prev = self.prev
+
 class DoublyLinkedList:
     def __init__(self, node=None):
         self.head = node
@@ -108,7 +135,7 @@ class RingBuffer:
             self.currentValue = self.storage.tail
         
         else: 
-            self.currentValue == self.storage.tail:
+           if self.currentValue == self.storage.tail:
             self.storage.remove_from_head()
             self.storage.add_to_head(item)
             self.currentValue = self.storage.head
