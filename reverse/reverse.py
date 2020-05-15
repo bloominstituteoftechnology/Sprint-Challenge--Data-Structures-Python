@@ -21,8 +21,16 @@ class LinkedList:
 
         if self.head is not None:
             node.set_next(self.head)
-
+            
         self.head = node
+        
+    def display(self):
+        elements = []
+        current = self.head
+        while current != None:
+            elements.append(current.value)
+            current = current.get_next()
+        print(elements)
 
     def contains(self, value):
         if not self.head:
@@ -39,4 +47,29 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        marker = self.head
+        nextNode = None
+        prev = None
+        # assume prev is None already?
+        #check if next is not None
+        while marker is not None:
+            #grab node next to marker
+            nextNode = marker.next_node
+            #overwrites next_node connection to prev
+            marker.next_node = prev #prev == None first run
+            #updates prev 
+            prev = marker
+            #sets marker as nextNode
+            marker = nextNode
+        self.head = prev
+    
+
+ll = LinkedList()
+ll.add_to_head(5)
+ll.add_to_head(4)
+ll.add_to_head(3)
+ll.add_to_head(2)
+ll.add_to_head(1)
+ll.display()
+ll.reverse_list(ll.head, None)
+ll.display()
