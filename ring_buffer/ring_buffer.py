@@ -138,7 +138,7 @@ class RingBuffer:
             self.currentValue = self.storage.tail
         else: 
             # the capcity is equal to the currentValue
-           if not self.currentValue.next:
+            if not self.currentValue.next:
             self.currentValue.value = item
             self.currentValue = self.storage.head
             else: 
