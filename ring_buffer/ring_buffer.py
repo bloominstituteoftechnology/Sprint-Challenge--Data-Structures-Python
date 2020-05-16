@@ -130,14 +130,23 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
+        # check for capacity value
         if len(self.storage) < self.capacity:
+            # if less, add to this list
             self.storage.add_to_tail(item)
+            # keep that current value
             self.currentValue = self.storage.tail
-        
         else: 
+            # the capcity is equal to the currentValue
            if not self.currentValue.next:
             self.currentValue.value = item
             self.currentValue = self.storage.head
+            else: 
+            #this is where we'll have to figure out a way to replace
+            #the last capcity value
+            # and move the current over 
+            self.currentValue.value = item
+            self.currentValue = self.currentValue.next
             
             
 
