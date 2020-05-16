@@ -6,6 +6,9 @@ class Node:
     def get_value(self):
         return self.value
 
+    def get_node(self):
+        return self.node
+
     def get_next(self):
         return self.next_node
 
@@ -52,6 +55,8 @@ class LinkedList:
         prev = None
         # assume prev is None already?
         #check if next is not None
+
+        # iterative solution
         while marker is not None:
             #grab node next to marker
             nextNode = marker.next_node
@@ -61,8 +66,21 @@ class LinkedList:
             prev = marker
             #sets marker as nextNode
             marker = nextNode
+            
         self.head = prev
     
+        #recursive
+
+        # if not node:
+        #     self.head = prev
+        #     return 
+        # else:
+        #     nextNode = node.next_node
+        #     node.next = prev
+        #     self.reverse_list(nextNode, node)
+       
+
+
 
 ll = LinkedList()
 ll.add_to_head(5)

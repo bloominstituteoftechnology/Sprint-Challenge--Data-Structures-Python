@@ -11,7 +11,7 @@ f.close()
 bts_1 = BinarySearchTree('')
 
 # add names from first list to binary search tree
-# Run Time Complexity is O(n/log(n)) ? 
+# Run Time Complexity is O(n * log(n)) ? 
 for name in names_1:
     #O(log(n))
     bts_1.insert(name)
@@ -30,13 +30,14 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 # Run Time Complexity is O(n^2)
+
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
 # iterates through first list
-# Run Time Complexity is O(n)?
+# Run Time Complexity is O(n * log(n))
 for name in names_2:
     # checks if name is in b tree O(log(n))?
     if bts_1.contains(name):
@@ -44,6 +45,7 @@ for name in names_2:
         duplicates.append(name)
 
 #Stretch
+# Big O(n) sets run at O(1) per value
 # duplicates = set1.intersection(set2)
 
 end_time = time.time()

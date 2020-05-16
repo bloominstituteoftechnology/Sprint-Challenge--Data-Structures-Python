@@ -32,7 +32,7 @@ class RingBuffer:
 
     def get(self):
          print(self.storage.get_all())
-         return self.storage.get_all()
+         return self.storage.get_all() 
 
 buffer = RingBuffer(3)
 
