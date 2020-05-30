@@ -17,3 +17,7 @@ class RingBuffer:
     def get(self):
         return self.storage
         pass
+    
+    # ran test and came out .001s!
+    
+    
