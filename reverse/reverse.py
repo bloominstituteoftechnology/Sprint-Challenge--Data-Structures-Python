@@ -46,6 +46,8 @@ class LinkedList:
     #   ## previous node becomes the current_node and current_node becomes next node
     #   ## head moves to previous node 
     
+    #   ## ran test and returned successful with runtime o f .011s!
+    
         prev = None
         node = None
         current_node = self.head
@@ -58,5 +60,3 @@ class LinkedList:
             self.head = prev
         return prev 
         pass 
-    
-
