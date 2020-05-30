@@ -39,4 +39,18 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        # Null case and single item list case
+        if node is None or node.next_node is None:
+            self.head = node
+            return node
+
+
+        # We want to recurse down to the last node in the list calling reverse_list at every step
+        revnode = self.reverse_list(node.get_next(), node)
+        # And now we add each previous node to that list
+        nxnode = node.get_next()
+        nxnode.set_next(node)
+        node.set_next(None)
+
+        # And now we can return revnode
+        return revnode

@@ -1,4 +1,5 @@
 import time
+from namesbst import BSTNode
 
 start_time = time.time()
 
@@ -13,10 +14,20 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+leadname1 = names_1[0]
+names_1 = names_1[1:]
+bst = BSTNode(leadname1)
+for name1 in names_1:
+    bst.insert(name1)
+
+for name2 in names_2:
+    if bst.contains(name2):
+        duplicates.append(name2)
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
