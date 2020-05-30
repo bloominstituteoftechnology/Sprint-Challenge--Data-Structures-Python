@@ -19,6 +19,11 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+""" 
+my code implementation, after test, had a runtime of .12772s returning 64 dup names from both names list
+
+"""
+
 nodes = BSTNode('')
 
 for name_1 in names_1:
