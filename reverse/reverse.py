@@ -38,24 +38,25 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
+    def reverse_list(self, node, prev): 
+    #   # Objective:
+    #   # initialize pointers, previous and node as None
+    #   # iterate thru linked list
+    #   ## need to setup the next node coming up as current next node via what used to be old node
+    #   ## previous node becomes the current_node and current_node becomes next node
+    #   ## head moves to previous node 
+    
+        prev = None
+        node = None
+        current_node = self.head
+        
+        while current_node is not None:
+            next = current_node.next_node
+            current_node.next_node = prev
+            prev = current_node
+            current_node = next
+            self.head = prev
+        return prev 
         pass 
-    # Objective:
-    # initialize pointers, previous and node as None
-    # iterate thru linked list
-    ## need to setup the next node coming up as current next node via what used to be old node
-    ## previous node becomes the current_node and current_node becomes next node
-    ## head moves to previous node
     
-    prev = None
-    node = None
-    current_node = self.tail
-    
-    while current_node is not None:
-        next = current_node.next_node
-        current_node.next.node = prev
-        prev = current.node
-        current_node = next
-        self.head = prev
-    return prev
 
