@@ -7,10 +7,12 @@ class RingBuffer:
 
     def append(self, item):
         # if the current length of the list is less than the capacity, 
-        # append an element at the end of the buffer
+        # append item to the tail
+        # otherwise, append item to tail and remove head
         if len(self.data) < self.capacity: 
             self.data.append(item)
         else:
+            self.data[self.current] = item
             self.current += 1
             if self.current > (self.capacity) - 1:
                 self.current = 0
