@@ -39,21 +39,21 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        #  mark the last node as head
-        if node.next is None:
-            self.head = node
+        pass
 
-            # update next to prev node
-            node.next = prev
-            return
-        
-        # Save node.next
-        next - node.next
-
-        # update next
-        node.next = prev
+    def printNode(self):
+        current = self.head
+        while current:
+            print(current.value)
+            current = current.get_next()
 
 
+
+myList = LinkedList()
+myList.add_to_head(1)
+myList.add_to_head(2)
+myList.add_to_head(3)
+myList.printNode()
 
 ##  Sources:
     # 1.  https://www.geeksforgeeks.org/reverse-a-linked-list/
