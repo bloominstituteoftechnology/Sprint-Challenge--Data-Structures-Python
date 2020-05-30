@@ -23,6 +23,9 @@ class RingBuffer:
 
 
 
-        ##  Sources:
-            # 1.  http://code.activestate.com/recipes/68429-ring-buffer/
-            # 2. 
+# Sources:
+
+    # 1. https://www.oreilly.com/library/view/python-cookbook/0596001673/ch05s19.html
+    # 2. http://code.activestate.com/recipes/68429-ring-buffer/
+    # 3. https://codereview.stackexchange.com/questions/85068/efficient-ring-buffer-fifo
+    # 4. http://jakevdp.github.io/blog/2014/05/05/introduction-to-the-python-buffer-protocol/

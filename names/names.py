@@ -18,10 +18,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+#----------------------------------------------------------------------------------
+
 #  MY REPLACEMENT (Source: https://stackoverflow.com/questions/2864842/common-elements-comparison-between-2-lists)
 for item in names_1:
   if item in names_2:
     duplicates.append(item)
+
+ 
+#------------------------------------------------------------------------------------
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
