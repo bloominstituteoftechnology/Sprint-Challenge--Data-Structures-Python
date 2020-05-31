@@ -56,6 +56,13 @@ class LinkedList:
 
 # This is the edit I made on Sunday, May 31th @ 5:47PM
 
+# Steps:
+# 1. Pass the head pointer to this method as node.
+# 2. Check if the next node of node is None:
+        # a) If yes, this indicates that we have reached the end of the linked list. Set the head  pointer to this node
+        # b) If no, pass the next node of node to the reverse method
+# 3. Once the last node is reached, the reversing happens.
+
     def reverse_list(self, node):
         if node.get_next()  == None:
             self.head = node
@@ -68,7 +75,7 @@ class LinkedList:
 # Sources:  
 # 1. Lecture work - Doubly Linked Lists    
 # 2. https://www.pythoncentral.io/reverse-singly-linked-list/
-## NOTE: In order to solve this problem, I  deleted the prev attribute from the class definition
+## NOTE: In order to solve this problem, I deleted 'prev' attribute from the 'reverse_list' class definition
    
 
 
