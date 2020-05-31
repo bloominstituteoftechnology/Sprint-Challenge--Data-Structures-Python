@@ -45,12 +45,30 @@ class LinkedList:
             print(current.value)
             current = current.get_next()
 
-    def reverse_list(self, node, prev):
-        if node.next != None:
-            self.reverse_list(node.next, prev = None)
-        node.next = prev
+#  This is the answered I submitted on Friday, May 29th @ 11:59PM 
 
-    
+    # def reverse_list(self, node, prev):
+    #     if node.next != None:
+    #         self.reverse_list(node.next, prev = None)
+    #     node.next = prev
+
+#------------------------------------------------------------------
+
+# This is the edit I made on Sunday, May 31th @ 5:47PM
+
+    def reverse_list(self, node):
+        if node.get_next()  == None:
+            self.head = node
+            return
+        self.reverse_list(node.get_next())
+        prev = node.get_next()
+        prev.set_next(node)
+        node.set_next(None)
+   
+# Sources:  
+# 1. Lecture work - Doubly Linked Lists    
+# 2. https://www.pythoncentral.io/reverse-singly-linked-list/
+## NOTE: In order to solve this problem, I  deleted the prev attribute from the class definition
    
 
 
@@ -60,63 +78,9 @@ myList.add_to_head("first")
 myList.add_to_head("second")
 myList.add_to_head("third")
 myList.add_to_head("fourth")
+print("Original List:")
+myList.printNode()
+print("Reversed List:")
+myList.reverse_list(myList.head)
 myList.printNode()
 
-
-
-# Sample codes 
-#    
-#       def reverseList(self, head: ListNode) -> ListNode:
-#         if not head or not head.next:
-#             return head
-#         node = self.reverseList(head.next)
-#         head.next.next = head
-#         head.next = None
-#         return node
-#----------------------------------------------
-
-    # def reverseList(self, head):
-    #     return self._reverse(head)
-
-    # def _reverse(self, node, prev=None):
-    #     if not node:
-    #         return prev
-    #     n = node.next
-    #     node.next = prev
-    #     return self._reverse(n, node)
-    #----------------------------------------------
-
-#     def reverse_list(self, node, prev):
-#         if not node:
-#             return prev
-        
-#         curr, node.next = node.next, prev
-#         return self.reverse_list(curr, node)
-#-------------------------------------------------------
-
-# def reverse_recursively(self, node, pre=None):
-#     if node.next != None:
-#         self.reverse_recursively(node.next, pre=node)
-#     node.next = pre
-#------------------------------------------------------
-# def reverse_list(self,node):
-#      if node is None:
-#          return //list is empty
-#      elif node.next is None:
-#         self.head = node // changing the head to last node after reversal
-#         return
-#      else:
-#         reverse_list(node.next) //call the function recursively until the end of the list
-#         node.next.next = node //reverse the link
-#         node.next = None
-# ----------------------------------------------------
-
-    
-    # def reverse_list(self,node):
-    #     if node.get_next() == None:
-    #         self.head = node
-    #         return
-    #     self.reverse_list(node.get_next())
-    #     temp = node.get_next()
-    #     temp.set_next(node)
-    #     node.set_next(None)

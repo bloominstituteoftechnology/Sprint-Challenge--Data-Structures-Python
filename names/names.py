@@ -20,11 +20,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 #----------------------------------------------------------------------------------
 
-#  MY REPLACEMENT (Source: https://stackoverflow.com/questions/2864842/common-elements-comparison-between-2-lists)
+#  MY REPLACEMENT 
+
 for item in names_1:
   if item in names_2:
     duplicates.append(item)
 
+# Source: 
+#  1.  https://stackoverflow.com/questions/2864842/common-elements-comparison-between-2-lists
+#  2.  Lecture- Linked list w/Tim Roy : bigOnotation.py
  
 #------------------------------------------------------------------------------------
 
