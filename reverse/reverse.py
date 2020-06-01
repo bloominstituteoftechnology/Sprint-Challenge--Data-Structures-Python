@@ -1,5 +1,5 @@
 """
-Singly-linked list and component node classes, with recursive reverse.
+Task 3. Reverse a Linked List
 """
 
 class Node:
@@ -85,3 +85,15 @@ class LinkedList:
         # Previous head becomes new tail.
         node.get_next().set_next(node)
         node.set_next(None)
+
+    def reverse_list_loop(self, node, prev):
+        """
+        Without making it a doubly-linked list (adding a tail attribute),
+        reverses the contents of the list using a loop, not recursion.
+        """
+        while node is not None:
+            next_node = node.get_next()
+            node.set_next(prev)
+            prev = node
+            node = next_node
+        self.head = prev
