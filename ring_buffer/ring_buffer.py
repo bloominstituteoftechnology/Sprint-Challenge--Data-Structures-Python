@@ -1,9 +1,23 @@
+# Using Array as data structure. 
+# User inputs length of array. 
+
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.storage = [None]*capacity
+        self.curr = 0
 
     def append(self, item):
-        pass
+        self.storage[self.curr] = item
+        self.curr += 1 
+        if self.curr == self.capacity:
+            self.curr = 0
+
 
     def get(self):
-        pass
+        return [x for x in self.storage if x is not None]
+
+
+
+
+    
