@@ -1,8 +1,10 @@
 class ListNode:
-    def __init__(self, item, prev=None, next=None):
+    def __init__(self, item, prev=None, next=None, counter=0):
         self.item = item
         self.prev = prev
         self.next = next
+        self.counter = counter #added
+
 
 
     def delete(self):
@@ -17,6 +19,7 @@ class DoublyLinkedList:
         self.head = node
         self.tail = node
         self.length = 0
+        self.tally = 0 #added
 
     def __len__(self):
         return self.length
@@ -24,6 +27,7 @@ class DoublyLinkedList:
     def add_to_tail(self, item):
         new_node = ListNode(item)
         self.length += 1
+        self.tally += 1
         # there is a tail
         if self.tail:
             self.tail.next = new_node
@@ -33,6 +37,7 @@ class DoublyLinkedList:
             self.head = new_node
 
         self.tail = new_node
+        new_node.counter = self.tally
 
     def remove_from_head(self):
         item = self.head.item
@@ -40,10 +45,39 @@ class DoublyLinkedList:
 
         return item
 
+    # def get_min(self):
+    #     return minnode    
+
+    def replace_oldest(self, item): #added
+        # find the oldest node
+        minvalue = self.head.counter
+        checkingnode = self.head
+        minnode = self.head
+
+        # found out you can't iterate on self, sooooo...
+        while checkingnode is not None:
+            if checkingnode.counter < minvalue:
+                minvalue = checkingnode.counter
+
+            checkingnode = checkingnode.next
+        
+        while minnode is not None:
+            if minnode.counter == minvalue:
+                # minnode is the oldest node
+                # we will replace the item and counter of minnode
+                self.tally +=1
+                # replace minnode with new_node
+                minnode.item = item
+                minnode.counter = self.tally
+
+            minnode = minnode.next
+
+
     def add_to_head(self, item):
         # wrap the given value in a ListNode
         new_node = ListNode(item, None, None)
         self.length += 1
+        self.tally += 1
         # handle if list has a head
         if self.head is not None:
             new_node.next = self.head
@@ -53,6 +87,7 @@ class DoublyLinkedList:
             self.tail = new_node
 
         self.head = new_node
+        new_node.counter = self.tally
 
 
     def remove_from_tail(self):
@@ -80,6 +115,7 @@ class DoublyLinkedList:
             self.tail = checknode
             self.length -= 1
             return delitem
+
 
     def set_tail(self):
         checknode = self.head

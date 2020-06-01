@@ -14,8 +14,11 @@ class RingBuffer:
         
 
         else:
-            self.dll.remove_from_head()
-            self.dll.add_to_tail(item)
+            # find & replace the oldest node
+            self.dll.replace_oldest(item)
+            
+            # self.dll.remove_from_head() #altered
+            # self.dll.add_to_tail(item) #altered
           
 
     def get(self):
