@@ -1,4 +1,6 @@
 import time
+import hashlib
+
 
 start_time = time.time()
 
@@ -18,7 +20,7 @@ f.close()
 
 def answer_1(names_1, names_2):
     # ~ 4x faster
-    duplicates = []
+    duplicates = []  # Uses List.  Does not meet criteria.
     for name in names_1:
         if name in names_2:
             duplicates.append(name)
@@ -55,6 +57,132 @@ def answer_1b(names_1, names_2):
 
 
 
+### Attempting search tree
+
+
+class Word():
+    def __init__(self, letters:str = None):
+        self._build_hash(letters)
+        self.letters = letters
+
+    def _build_hash(self, letters):
+        self.hash = int(hashlib.sha256(letters.encode('utf-8')).hexdigest(), 16)
+
+
+class Node():
+    def __init__(self, value:Word, right=None, left=None):
+        self.value = value
+        self.right = right
+        self.left = left
+
+    def __repr__(self):
+        return f'Word: {self.value.letters}'
+
+
+
+
+
+class SearchTree():
+    
+    def __init__(self):
+        self.head = Node(Word('0'))
+        self.duplicate_attempts = 0
+        self.duplicates = []
+    
+    
+    def add_word(self, word):
+        new_word = Word(word)
+        terminal = self._check_exists(new_word)
+
+
+        if terminal:
+            self._add_new_word(new = Node(new_word), branch = terminal)
+
+        elif terminal == False:
+            self.duplicate_attempts += 1
+            self.duplicates.append(word)
+
+        if terminal is None:
+            print(terminal)
+            raise ValueError('Terminal None')
+    
+
+
+    def _check_exists(self, word):
+        return self._lookup(word)
+        
+
+
+    def _lookup(self, word):
+        start = self.head
+        return self._traverse(start, word)
+
+
+
+    def _traverse(self, current_node, word):
+        # Check for collision, duplicate
+        if current_node.value.hash == word.hash:
+            if current_node.value.letters == word.letters:
+                return False 
+            else:
+                return current_node 
+        
+        # Check Termination
+        if self._check_end(current_node):
+            return current_node
+
+        # Continue search
+        next_node = self._check_direction(current_node, word)
+
+        if next_node is None:
+            return current_node
+        else:
+            return self._traverse(current_node = next_node, word=word)
+        
+
+    def _check_end(self, node):
+        if node.left is None and node.right is None:
+            return True
+        return False
+
+
+    def _check_direction(self, node, value):
+        if node.value.hash > value.hash:
+            # print(f'Moving Left: {node.value.letters} , {value.letters}')
+            return node.left
+        elif node.value.hash < value.hash:
+            # print(f'Moving Right: {node.value.letters}, {value.letters}')
+            return node.right
+        return None
+
+
+    def _add_new_word(self, new: Node, branch: Node):
+        
+        if new.value.hash < branch.value.hash:
+            # print(f'Adding new {new.value.letters} Left Of {branch.value.letters}')
+            branch.left = new 
+        elif new.value.hash > branch.value.hash: 
+            # print(f'Adding new {new.value.letters} Right Of {branch.value.letters}')
+            branch.right = new
+        else:
+            return ValueError('Collision Detected')
+
+
+
+
+def answer_1c(names_1, names_2):
+    tree = SearchTree()
+    [tree.add_word(word) for word in names_1]
+    print(f'1C Duplicates found pass names_1: {tree.duplicate_attempts}')
+    [tree.add_word(word) for word in names_2]
+    print(f'1C Duplicates found pass names_2: {tree.duplicate_attempts}')
+    return tree.duplicates
+    
+        
+
+
+
+
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
@@ -81,3 +209,4 @@ if __name__ == "__main__":
     run_test(answer_1, names_1, names_2)
     run_test(answer_1b, names_1, names_2)
     run_test(answer_2, names_1, names_2)
+    run_test(answer_1c, names_1, names_2)
