@@ -1,41 +1,33 @@
-from DLL import DoublyLinkedList
+#from DLL import DoublyLinkedList
 
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.current_node = None
-        self.storage = DoublyLinkedList()
+        self.oldest_node = None
+        self.new_oldest_node = None
+        self.stack = []
 
     def append(self, item):
-        #Will see is the size of storage is less than expected
+        if self.oldest_node is None:
+            self.oldest_node = 0
+            return self.stack.append(item)
 
-        if len(self.storage) < self.capacity: 
-            #set current_node to storage head
-            #add to tail to prevent checking for head
-            self.storage.add_to_tail
-            self.current_node = self.storage.head
-        else: #Just in case capacity is reached
-            #Does the current node have a next?
-            if not self.current_node.next:
-                self.current_node.value = item
-                self.current_node = self.storage.head
-            else: 
+        elif len(self.stack) +1 <= self.capacity:
+            self.new_oldest_node = 1
+            return self.stack.append(item)
+        
+        else:
+            self.stack[self.oldest_node] = item
+            self.oldest_node += 1
+            if self.oldest_node + 1 > self.capacity:
+                self.oldest_node = 0
+        
+    
 
-                self.current_node.value = item
-                self.current_node = self.current_node.next
-            
         
 
     def get(self):
-        # Make an empty array
-        arr = []
-        #Create a current variable and set it to head
-        current = self.storage.head
-        while current: #While there is still a current value, we append to the array
-            arr.append(current.value)
-            
-            current = current.next
-        return arr
+        return self.stack
             
 
     
