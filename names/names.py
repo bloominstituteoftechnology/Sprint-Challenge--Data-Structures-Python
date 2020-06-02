@@ -62,7 +62,7 @@ f.close()
 
 f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
-# names_2 = sorted(names_2)
+# names_2 = sorted(names_2) 
 f.close()
 
 # duplicates = sorted(names_1 + names_2, key=lambda x: x.split(" ")[-1])  # Return the list of duplicates in this data structure

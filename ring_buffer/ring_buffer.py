@@ -19,22 +19,8 @@ class RingBuffer:
     def get(self):
         return self.storage
 
-rb = RingBuffer(4)
 
-rb.append(1)
-rb.append(2)
-rb.append(3)
-rb.append(1)
-rb.append(5)
-rb.append(7)
-rb.append(89)
-rb.append(99)
-rb.append(20)
-rb.append(2)
-rb.append(3)
-rb.append(1)
 
-print(rb.get())
 
 
 
