@@ -1,7 +1,7 @@
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity 
-        self.store = (None) * capacity
+        self.store = [None] * capacity
         self.index = -1
 
     def append(self, item):
