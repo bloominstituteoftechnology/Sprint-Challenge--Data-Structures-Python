@@ -86,29 +86,31 @@ class SearchTree():
     
     def __init__(self):
         self.head = Node(Word('0'))
-        self.duplicate_attempts = 0
-        self.duplicates = []
+        # self.duplicate_attempts = 0
+        # self.duplicates = []
     
     
     def add_word(self, word):
         new_word = Word(word)
-        terminal = self._check_exists(new_word)
+        terminal = self._check_terminal(new_word)
 
 
         if terminal:
             self._add_new_word(new = Node(new_word), branch = terminal)
 
         elif terminal == False:
-            self.duplicate_attempts += 1
-            self.duplicates.append(word)
+            # self.duplicate_attempts += 1
+            # self.duplicates.append(word)
+            pass
 
         if terminal is None:
             print(terminal)
             raise ValueError('Terminal None')
     
+    def not_exists(self, word):
+        return self._check_terminal(Word(word))
 
-
-    def _check_exists(self, word):
+    def _check_terminal(self, word):
         return self._lookup(word)
         
 
@@ -173,11 +175,7 @@ class SearchTree():
 def answer_1c(names_1, names_2):
     tree = SearchTree()
     [tree.add_word(word) for word in names_1]
-    print(f'1C Duplicates found pass names_1: {tree.duplicate_attempts}')
-    [tree.add_word(word) for word in names_2]
-    print(f'1C Duplicates found pass names_2: {tree.duplicate_attempts}')
-    return tree.duplicates
-    
+    return [name for name in names_2 if tree.not_exists(name)==False]
         
 
 
