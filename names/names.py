@@ -204,7 +204,8 @@ def run_test(func, names_1, names_2):
     print (f"runtime: {end_time - start_time} seconds")
 
 if __name__ == "__main__":
-    run_test(answer_1, names_1, names_2)
-    run_test(answer_1b, names_1, names_2)
-    run_test(answer_2, names_1, names_2)
-    run_test(answer_1c, names_1, names_2)
+    run_test(answer_1, names_1, names_2)  # Memory constrained list (Stretch in Readme)
+    run_test(answer_1b, names_1, names_2)  # Wrapped dictionary Implementation
+    run_test(answer_1c, names_1, names_2)  # Binary tree implementation
+    run_test(answer_2, names_1, names_2)  # Set implementation
+    
