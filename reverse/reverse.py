@@ -39,13 +39,14 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        current_position = self.head # START AT THE HEAD OF THE LINKED LIST
-        next_node = None # SET THE VALUE OF 'NEXT' TO 'None' TO START
-        prev = None # THERE IS NO 'PREVIOUS' TO POINT TO, YET 
-        
-        while current_position is not None:
-            next_node = current_position.next_node # POINT THE VALUE OF THE NEXT NODE TO BE VALUE OF THE NEXT NODE
-            current_position.next_node = prev # REVERSE THE POINTER FOR NEXT TO BE PREVIOUS  
-            prev = current_position # CHANGE POINTER FROM 'PREVIOUS' TO 'CURRENT'
-            current_position = next_node # CHANGE POINTER FROM 'CURRENT' TO 'NEXT'
-        self.head = prev
+        if node is None: # CONDITION 1: NODE IS EMPTY 
+            return
+
+        if node.get_next() is None: # CONDITION 2: LINKED LIST HAS 1 OR MORE NODES | USE RECURSION TO GET TO THE END OF THE `SLL`
+            self.head = node #  SET THE TAIL OF THE `SLL` AS THE HEAD OF `REVERSE_LIST`
+            return
+
+        self.reverse_list(node.get_next(), node) # REVERSE THE REST OF THE LIST, BY CONVERTING THE CURRENT NODE TO THE PREVIOUS NODE
+        node.get_next().set_next(node) # SET THE VALUE OF WHAT WAS ORIGINALLY THE SECOND NODE, TO BE SECOND TO LAST
+        node.set_next(None) # SET THE `NEXT` VALUE TO `NONE` ON THE NEW TAIL 
+            
