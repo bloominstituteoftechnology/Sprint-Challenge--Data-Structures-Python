@@ -5,7 +5,7 @@ class RingBuffer:
 
     def append(self, item):
         # Check if we're not past our capacity
-        if len(self.stack) <= self.capacity:
+        if len(self.stack) < self.capacity:
             # Check if item isn't already on the list:
             if item not in self.stack:
                 self.stack.append(item)
@@ -14,8 +14,12 @@ class RingBuffer:
                 self.stack.append(self.stack.pop(item))
         # If we're past capacity, delete index 0 and call append again
         else:
-            self.stack.pop(0)
-            self.append(item)
+            #check if item in stack already
+            if item not in self.stack:
+
+                self.stack[0] = item
+            else:
+                self.stack.append(self.stack.pop(item))
 
     def get(self):
-        pass
+        return self.stack
