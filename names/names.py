@@ -18,12 +18,18 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 # MacBook Pro (15-inch, 2017): runtime: 8.966019868850708 seconds
+# Two nested loops result in a time complexity of O(n ^ 2)
 
-# Failed approach. just read we can't use set.
+# Approach 1: Failed approach. just read we can't use set.
 # set_of_names_1 = set(names_1)
 # duplicates = [name for name in names_2 if name in set_of_names_1]
 # runtime: 0.005300045013427734 seconds
 
+# Approach 2:  Tried 1; there are a few others // https://www.geeksforgeeks.org/python-intersection-two-lists/ 
+# duplicates = [value for value in names_1 if value in names_2] 
+# runtime: 1.8755018711090088 seconds
+
+# Approach 3: Binary Tree
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -68,11 +74,13 @@ for name in names_2:
     if nameTree.contains(name):
         duplicates.append(name)
 
+# This is a 0(log n) solution.
+# runtime: 0.1528627872467041 seconds
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
-# runtime: 0.1528627872467041 seconds
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
