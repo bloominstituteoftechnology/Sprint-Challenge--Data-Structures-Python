@@ -3,6 +3,21 @@ class BSTNode:
         self.value = value
         self.left = None
         self.right = None
+
+    def insert(self, value):
+        if self is None:
+            self = BSTNode(value)
+        else:
+            if value < self.value:
+                if self.left:
+                    self.left.insert(value)
+                else:
+                    self.left = BSTNode(value)
+            else:
+                if self.right:
+                    self.right.insert(value)
+                else:
+                    self.right = BSTNode(value)
       
     def contains(self, target):
         if self is None:

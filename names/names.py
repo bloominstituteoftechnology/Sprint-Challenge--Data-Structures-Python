@@ -13,13 +13,17 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-node = BSTNode(names_1)
+node = BSTNode(names_1[0])
 
-a = node.contains(names_1)
-b = node.contains(names_2)
+def dupl():    
+    for a in names_1:
+        node.insert(a)
+    for b in names_2:
+        if node.contains(b):
+            duplicates.append(b)    
+    return duplicates
 
-if a == b:
-    duplicates.append(a)
+dupl()
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
