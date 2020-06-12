@@ -1,3 +1,4 @@
+#this runtime is O(n^2)
 import time
 
 start_time = time.time()
