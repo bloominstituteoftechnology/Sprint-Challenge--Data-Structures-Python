@@ -17,4 +17,7 @@ class RingBuffer:
             self.current = self.current.next
 
     def get(self):
-        pass
+        list_buffer_contents = []
+        list_buffer_contents.append(self.storage.head.value)
+        next_node = self.storage.head.next
+        
