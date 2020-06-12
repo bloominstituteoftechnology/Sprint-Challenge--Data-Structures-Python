@@ -14,6 +14,5 @@ class RingBuffer:
         if self.current_location == self.capacity:
             self.current_location = 0
 
-
     def get(self):
         return self.storage

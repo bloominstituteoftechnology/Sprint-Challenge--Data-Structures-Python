@@ -1,4 +1,32 @@
+from binary_search_tree import BSTNode
 import time
+
+# Using binary search tree
+
+start_time = time.time()
+
+f = open('names_1.txt', 'r')
+names_1 = f.read().split("\n")  # List containing 10000 names
+f.close()
+
+f = open('names_2.txt', 'r')
+names_2 = f.read().split("\n")  # List containing 10000 names
+f.close()
+
+duplicates = []  # Return the list of duplicates in this data structure
+
+names_2_tree = BSTNode(names_2[0])
+for name in names_2[1:]:
+    names_2_tree.insert(name)
+
+duplicates = [name for name in names_1 if names_2_tree.contains(name)]
+
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
+
+
+# Using set
 
 start_time = time.time()
 
@@ -20,6 +48,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Initial runtime of 6.29 seconds
 # These nested loops result in a time complexity of O(n^2) which scales horribly
+
 
 # We could create a set from the second array, then check the first array against the set
 # If the set contains a name, we can simply append the name to duplicates
