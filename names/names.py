@@ -1,10 +1,6 @@
 """
 Task 2. Runtime Optimization
 
-!Important! If you are running this using PowerShell by clicking on the green play button, 
-you will get an error that names1.txt is not found. To resolve this, run it, get the error, 
-then cd into the names directory in the python terminal that opens in VSCode.
-
 Navigate into the names directory. Here you will find two text files containing 
 10,000 names each, along with a program names.py that compares the two files and 
 prints out duplicate name entries. Try running the code with python3 names.py. 
@@ -84,6 +80,6 @@ for i in range(100):
 end_time = time.time()
 
 print(f"Attempt at improved runtime: {(end_time - start_time)} seconds\n")
-# NO - the python .intersection() method does NOT run faster than our code
+# NO - the python .intersection() method DOES NOT run faster than our code
 # BST runtime: 0.06711864471435547 seconds
 # "Improved" runtime: 0.10357379913330078 seconds
