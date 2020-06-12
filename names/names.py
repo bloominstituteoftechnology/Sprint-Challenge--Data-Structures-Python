@@ -19,8 +19,12 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 # MacBook Pro (15-inch, 2017): runtime: 8.966019868850708 seconds
 
-set_of_names_1 = set(names_1)
-duplicates = [name for name in names_2 if name in set_of_names_1]
+# Failed approach. just read we can't use set.
+# set_of_names_1 = set(names_1)
+# duplicates = [name for name in names_2 if name in set_of_names_1]
+# runtime: 0.005300045013427734 seconds
+
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
