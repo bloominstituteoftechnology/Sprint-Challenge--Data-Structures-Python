@@ -23,24 +23,23 @@ class BSTNode:
             if self.left is None:
                 new_node = BSTNode(value)
                 self.left = new_node
-            else: 
+            else:
                 self.left.insert(value)
-        elif value > self.value:
+        else:
             if self.right is None:
                 new_node = BSTNode(value)
                 self.right = new_node
             else:
                 self.right.insert(value)
-        else:
-            return
                 
-    def contains(self, target):
+    def contains(self, target, array):
         if target == self.value:
+            array.append(target)
             return True
         if target < self.value and self.left:
-            return self.left.contains(target)
+            return self.left.contains(target, array)
         if target > self.value and self.right:
-            return self.right.contains(target)
+            return self.right.contains(target, array)
         return False
 
     def get_max(self):

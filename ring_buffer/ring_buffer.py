@@ -23,21 +23,3 @@ class RingBuffer:
 
     def get(self):
         return self.buffer
-
-
-rb = RingBuffer(3)
-
-rb.append(7)
-rb.append(12)
-rb.append(21)
-print(rb)
-rb.append(87)
-print(rb)
-rb.append(32)
-print(rb)
-rb.append(90)
-print(rb)
-rb.append(11)
-print(rb)
-rb.append(7)
-print(rb)

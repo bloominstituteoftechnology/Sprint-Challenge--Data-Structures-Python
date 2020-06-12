@@ -14,10 +14,18 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+bst = BSTNode(names_1[0])
+
+for name in names_1:
+    bst.insert(name)
+for name in names_2:
+    bst.contains(name, duplicates)
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
@@ -30,22 +38,13 @@ print(f"runtime: {end_time - start_time} seconds")
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-duplicates = []
-
 start_time = time.time()
 
-my_set = set()
-for name in names_1:
-    if my_set.__contains__(name):
-        duplicates.append(name)
-    else:
-        my_set.add(name)
-for name in names_2:
-    if my_set.__contains__(name):
-        duplicates.append(name)
-    else:
-        my_set.add(name)
+my_duplicates = []
+names = set(names_1).intersection(names_2)
+for name in names:
+    my_duplicates.append(name)
 
 end_time = time.time()
-print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print(f"{len(my_duplicates)} duplicates:\n\n{', '.join(my_duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
