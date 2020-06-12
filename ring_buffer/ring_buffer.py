@@ -33,7 +33,6 @@ class RingBuffer:
         self.current_index += 1
 
         if self.current_index > (self.capacity - 1):
-
             self.current_index = 0
 
     def get(self):
