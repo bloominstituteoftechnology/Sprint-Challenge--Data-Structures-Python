@@ -97,23 +97,24 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-# # old version time complexity is O(n^2) methinks
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
+# # old version time complexity is O(n^c) methinks (would O(n^2) count?)
+# NEW version
+bst1 = BSTNode(names_1[0])
+bst2 = BSTNode(names_2[0])
 
-# bst1 = BSTNode(names_1[0])
-# bst2 = BSTNode(names_2[0])
+# fill in 2 bsts with a name list
+for name in names_1:
+    bst1.insert(name)
+for name in names_2:
+    bst2.insert(name)
 
-# for name in names_1:
-#     bst1.insert(name)
-# for name in names_2:
-#     bst2.insert(name)
-
-# bst1.for_each(bst1.contains(bst2))
-
+test_name = "Hallie Vazquez"
+print(bst1.contains(test_name) and bst2.contains(test_name))
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
