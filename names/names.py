@@ -19,9 +19,19 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-for name in names_1:
-    if name in names_2:
-        duplicates.append(name)
+# Runtime complexity for this should be O(n) since iterating through a list is O(n).
+# Reduced runtime on my computer to 2.15 seconds
+# for name in names_1:
+#     if name in names_2:
+#         duplicates.append(name)
+
+# Stretch: Runtime complexity for this is O(1) since dictionaries are a O(1) complexity for searching
+# Reduced runtime on my computer to 0.011 seconds
+names1_dict = {names_1[i] : i for i in range(0, len(names_1))}
+names2_dict = {names_2[i] : i for i in range(0, len(names_2))}
+for key in names1_dict:
+    if key in names2_dict:
+        duplicates.append(key)
 
 
 end_time = time.time()
