@@ -38,5 +38,12 @@ class LinkedList:
 
         return False
 
+    # Time complexity of O(n)
     def reverse_list(self, node, prev):
-        pass
+        if node:
+            prev, node.next_node = node.next_node, prev
+
+        if prev:
+            self.reverse_list(prev, node)
+        else:
+            self.head = node
