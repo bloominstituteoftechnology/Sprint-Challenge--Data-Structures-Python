@@ -17,7 +17,7 @@ values in the list even if they are present in the ring buffer.
 class RingBuffer:
     """
     a queue with a max size that loops back over itself
-    FIFO(?)
+    FIFO
     """
     def __init__(self, capacity):
         self.capacity = capacity
