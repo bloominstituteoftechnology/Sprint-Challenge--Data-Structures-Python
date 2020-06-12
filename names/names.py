@@ -102,19 +102,29 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# # old version time complexity is O(n^c) methinks (would O(n^2) count?)
-# NEW version
+# NEW version START - old version time complexity is O(n^c) methinks (would O(n^2) count?)
 bst1 = BSTNode(names_1[0])
 bst2 = BSTNode(names_2[0])
 
-# fill in 2 bsts with a name list
+# fill in 2 bsts with a name list (don't add first cuz its already there)
 for name in names_1:
+    if name == names_1[0]:
+        continue
     bst1.insert(name)
 for name in names_2:
+    if name == names_2[0]:
+        continue
     bst2.insert(name)
 
-test_name = "Hallie Vazquez"
-print(bst1.contains(test_name) and bst2.contains(test_name))
+def is_in_both(bstA, bstB, name):
+    if bstA.contains(name) and bstB.contains(name):
+        return True
+    return False
+
+for name in names_1:        
+    if is_in_both(bst1, bst2, name):
+        duplicates.append(name)
+# NEW version END
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
