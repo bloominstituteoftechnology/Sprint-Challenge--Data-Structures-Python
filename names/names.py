@@ -23,15 +23,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # use Binary Search Tree to go through and search duplicates using contains
 # Runtime ~.25, Runtime complexity O(log(n))
-a = BSTNode("")
-bst = BSTNode(names_1[0])
+# a = BSTNode("")
+# bst = BSTNode(names_1[0])
 
-for name in names_1:
-    a.insert(name)
+# for name in names_1:
+#     a.insert(name)
 
-for name2 in names_2:
-    if a.contains(name2):
-        duplicates.append(name2)
+# for name2 in names_2:
+#     if a.contains(name2):
+#         duplicates.append(name2)
 
 
 # end_time = time.time()
@@ -43,19 +43,18 @@ for name2 in names_2:
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-# -- BEST SOLUTION--, O(1)
-# 0.01sec runtime
-# make dictionary because constant time
-# names_table = {}
-#
-# for name in names_1:
-#     names_table[name] = True
-#
-# for name in names_2:
-#     if name in names_table:
-#         duplicates.append(name)
+
+names_table = {}
+
+for name in names_1:
+    names_table[names] = True
+
+for name in names_2:
+    if name in names_table:
+        duplicates.append(name)
 
 
 end_time = time.time()
+print("\n\n\nList Version:")
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
