@@ -35,7 +35,7 @@ def list_duplicates(seq):
     return list (seen_twice)
 
 f = open('names_3.txt', 'r')
-names_3 = f.read().split("\n")  # List containing 10000 names
+names_3 = f.read().split("\n")  # List containing 20000 names
 f.close()
 
 list_duplicates(names_3)
