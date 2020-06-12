@@ -126,36 +126,28 @@ class DoublyLinkedList:
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.currentValue = None
+        self.oldest = None
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        # check for capacity value
-        if len(self.storage) < self.capacity:
-            # if less, add to this list
+        if self.capacity > len(self.storage):
             self.storage.add_to_tail(item)
-            # keep that current value
-            self.currentValue = self.storage.tail
-        else: 
-            # the capcity is equal to the currentValue
-            if not self.currentValue.next:
-            self.currentValue.value = item
-            self.currentValue = self.storage.head
-            else: 
-            #this is where we'll have to figure out a way to replace
-            #the last capcity value
-            # and move the current over 
-            self.currentValue.value = item
-            self.currentValue = self.currentValue.next
-            
-            
+            if len(self.storage) == 1:
+                self.oldest = self.storage.head
+        
+        else:
+            self.oldest.value = item
+
+            if self.oldest is not self.storage.tail:
+                self.oldest = self.oldest.next
+            else:
+                self.oldest = self.storage.head
 
     def get(self):
-         ring_buffer_list = []
-         
-         node = self.storage.head
-         while node:
-             ring_buffer_list.append(node.value)
-             node = node.next
+        ring_buffer_list = []
+        node = self.storage.head
+        while node is not None:
+            ring_buffer_list.append(node.value)
+            node = node.next
 
-         return ring_buffer_list
+        return ring_buffer_list
