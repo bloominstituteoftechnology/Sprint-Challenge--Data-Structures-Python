@@ -80,6 +80,6 @@ for i in range(100):
 end_time = time.time()
 
 print(f"Attempt at improved runtime: {(end_time - start_time)} seconds\n")
-# NO - the python .intersection() method DOES NOT run faster than our code
+# NO - the python .intersection() method DOES NOT run faster than our code {BC of loop}
 # BST runtime: 0.06711864471435547 seconds
 # "Improved" runtime: 0.10357379913330078 seconds

@@ -20,9 +20,9 @@ class RingBuffer:
     FIFO
     """
     def __init__(self, capacity):
-        self.capacity = capacity
-        self.index = 0  
-        self.storage = [None] * capacity
+        self.capacity = capacity # max # of values that can be stored in the buffer
+        self.index = 0  # start
+        self.storage = [None] * capacity # represents number of values stored in the buffer currently
 
     def append(self, item):
         """
@@ -32,6 +32,7 @@ class RingBuffer:
         self.index += 1
         if self.index == self.capacity:
             self.index = 0
+        # this overwrties the oldest node instead of just appends :)
 
     def get(self):
         """
