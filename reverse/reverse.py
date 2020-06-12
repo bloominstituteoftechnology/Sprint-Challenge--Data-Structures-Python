@@ -1,3 +1,14 @@
+"""
+Task 3. Reverse a Linked List
+
+Without making it a Doubly Linked List (adding a tail attribute), 
+complete the reverse_list() function within reverse/reverse.py 
+***reverse the contents of the list using recursion, not a loop.***
+
+While credit will be given for a functional solution, 
+only optimal solutions will earn a 3 on this task.
+"""
+
 class Node:
     def __init__(self, value=None, next_node=None):
         self.value = value
@@ -38,5 +49,15 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        pass
+    def reverse_list(self, node, prev): #actually can use loop but NO TAIL ATTRIBUTE
+        if node is None:
+            return
+        
+        if node.get_next() is None:
+            self.head = node
+            return
+
+        self.reverse_list(node.get_next(), node)
+
+        node.get_next().set_next(node)
+        node.set_next(None)
