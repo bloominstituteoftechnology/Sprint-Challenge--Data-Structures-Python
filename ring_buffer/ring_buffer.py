@@ -1,6 +1,7 @@
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
+        self.clock = 0
         self.stack = []
 
     def append(self, item):
@@ -16,10 +17,13 @@ class RingBuffer:
         else:
             #check if item in stack already
             if item not in self.stack:
-
-                self.stack[0] = item
+                self.stack[self.clock] = item
+                self.update_clock()
             else:
                 self.stack.append(self.stack.pop(item))
 
     def get(self):
         return self.stack
+
+    def update_clock(self):
+        self.clock = self.clock + 1 if self.clock + 1 < self.capacity else 0
