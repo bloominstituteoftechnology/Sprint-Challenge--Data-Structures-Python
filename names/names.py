@@ -18,9 +18,11 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-for name in names_1:
-    if name in names_2:
-        duplicates.append(name)
+# for name in names_1:
+#     if name in names_2:
+#         duplicates.append(name)
+
+duplicates = [name for name in names_1 if name in names_2]
 
 
 end_time = time.time()
