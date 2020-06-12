@@ -13,8 +13,8 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-binary_tree = BinarySearchTree("")
-for name in names_1:
+binary_tree = BinarySearchTree(names_1[0])
+for name in names_1[1:]:
     binary_tree.insert(name)
 for name in names_2:
     if binary_tree.contains(name):
