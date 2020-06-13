@@ -106,6 +106,11 @@ duplicates = []  # Return the list of duplicates in this data structure
 bst1 = BSTNode(names_1[0])
 bst2 = BSTNode(names_2[0])
 
+def is_in_both(bstA, bstB, name):
+    if bstA.contains(name) and bstB.contains(name):
+        return True
+    return False
+
 # fill in 2 bsts with a name list (don't add first cuz its already there)
 for name in names_1:
     if name == names_1[0]:
@@ -115,15 +120,13 @@ for name in names_2:
     if name == names_2[0]:
         continue
     bst2.insert(name)
-
-def is_in_both(bstA, bstB, name):
-    if bstA.contains(name) and bstB.contains(name):
-        return True
-    return False
-
-for name in names_1:        
     if is_in_both(bst1, bst2, name):
         duplicates.append(name)
+
+
+# for name in names_1:        
+#     if is_in_both(bst1, bst2, name):
+#         duplicates.append(name)
 # NEW version END
 
 end_time = time.time()
