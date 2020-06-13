@@ -30,7 +30,7 @@ class LinkedList:
 
         current = self.head
 
-        while current:
+        while current:                #checks the current value
             if current.get_value() == value:
                 return True
 
@@ -38,5 +38,13 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        pass
+    def reverse_list(self, node, prev=None):
+        # recursion -- 
+        if node is None:
+            self.head = prev
+            return
+        else:
+            temp = node.next_node
+            node.next_node = prev
+            prev = node
+            self.reverse_list(temp, prev)
