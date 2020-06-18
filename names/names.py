@@ -1,5 +1,9 @@
 import time
+<<<<<<< HEAD
 # Will come back to this Sprint (AGAIN)
+=======
+# Will come back to this Sprint
+>>>>>>> a4b13b5adcd64c3913edeba6bdeed7e5c67f7b11
 
 start_time = time.time()
 
