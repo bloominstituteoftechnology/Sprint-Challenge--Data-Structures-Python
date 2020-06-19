@@ -1,7 +1,9 @@
 class Node:
     def __init__(self, value=None, next_node=None):
-        self.value = value
-        self.next_node = next_node
+        '''Holds Node value'''
+        self.value = value 
+        '''references nxt Node'''
+        self.next_node = next_node 
 
     def get_value(self):
         return self.value
@@ -10,11 +12,13 @@ class Node:
         return self.next_node
 
     def set_next(self, new_next):
-        self.next_node = new_next
+        '''sets nxt Node refrence to whatever Node is passed in'''
+        self.next_node = new_next 
 
 class LinkedList:
     def __init__(self):
-        self.head = None
+        ''' Head '''
+        self.head = None 
 
     def add_to_head(self, value):
         node = Node(value)
@@ -28,15 +32,31 @@ class LinkedList:
         if not self.head:
             return False
 
-        current = self.head
+        '''Reference current Node , update as we iterate over list'''
+        current = self.head 
 
         while current:
             if current.get_value() == value:
-                return True
+                '''Check if Node is valid , return True if Node value matches target value'''
+                return True 
 
-            current = current.get_next()
+            '''update to point to next Node'''
+            current = current.get_next() 
 
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        if self.head is None:
+            return '...'
+        prev = None
+        cur = self.head
+        nxt = self.head.get_next()
+
+        while cur != None:
+            cur.set_next(prev)
+            prev = cur
+            cur = nxt
+            if nxt != None:
+                nxt = cur.get_next()
+
+        self.head = prev
