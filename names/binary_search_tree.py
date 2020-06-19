@@ -5,26 +5,24 @@ class BinarySearchTree:
         self.right = None
         self.count = 1
 
-    # insert the given value into the tree
+''' Insert given value into tree . If no Node , insert new node . If Node , implement recursion . '''
+
+''' If tree contains value , return TRUE . Return False otherwise . '''
+
     def insert(self, value):
         if value < self.value:
             if not self.left:
-                # if node does not exist, insert new node
                 self.left = BinarySearchTree(value)
             else:
-                # if node exists, recurse
                 self.left.insert(value)
         else:
-            # value is >= node
             if not self.right:
                 self.right = BinarySearchTree(value)
             else:
                 self.right.insert(value)
 
-    # Return True if the tree contains the value
-    # False if it does not
+''' Implement recursion '''
     def contains(self, target):
-        # recursive solution
         if target == self.value:
             return True
         elif target < self.value:
