@@ -64,12 +64,14 @@ for name in names_2:
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
+# Runtime: ~ 0.058 seconds
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-stretch_duplicates = [n for n in names_1 if n in names_2]
-print (f"{len(stretch_duplicates)} duplicates:\n\n{', '.join(stretch_duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+# stretch_duplicates = [n for n in names_1 if n in names_2]
+# print (f"{len(stretch_duplicates)} duplicates:\n\n{', '.join(stretch_duplicates)}\n\n")
+# print (f"runtime: {end_time - start_time} seconds")
+# Runtime: ~ 0.057 seconds
