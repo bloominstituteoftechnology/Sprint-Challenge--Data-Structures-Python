@@ -39,30 +39,13 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        if node is None:
-            
-        else:
+
+      while node != None:
             new_node = Node(node.value)
+            new_node.add_to_head(node.value)
+            node = node.get_next()
 
-class Stack:
-    def __init__(self):
-        self.size = 0
-        self.storage = LinkedList()
-
-    def __len__(self):
-        return self.size
-
-    def push(self, value):
-        # add an element to the front of our array
-        self.size += 1
-        self.storage.add_to_head(value)
-
-    def pop(self):
-        # check if empty
-        if self.size == 0:
-            return None
-        # remove the first element in storage
-        self.size -= 1
-        node = self.storage.remove_head()
-        return node
+     while new_node != None:        
+           new_node.get_value()
+           new_node.get_next()
 
