@@ -16,12 +16,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 
+names_1.sort()
+names_2.sort()
+
 for i in range(predefined_size):
     if names_1[i] == names_2[i]:
         duplicates.append(names_1[i])
     else:
-        print("Name_1", i)
-        print("Name_2", i)
+        print("Name_1", names_1[i])
+        print("Name_2", names_2[i])
 
 # for name_1 in names_1:
 #     for name_2 in names_2:
