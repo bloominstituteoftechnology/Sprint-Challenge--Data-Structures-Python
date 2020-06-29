@@ -2,6 +2,8 @@ import time
 
 start_time = time.time()
 
+predefined_size = 10000
+
 f = open('names_1.txt', 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
 f.close()
@@ -13,10 +15,18 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+for i in range(predefined_size):
+    if names_1[i] == names_2[i]:
+        duplicates.append(names_1[i])
+    else:
+        print("Name_1", i)
+        print("Name_2", i)
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
