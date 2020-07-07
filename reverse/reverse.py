@@ -39,7 +39,7 @@ class LinkedList:
         return False
 
     def reverse_list(self, current_node, prev):
-        # Check to see if the recursion has reached end of list
+      
         if current_node is None:
             self.head = prev
         else:
@@ -47,5 +47,5 @@ class LinkedList:
             current_node.next_node = prev
             prev = current_node
             current_node = next
-            # this is what gets recursively "stacked" to create the "reverse" effect:
+        
             self.reverse_list(current_node, prev)
