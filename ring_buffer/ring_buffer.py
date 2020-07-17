@@ -1,29 +1,31 @@
 from queue import Queue
 
+# General Case Ring Buffer Class
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.queue = Queue()
+        self.data = []
+
+    # Special Case Full Ring Buffer CLass
+    class __Full:
+        def append(self, item):
+            self.data[self.current] = item
+            self.current = (self.current + 1) % self.capacity
+
+        def get(self):
+            return self.data[self.current:] + self.data[:self.current]
 
     def append(self, item):
         # general case
-        if self.queue.__len__() < self.capacity:
-            self.queue.enqueue(item)
-
+        self.data.append(item)
         # full capacity
-        else:
-            self.queue.dequeue()
-            self.queue.enqueue(item)
+        if len(self.data) == self.capacity:
+            self.current = 0
+            # changes class to __Full
+            self.__class__ = self.__Full
         
     def get(self):
-        list_ = []
-        current = self.queue.storage.head
-        list_.append(current.value)
-        # itterate through singly-linked list
-        while current.get_next():
-            current = current.get_next()
-            list_.append(current.value)
-        return list_
+        return self.data
 
 
 if __name__ == "__main__":
