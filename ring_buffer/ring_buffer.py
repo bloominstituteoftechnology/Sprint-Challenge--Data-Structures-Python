@@ -1,18 +1,20 @@
-from collections import deque
+from queue import Queue
 
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.storage = deque([])
+        self.queue = Queue()
 
     def append(self, item):
-        # self.storage is not at capacity
-        if len(self.storage) < self.capacity:
-            self.storage.append(item)
-        # self.storage is at capacity
+        if self.queue.__len__() < self.capacity:
+            self.queue.enqueue(item)
+
+        else:
+            self.queue.dequeue()
+            self.storage.enqueue(item)
         
     def get(self):
-        return list(self.storage)
+        pass
 
 
 if __name__ == "__main__":
@@ -22,3 +24,5 @@ if __name__ == "__main__":
     rb.append("c")
 
     print(rb.get())
+
+

@@ -23,7 +23,7 @@ class LinkedList:
         output = ""
         current_node = self.head
         while current_node is not None:
-            output += f"{current_node.value} -->"
+            output += f"{current_node.value}, "
             current_node = current_node.get_next()
 
         return output
