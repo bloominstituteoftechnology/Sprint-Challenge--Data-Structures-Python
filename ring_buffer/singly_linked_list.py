@@ -14,7 +14,7 @@ class Node:
     def set_next(self, new_next):
         self.next = new_next
 
-class LinkedList:
+class CircularLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -52,6 +52,7 @@ class LinkedList:
             self.tail.set_next(new_node)
             # 3. reassign self.tail to refer to the new Node 
             self.tail = new_node
+            self.tail.set_next(self.head)
 
     def remove_head(self):
         # if we have an empty linked list 
@@ -97,7 +98,7 @@ class LinkedList:
         value = self.tail.get_value()
         self.tail = current
         # remove new tail's reference to the old tail
-        self.tail.set_next(None)
+        self.tail.set_next(self.head)
         return value
             
 
@@ -133,12 +134,3 @@ class LinkedList:
             # update the current node to the next node in the list
             current = current.get_next()
         return max_value
-
-
-if __name__ == "__main__":
-    ll = LinkedList()
-
-    for i in range(1, 6):
-        ll.add_to_tail(Node(2**i))
-
-    print(ll)
