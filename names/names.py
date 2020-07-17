@@ -1,6 +1,5 @@
 import time
-from binary_search_tree import BSTNode
-
+from binary_search_tree import BSTNode 
 
 start_time = time.time()
 
@@ -15,24 +14,20 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
+nodes = BSTNode('names')
 
-def reverseList(self, head):
-        prev = None
-        curr = head
-        while curr is not None:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
-        # fix head
-        head = prev
+for names in names_1:
+    nodes.insert(names)
 
-        return head      
+for name in names_2:
+    if nodes.contains(name):
+        duplicates.append(name)
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
