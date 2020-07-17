@@ -1,4 +1,5 @@
 import time
+from BinarySearchTree import BSTNode
 
 start_time = time.time()
 
