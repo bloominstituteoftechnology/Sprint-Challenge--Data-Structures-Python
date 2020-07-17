@@ -42,6 +42,7 @@ print(f"runtime: {end_time - start_time} seconds")
 # Time on First Run: 5.129 seconds
 # Time on ABW Solution II: 0.111 seconds
 
+
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
