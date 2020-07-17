@@ -13,29 +13,20 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 name_list = []
+name_list2 = []
 
 for name in names_1:
     name_list.append(name)
 
 for name in names_2:
-    name_list.append(name)
+    name_list2.append(name)
 
-s = set()
+a = set(name_list)
+b = set(name_list2)
 
-dups = set(name for name in name_list if name in s or s.add(name))
-print(len(dups))
+c = a.intersection(b)
 
-
-def remove_duplicates(list_of_names):
-    final_list = []
-    for name in name_list:
-        if name not in final_list:
-            final_list.append(name)
-    return final_list
-
-
-duplicates = remove_duplicates(dups)
-
+duplicates = c
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
