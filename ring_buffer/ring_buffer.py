@@ -3,6 +3,7 @@ class RingBuffer:
         self.capacity = capacity
         self.data = []
         self.size = 0
+        
         #self.head = 0
         #self.tail = -1
         #self.data = [0 for i in range(capacity)]
