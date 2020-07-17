@@ -24,10 +24,15 @@ class RingBuffer:
 if __name__ == "__main__":
     buffer = RingBuffer(5)
 
-    buffer.append("a")
+    buffer.append('a')
     buffer.append('b')
     buffer.append('c')
     buffer.append('d')
     buffer.append('e')
+    buffer.append('f')
 
     print(buffer.get())
+
+
+
+
