@@ -67,3 +67,21 @@ class LinkedList:
                 # whatever was current will be the head
                 self.head = current
 
+if __name__ == "__main__":
+
+    ll = LinkedList()
+
+    ll.add_to_head(1)
+    ll.add_to_head(2)
+    ll.add_to_head(3)
+    ll.add_to_head(4)
+    ll.add_to_head(5)
+
+    # breakpoint()
+    ll.reverse_list(ll.head, None)
+    print(ll.head.value) #> 1
+    print(ll.head.get_next().value) #> 2
+    print(ll.head.get_next().get_next().value) #> 3
+
+
+    # breakpoint()
