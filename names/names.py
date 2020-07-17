@@ -31,7 +31,7 @@ for name_2 in names_2:
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+print (f"runtime: {end_time - start_time} seconds\n")
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
@@ -42,7 +42,8 @@ set1 = set(names_1)
 set2 = set(names_2)
 
 list3 = list(set1.intersection(set2))
-print(list3)
 end_time = time.time()
-print (f"runtime: {end_time - start_time} seconds")
+print(f"{len(list3)} duplicates:")
+print(list3)
+print (f"\nruntime: {end_time - start_time} seconds\n")
 
