@@ -40,13 +40,15 @@ class LinkedList:
         return False
 
     # Method to reverse linked list
+            # Divide list into first node and rest of linked list
+            # Call reverse for the rest of the linked list
+            # Link rest to first
+            # Link rest to first
+            #fix head pointer
     def reverse_list(self, node, prev):
-        # Divide list into first node and rest of linked list
-        while node:
-        # Call reverse for the rest of the linked list
+        while node:        
             next_node = node.get_next()
-            prev = node 
-        # Link rest to first
-            node = next_node
-        #fix head pointer
+            node.next_node = prev
+            prev = node        
+            node = next_node        
         self.head = prev
