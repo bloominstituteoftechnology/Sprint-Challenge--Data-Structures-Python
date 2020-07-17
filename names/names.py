@@ -17,14 +17,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 # for name_1 in names_1:
 #     if name_1 in names_2:
 #         duplicates.append(name_1)
-bst = BSTNode(names_1[0])
+# bst = BSTNode(names_1[0])
 
-for i in range(1, len(names_1)):
-    bst.insert(names_1[i])
-for j in names_2:
-    if bst.contains(j):
-        duplicates.append(j)
+# for i in range(1, len(names_1)):
+#     bst.insert(names_1[i])
+# for j in names_2:
+#     if bst.contains(j):
+#         duplicates.append(j)
 
+duplicates = list(set(names_1).intersection(set(names_2)))
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
