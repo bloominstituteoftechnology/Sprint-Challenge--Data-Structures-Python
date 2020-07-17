@@ -13,6 +13,7 @@ class Node:
         self.next_node = new_next
 
 class LinkedList:
+    """LL Class"""
     def __init__(self):
         self.head = None
 
@@ -39,4 +40,30 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        """
+        Reverse the contents of the list using recursion, not a loop
+        """
+        if self.head is None:
+            return None
+
+        # Start with head
+        self.head = node
+        current = self.head
+        # Define next node
+        nn = current.next_node
+
+        # if there is a next node
+        while nn is not None:
+            # establish previous
+            prev = current
+            # make next node the new current
+            current = nn
+            nn = current.next_node
+            # reversal
+            current.next_node = prev
+
+            # if no next nodes
+            if nn is None:
+                # whatever was current will be the head
+                self.head = current
+
