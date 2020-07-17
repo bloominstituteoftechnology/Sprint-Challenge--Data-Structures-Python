@@ -18,9 +18,12 @@ duplicates = []  # Return the list of duplicates in this data structure
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
+
 bst = BSTNode('root')
+# BST insert runtime O(n)
 for i in names_1:
     bst.insert(i)
+# BST search runtime O(n)
 for i in names_2:
     if bst.contains(i):
         duplicates.append(i)
