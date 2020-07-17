@@ -67,6 +67,8 @@ print (f"runtime: {end_time - start_time} seconds")
 
 
 ##original runtime = 6.6036 seconds
+#New 0.136
+# Runtime is O(n log n)
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
