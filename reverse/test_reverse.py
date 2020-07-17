@@ -1,5 +1,6 @@
 import unittest
 from reverse import LinkedList
+from pdb import set_trace as st
 
 class LinkedListTests(unittest.TestCase):
   def setUp(self):

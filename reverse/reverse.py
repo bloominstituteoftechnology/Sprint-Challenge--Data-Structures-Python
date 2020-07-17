@@ -1,3 +1,6 @@
+from pudb import set_trace as st
+
+
 class Node:
     def __init__(self, value=None, next_node=None):
         self.value = value
@@ -11,6 +14,10 @@ class Node:
 
     def set_next(self, new_next):
         self.next_node = new_next
+
+    def __str__(self):
+        return self.value
+
 
 class LinkedList:
     def __init__(self):
@@ -39,4 +46,35 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        if node is None:
+            return
+        next_node = node.get_next()
+        if next_node is not None:
+            self.reverse_list(next_node, node)
+        else:
+            self.head = node
+        node.set_next(prev)
+
+    def print_list(self):
+        current_node = self.head
+        while True:
+            print(f"{current_node.value} -> ", end="")
+            if current_node.get_next() is None:
+                print("None")
+                break
+            current_node = current_node.get_next()
+
+            
+
+
+if __name__ == "__main__":
+    aa = LinkedList()
+    aa.add_to_head(1)
+    aa.add_to_head(2)
+    aa.add_to_head(3)
+    aa.add_to_head(4)
+    aa.add_to_head(5)
+    aa.print_list()
+    aa.reverse_list(aa.head, None)
+    # aa.reverse_list(aa.head.get_next(), aa.head)
+    aa.print_list()
