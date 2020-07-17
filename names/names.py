@@ -29,15 +29,21 @@ f.close()
 
 #for the first name in names_2 create a bstnode using that value
 for name in names_2:
+    #the first time we loop through we initialize BSTNode(name) and the result was we inserted the name
+    result = "added"
     if tree2 is None:
         tree2 = BSTNode(name)
+
     #if it is not the first name
     else:
         #and if we are not inserting a duplicate name from names_2
-        if tree2.insert(name) != "duplicate":
-            #and if the name exists in names_1
-            if tree.insert(name) == "duplicate":
-                duplicates.append(name)
+        result = tree2.insert(name)
+
+    if result != "duplicate":
+
+        #and if the name exists in names_1
+        if tree.insert(name) == "duplicate":
+            duplicates.append(name)
 
 # # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
