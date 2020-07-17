@@ -6,15 +6,24 @@ class RingBuffer:
         self.queue = Queue()
 
     def append(self, item):
+        # general case
         if self.queue.__len__() < self.capacity:
             self.queue.enqueue(item)
 
+        # full capacity
         else:
             self.queue.dequeue()
-            self.storage.enqueue(item)
+            self.queue.enqueue(item)
         
     def get(self):
-        pass
+        list_ = []
+        current = self.queue.storage.head
+        list_.append(current.value)
+        # itterate through singly-linked list
+        while current.get_next():
+            current = current.get_next()
+            list_.append(current.value)
+        return list_
 
 
 if __name__ == "__main__":
@@ -22,6 +31,7 @@ if __name__ == "__main__":
     rb.append("a")
     rb.append("b")
     rb.append("c")
+    rb.append("d")
 
     print(rb.get())
 
