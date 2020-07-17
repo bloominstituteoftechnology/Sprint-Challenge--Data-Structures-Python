@@ -19,15 +19,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 ### 0.17504072189331055
 
-for name in names_1:
-    if tree:
-        tree.insert(name)
-    else:
-        tree = BinarySearchTree(name)
+# for name in names_1:
+#     if tree:
+#         tree.insert(name)
+#     else:
+#         tree = BinarySearchTree(name)
 
-for name in names_2:
-    if tree.contains(name):
-        duplicates.append(name)
+# for name in names_2:
+#     if tree.contains(name):
+#         duplicates.append(name)
 
 
 
@@ -51,17 +51,13 @@ for name in names_2:
 
 ### 0.024008512496948242   BUT COUNTS 124 DUPLICATES
 
-# setOne = set()
-# for name in names_1:
-#     if name not in setOne:
-#         setOne.add(name)
-#     else:
-#         duplicates.append(name)
-# for name in names_2:
-#     if name not in setOne:
-#         setOne.add(name)
-#     else:
-#         duplicates.append(name)
+setOne = set()
+for name in names_1:
+    if name not in setOne:
+        setOne.add(name)
+for name in names_2:
+    if name in setOne:
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
