@@ -10,14 +10,15 @@ class RingBuffer:
 
 
     def append(self, item):
-       # if the len of the items is equal to the capacity then we will append items with its position
-       # to the item
+       # if the len of the items is equal to the capacity then we will equalize the position of items by the position
+       # numbe of the ring to the item
+       # so what we are trying to do here is to be able to give an index to the item by the order
+       # so if we try to call the buffer by the index we should receive the result of the demanded item.
        if len(self.items) == self.capacity:
            self.items[self.ring_position] = item
-           # if the items are lesser then capacity then we will append the item to items as new item.
-       if len(self.items) < self.capacity:
+        # here after any case > or < or whatever we are going to append the item to the items
+       else:
            self.items.append(item)
-
 
 
 
