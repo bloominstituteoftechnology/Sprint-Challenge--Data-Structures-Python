@@ -38,13 +38,23 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        prev = None
-        current = self.head 
-        while(current is not None): 
-            next = current.next_node
-            current.next_node = prev 
-            prev = current 
-            current = next
-        self.head = prev
+    def reverse_list(self, curr, prev):
+        if self.head is None:
+            return
+            
+         # If last node mark it head 
+        if curr.next_node is None : 
+            self.head = curr  
+              
+            # Update next to prev curr 
+            curr.next_node = prev 
+            return 
+          
+        # Save the next curr for recursive call 
+        next = curr.next_node
+  
+        # And update next  
+        curr.next_node = prev 
+      
+        self.reverse_list(next, curr)  
 
