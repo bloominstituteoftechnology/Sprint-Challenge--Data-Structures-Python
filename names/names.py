@@ -38,18 +38,18 @@ class BSTNode:
         
     
     def containsDups(self, target):
-        if self.value == target:
+        if target == self.value:
             return True
-        if self.value <= target:
-            if self.left is None:
-                return False
-            else:
-                return self.left.containsDups(target)
-        else:
-            if self.right is None:
+        if target >= self.value:
+            if self.right == None:
                 return False
             else:
                 return self.right.containsDups(target)
+        else:
+            if self.left == None:
+                return False
+            else:
+                return self.left.containsDups(target)
 
 BST = BSTNode("names")
 
@@ -60,7 +60,6 @@ for name_1 in names_1:
 for name_2 in names_2:
     if BST.containsDups(name_2):
         duplicates.append(name_2)
-
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
