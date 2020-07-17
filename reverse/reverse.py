@@ -39,12 +39,15 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        # pass head point to node
-        if node == None: # if yes end of list
-            return
-        else:
-            self.reverse_list()
-        
-
-
-
+        while node:
+            next_node = node.get_next()
+            node.next_node = prev
+            prev = node
+            node = next_node
+        self.head
+ # need to remove loop!
+ # can now run by running the follow commands:
+ # chmod u+rwx name.py
+ # then cd into names folder 
+ # and run :
+ # python names.py
