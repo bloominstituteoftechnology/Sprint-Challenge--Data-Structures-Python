@@ -15,7 +15,7 @@ class RingBuffer:
         else:
             self.items[self.oldest] = item
             self.oldest += 1
-        # if oldest equals max 
+        # if oldest position 
         if self.oldest == self.capacity:
             self.oldest = 0
 
