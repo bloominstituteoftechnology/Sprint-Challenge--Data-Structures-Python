@@ -37,12 +37,14 @@ duplicates = []  # Return the list of duplicates in this data structure
 # ============= stretch ======================== #
 
 
-def get_duplicates(list1, list2):
-    dupes = [name for name in list1 if name in list2]
-    return dupes
+# def get_duplicates(list1, list2):
+#     dupes = [name for name in list1 if name in list2]
+#     return dupes
 
 
-duplicates = get_duplicates(names_1, names_2)
+# duplicates = get_duplicates(names_1, names_2)
+
+duplicates = set(names_1) & set(names_2)
 
 # ============= stretch ======================== #
 
