@@ -52,21 +52,6 @@ class LinkedList:
         else:
             self.head = node
 
-
-# reverse the two nodes
+        # reverse the two nodes
         node.set_next(prev)
         return self
-
-        # #Otherwise temporarily store the current head
-        # current = self.head
-        # prev = None
-        # next_node = None
-        # while current is not None:
-        #     #store what points to the next node
-        #     next_node = current.get_next()
-        #     #switch current.next pointer to previous
-        #     current.set_next(prev)
-        #     #Increment!
-        #     prev = current
-        #     current = next_node
-        # self.head = next_node
