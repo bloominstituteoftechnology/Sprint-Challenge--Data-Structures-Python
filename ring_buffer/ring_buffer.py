@@ -17,6 +17,7 @@ class RingBuffer:
             while current.get_next() is not self.queue.storage.head:
                 current = current.get_next()
                 array.append(current.value)
+            array = array[-1:] + array[:-1]
         return array
 
 
@@ -24,3 +25,9 @@ if __name__ == "__main__":
     buffer = RingBuffer(5)
 
     buffer.append("a")
+    buffer.append('b')
+    buffer.append('c')
+    buffer.append('d')
+    buffer.append('e')
+
+    print(buffer.get())

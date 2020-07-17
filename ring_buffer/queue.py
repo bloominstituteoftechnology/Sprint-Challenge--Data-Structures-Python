@@ -20,4 +20,3 @@ class CircularQueue:
         if self.__len__() > 0:
             self.size -= 1
             return self.storage.remove_head()
-

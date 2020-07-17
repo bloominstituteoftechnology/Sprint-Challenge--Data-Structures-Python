@@ -27,6 +27,27 @@ class CircularLinkedList:
             current_node = current_node.get_next()
 
         return output
+
+
+    def add_to_head(self, value):
+        # 1. create the Node from the value 
+        new_node = Node(value)
+        # So, what do we do if tail is None? 
+        # What's the rule we want to set to indicate that the linked
+        # list is empty? 
+        # Would it be better to check the head? 
+        # Let's check them both: an empty linked list has an empty 
+        # head and an empty tail 
+        if self.head is None and self.tail is None:
+            # in a one-element linked list, what should head and tail 
+            # be referring to? 
+            # have both head and tail referring to the single node 
+            self.head = new_node
+            # set the new node to be the tail 
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
         
 
     def add_to_tail(self, value):
