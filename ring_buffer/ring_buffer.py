@@ -1,5 +1,3 @@
-from queue import Queue
-
 # General Case Ring Buffer Class
 class RingBuffer:
     def __init__(self, capacity):
@@ -10,7 +8,7 @@ class RingBuffer:
     class __Full:
         def append(self, item):
             self.data[self.current] = item
-            self.current = (self.current + 1) % self.capacity
+            self.current = (self.current + 1) 
 
         def get(self):
             return self.data[self.current:] + self.data[:self.current]
@@ -29,12 +27,19 @@ class RingBuffer:
 
 
 if __name__ == "__main__":
-    rb = RingBuffer(3)
-    rb.append("a")
-    rb.append("b")
-    rb.append("c")
-    rb.append("d")
+    buffer = RingBuffer(5)
 
-    print(rb.get())
+    buffer.append('a')
+    buffer.append('b')
+    buffer.append('c')
+    buffer.append('d')
+    buffer.append('e')
+    buffer.append('f')
+    buffer.append('g')
+    buffer.append('h')
+    buffer.append('i')
+    
+
+    print(buffer.get())
 
 
