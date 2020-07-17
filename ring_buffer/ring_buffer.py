@@ -19,6 +19,7 @@ their given order. It should not return any None values in the list
 even if they are present in the ring buffer.
 """
 
+
 class RingBuffer:
     """
     RingBuffer has two methods, append and get.
@@ -57,7 +58,6 @@ class RingBuffer:
         their given order.
         """
         return self.buffer
-
 
     if __name__ == "__main__":
         rb = RingBuffer(5)
