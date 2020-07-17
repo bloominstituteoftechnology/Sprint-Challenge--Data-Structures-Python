@@ -16,7 +16,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 # Replace the nested for loops below with your improvements
 # BTS with O(n) runtime complexity
 root_node = BSTNode(names_1[0]) # first item in list is root in our BST.
-for name_1 in names_1[1:]:
+for name_1 in names_1:
     root_node.insert(name_1) # insert all names into BST
 for name_2 in names_2:
     if root_node.contains(name_2): # use our contains function on tree we created from names_1 to look for duplicates.

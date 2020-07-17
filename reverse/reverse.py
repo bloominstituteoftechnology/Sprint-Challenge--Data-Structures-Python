@@ -47,7 +47,7 @@ class LinkedList:
             node.next_node = prev # and set next node to prev
             return
         else:
-            nextnode = node.next_node # store our next node value
+            nextnode = node.next_node # store our next node
             node.next_node = prev # set next node pointer to previous node
             self.reverse_list(nextnode, node) # reverse next node and curent node until we reach one of our base cases
 
