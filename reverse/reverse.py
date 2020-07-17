@@ -39,4 +39,18 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        #Steps: We are trying to swap the positions to change their value
+        #1. if the node exists then we are going to swap the values ç
+        # so the prev node will become the next node and the node that prev was becomes to none.
+        # example: 1->2->3->None, 3->2->1->None
+        if node:
+
+            prev, node.next_node = node.next_node, prev
+        # if prev node exists then we have the prev node to move more forward by incrementing the number of node.
+        # and the former node goes back in a lesser number of node.
+        if prev: #
+            #using the recursive method to swap.
+            self.reverse_list(prev, node)
+        else: # 3->2->1->None
+            # this wil identify that we have reached to the end point and it wil default the node to head.
+            self.head = node
