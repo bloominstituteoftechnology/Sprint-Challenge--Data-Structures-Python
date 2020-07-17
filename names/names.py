@@ -33,7 +33,7 @@ for name2 in names_2:
 
 
 ## runtime with BSTnode: runtime: 0.12445187568664551 seconds
-## runtime complexity: O(logn) ?
+## runtime complexity: O(nlogn) ?
 
 
 end_time = time.time()
