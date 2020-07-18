@@ -39,10 +39,13 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
+    def iterative_reverse_list(self, node, prev):
         """
         Reverse the contents of the list using recursion, not a loop
         """
+        # Used while loop to get working solution, came back and added
+        # recursive solution later
+
         if self.head is None:
             return None
 
@@ -66,6 +69,22 @@ class LinkedList:
             if nn is None:
                 # whatever was current will be the head
                 self.head = current
+
+    def reverse_list(self, node, prev):
+        """
+        Reverse the contents of the list using recursion, not a loop
+        """
+        # Recursive solution without loop:
+
+        # If there is no node, then declare the previous node as the head node
+        if node is None:
+            self.head = prev
+        # if there is a node ...
+        else:
+            # call the reverse_list method on the node's next, with the current
+            # node as the previous
+            self.reverse_list(node.next_node, node)
+            node.next_node = prev
 
 if __name__ == "__main__":
 
