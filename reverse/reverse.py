@@ -16,6 +16,17 @@ class LinkedList:
     def __init__(self):
         self.head = None
         # No tail attribute in provided prompt starter code.
+    
+    def __repr__(self):
+        """
+        Representation of the LL object for displaying as output.
+        """
+        repr_string = ""
+        current = self.head
+        while current is not None:
+            repr_string = repr_string + str(current.value) + "\n"
+            current = current.get_next()
+        return repr_string
 
     def add_to_head(self, value):
         node = Node(value)
@@ -39,10 +50,9 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
+    def reverse_list(self):
         """
-        Reverse the order of the items in the linked list, in place. 
-        Return the new list (for ease of use).
+        Reverse the order of the items in the linked list, in place.
         """        
         # Reverse the list in place:
         # Runtime: O(n)
@@ -56,12 +66,3 @@ class LinkedList:
         
         # Set the LL's original tail (prev, because current is now None) as its new head:
         self.head = prev
-
-    def print_values(self):
-        """
-        Print the value of every node in the linked list.
-        """
-        current = self.head
-        while current is not None:
-            print(current.value)
-            current = current.get_next()
