@@ -15,6 +15,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        # No tail attribute in provided prompt starter code.
 
     def add_to_head(self, value):
         node = Node(value)
@@ -25,7 +26,7 @@ class LinkedList:
         self.head = node
 
     def contains(self, value):
-        if not self.head:
+        if self.head is None:
             return False
 
         current = self.head
@@ -39,4 +40,28 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        """
+        Reverse the order of the items in the linked list, in place. 
+        Return the new list (for ease of use).
+        """        
+        # Reverse the list in place:
+        # Runtime: O(n)
+        prev = None
+        current = self.head
+        while current is not None:      # This already addresses case of empty LL.
+            next = current.get_next()
+            current.set_next(prev)
+            prev = current
+            current = next
+        
+        # Set the LL's original tail (prev, because current is now None) as its new head:
+        self.head = prev
+
+    def print_values(self):
+        """
+        Print the value of every node in the linked list.
+        """
+        current = self.head
+        while current is not None:
+            print(current.value)
+            current = current.get_next()
