@@ -64,6 +64,14 @@ Navigate into the `names` directory. Here you will find two text files containin
 
 Six seconds is an eternity so you've been tasked with speeding up the code. Your goal is to use one of the data structures we built out over the course of this week in order to optimize and improve on the runtime so that it's more efficient than O(n²).
 
+***Answer (Chris Huskey):**
+***Original algorithm:***
+Runtime: O(n^2) because of the nested for loops
+Time to run on my computer: 7.3 seconds
+***My new algorithm (using binary search in a BST):***
+Runtime: O(nlogn) if perfectly balanced <= runtime <= O(n^2) if perfectly linear (if every BST node has only 1 child node)
+Time to run on my computer: 0.17 seconds
+
 A follow-up question to think about: _*once you've used one of the data structures we implemented over the course of the week*_ in order to improve the runtime of the implementation, what other data structures (including ones from Python's standard library) are also possible candidates for improving the runtime of the implementation?
 
 #### Task 3. Reverse a Linked List
