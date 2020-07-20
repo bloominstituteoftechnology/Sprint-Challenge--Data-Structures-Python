@@ -1,4 +1,5 @@
 import time
+from BST import BSTNode
 
 start_time = time.time()
 
@@ -13,10 +14,15 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+BSTNode = BSTNode(names_1[0]) # initialize BST
+#A given leaf node (a letter from the alphabet) of the optimal alphabetic binary search tree can be located using a binary search procedure. The latter does not hold for optimal alphabetic tree. Algorithms for building optimal alphabetic trees can be used to build optimal alphabetic binary search trees.
+for name in names_1:
+    BSTNode.insert(name)
+
+for name in names_2:
+    if BSTNode.contains(name):
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
