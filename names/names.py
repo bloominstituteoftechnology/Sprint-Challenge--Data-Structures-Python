@@ -10,14 +10,22 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-#duplicates = [i for i in i if name_1 == name_2]  # Return the list of duplicates in this data structure
+# Return the list of duplicates in this data structure
 duplicates = []
 
 # Replace the nested for loops below with your improvements
+#for name_1 in names_1:
+#    for name_2 in names_2:
+#        if name_1 == name_2:
+#            duplicates.append(name_1)
+
+from binary_search_tree import BSTNode
+
 for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+    names = BSTNode(name_1)
+for name_2 in names_2:
+    if names.contains(name_2):
+        duplicates.append(name_2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
