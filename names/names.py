@@ -13,10 +13,34 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+
+class Queue:
+    def __init__(self):
+        self.size = 0
+        self.storage = []
+
+    def __len__(self):
+        return len(self.storage)
+
+    def enqueue(self, value):
+        self.storage.append(value)
+
+    def checkForDupes(self, csv01, csv02):
+        for name in csv01:
+            self.enqueue(name)
+        for name in csv02:
+            if name in self.storage:
+                duplicates.append(name)
+
+
+queueForDupes = Queue()
+queueForDupes.checkForDupes(names_1, names_2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
