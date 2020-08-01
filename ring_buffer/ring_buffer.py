@@ -1,9 +1,10 @@
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.data = [None for i in range(capacity)]
 
     def append(self, item):
-        pass
+        self.data.append(item)
+        self.data.pop(0)
 
     def get(self):
-        pass
+        return self.data
