@@ -67,18 +67,20 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
-n = BST(names_1[0])
-for i in range(1, len(names_1)):
-    n.insert(names_1[i])
+# n = BST(names_1[0])
+# for i in range(1, len(names_1)):
+#     n.insert(names_1[i])
 
-for i in names_2:
-    if n.contains(i):
-        duplicates.append(i)
+# for i in names_2:
+#     if n.contains(i):
+#         duplicates.append(i)
+
+duplicates = set.intersection(set(names_1),set(names_2))
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
