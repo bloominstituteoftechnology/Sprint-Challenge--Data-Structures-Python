@@ -39,4 +39,26 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        
+        # empty list case
+        if node is None:
+            pass
+
+        else:
+            # bottom out here - this'll be the new head
+            if node.get_next() is None:
+                #set the node's next to be the previous node
+                node.set_next(prev)
+
+                # set the head
+                self.head = node
+
+            else:
+                # call the function on the next node, with the current node as it's previous.
+                self.reverse_list(node.get_next(), node)
+                
+                # set the node's next to be the previous node
+                node.set_next(prev)
+
+# I'm pretty certain time complexity here is O(n). The number of function calls are proportional 
+# to the number of elements in the list.
