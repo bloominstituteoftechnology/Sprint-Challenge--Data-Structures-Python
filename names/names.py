@@ -79,7 +79,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 # for i in names_2:
 #     if n.contains(i):
 #         duplicates.append(i)
-
+#  use intersection to get runtime from 6.718273878097534 seconds to 0.0038001537322998047 seconds
 duplicates = set.intersection(set(names_1),set(names_2))
 
 end_time = time.time()
@@ -89,4 +89,5 @@ print (f"runtime: {end_time - start_time} seconds")
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
+# Interesection is wayyyyyyyyyyyy faster @ 0.0038001537322998047
 # structures, but you may not import any additional libraries that you did not write yourself.
