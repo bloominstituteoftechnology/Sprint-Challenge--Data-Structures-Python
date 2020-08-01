@@ -1,5 +1,31 @@
 import time
 
+# use binary search tree
+
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    # Insert the given value into the tree
+    def insert(self, value):
+        #check whether new nodes value is less than current nodes value
+        if value < self.value: 
+            if not self.left:
+                self.left = BSTNode(value)
+            else:
+                self.left.insert(value)
+        # check weather new nodes value is greater or equal to current node
+        elif value >= self.value:
+            if not self.right:
+                self.right = BSTNode(value)
+            else:
+                self.right.insert(value)
+
+
+
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
