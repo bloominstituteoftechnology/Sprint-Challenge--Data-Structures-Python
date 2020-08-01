@@ -6,7 +6,6 @@ class RingBuffer:
 
     def append(self, item):
         if len(self.items) == self.capacity:
-           # for i in range(0, self.capacity):
             del self.items[self.counter]
             self.items.insert(self.counter, item)
             if self.counter == 4:
