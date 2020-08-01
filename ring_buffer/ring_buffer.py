@@ -5,6 +5,7 @@ class RingBuffer:
         self.position = 0
 
     def append(self, item):
+        # TODO rethink this, a little clunky, but works for now
         if len(self.buffer) < self.capacity:
             self.buffer.append(item)
             self.position += 1
