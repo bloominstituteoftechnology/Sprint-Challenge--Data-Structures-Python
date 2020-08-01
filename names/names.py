@@ -95,8 +95,8 @@ start_time = time.time() # I moved this because I only want to test the
 # directly to the data structure you need.
 
 # original()
-# set_theory()
-bst_attempt()
+set_theory()
+# bst_attempt()
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
