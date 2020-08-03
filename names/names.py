@@ -1,3 +1,5 @@
+from linked_list import LinkedList, Node
+
 import time
 
 start_time = time.time()
@@ -13,10 +15,24 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+# The runtime of the above code is O(n^2). AKA: quadratic runtime
+
+for name in names_1:
+    if name in names_2:
+        duplicates.append(name)
+
+# ll = LinkedList()
+# for name in names_1:
+#     ll.add_to_tail(name)
+    
+# for name in names_2:
+#     if ll.contains(name):         # --> takes ~ 19 seconds
+#         duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
