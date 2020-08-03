@@ -1,6 +1,9 @@
 import time
 from BinarySearchTree import BSTNode
 
+# old runtime: Factorial - O(n²)
+# new runtime: Linear - O(n)
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
