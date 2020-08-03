@@ -12,8 +12,9 @@ f.close()
 
 # ------------ original inefficient code -------------------
 """ The timing of this ^^^ code took approximately 7.87 seconds. """
+#
 # duplicates = []  # Return the list of duplicates in this data structure
-
+#
 # # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
 #     for name_2 in names_2:
@@ -23,7 +24,7 @@ f.close()
 
 
 
-# More efficient line
+# More efficient code in a single line
 """ This code took approximately 0.005 seconds! """
 duplicates = set(names_1) & set(names_2)
 
@@ -38,4 +39,7 @@ print (f"runtime: {end_time - start_time} seconds")
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-""" The fastest I could find is implemented above... 0.005 seconds! """ 
+""" The fastest I could find is implemented above and would work 
+excellently with lists and other data structures. It only takes 
+0.005 seconds, well under the goal of 6 seconds! 
+""" 
