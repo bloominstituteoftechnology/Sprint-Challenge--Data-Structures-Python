@@ -48,11 +48,12 @@ class LinkedList:
         node.set_next(prev)
         self.reverse_list(next, node)
 
+
 list = LinkedList()
 list.add_to_head(2)
 list.add_to_head(4)
 list.add_to_head(12)
 
 print(f"Head value is {list.head.value}")
-list.reverse_list(list.head,None)
+list.reverse_list(list.head, None)
 print(f"Head value is {list.head.value}")

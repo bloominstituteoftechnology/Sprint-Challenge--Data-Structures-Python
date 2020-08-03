@@ -5,10 +5,10 @@ class RingBuffer:
         self.position_in_queue = 0
 
     def append(self, item):
-        """ Appends an element to the buffer.
-            If appending beyond the buffer's maximum
-            capacity, the new items will loop back
-            over the buffer, overwriting old values.
+        """Appends an element to the buffer.
+        If appending beyond the buffer's maximum
+        capacity, the new items will loop back
+        over the buffer, overwriting old values.
         """
         # Add item to buffer if below the maximum capacity
         if len(self.storage) < self.capacity:
