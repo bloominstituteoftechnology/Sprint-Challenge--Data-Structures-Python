@@ -1,3 +1,11 @@
+From TL - Alexis Davalos to Everyone:  09:37 PM
+# UPER
+# - U: your thoughts
+# - P: your plan
+# - E: execute code
+# R: reflect
+
+
 class Node:
     def __init__(self, value=None, next_node=None):
         self.value = value
@@ -39,4 +47,21 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        prev = None
+        current = self.head 
+        while(current is not None): 
+            next = current.next_node
+            current.next_node = prev 
+            prev = current 
+            current = next
+        self.head = prev 
+
+    # def reverse_list(self,node,prev):
+    #     if (node == None):
+    #         return node 
+    #     if (node.next_node == None): 
+    #         return node          
+    #     node1 = self.reverse_list(node.next_node) 
+    #     node.next_node.next_node = node 
+    #     node.next_node = None
+    #     return node1 
