@@ -87,13 +87,13 @@ class RingBuffer:
         if len(self.current) == self.capacity:
             #self.oldest is a pointer to the index of first to overwrite. the oldest value. the rotating head
             #when buffer is full self.oldest travels along the ring always one ahead of the last added value
-            f'self.oldest={self.oldest} self.current={self.current}'
-            del self.current[self.oldest]
-            self.current.insert(int(self.oldest),(value))
-            self.oldest+=1
             if self.oldest>self.capacity:
                 self.oldest-=self.capacity
-                self.oldest-=1
+                
+            f'self.oldest={self.oldest} self.current={self.current}'
+            self.current.insert((self.oldest),(value))
+            del self.current[ (self.oldest-self.capacity) ]
+            self.oldest+=1
             return
 
             # self.current[self.oldest]=value
