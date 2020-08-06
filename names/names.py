@@ -13,6 +13,7 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
+
 class Node:
     def __init__(self, value=None, next_node=None):
         self.value = value
@@ -27,14 +28,16 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
+
     def __repr__(self):
-        crrnt=self.head
+        crrnt = self.head
         while crrnt:
             f'{crrnt}'
-            crrnt=crrnt.get_next()
+            crrnt = crrnt.get_next()
 
     def add_to_head(self, value):
         node = Node(value)
@@ -76,7 +79,7 @@ class LinkedList:
 #     c1=ll1.head
 #     c2=ll2.head
 #     count=0
-  
+
 
 #     while c1:
 #         while c2:
@@ -84,8 +87,8 @@ class LinkedList:
 #                 global duplicates
 #                 count+=1
 #                 duplicates.append(c1.value)
-                
-                
+
+
 #             c2=c2.next_node
 #         c1=c1.next_node
 #         c2=ll2.head
@@ -98,6 +101,8 @@ class LinkedList:
 # # ************************************************************************#
 # ************************************************************************
 # ************************************************************************
+# referenced this solution
+# https://www.geeksforgeeks.org/find-the-common-nodes-in-two-singly-linked-list/
 # 0.0339 seconds ==> 64 duplicates
 # 2 linked lists & 1 set
 
@@ -106,7 +111,7 @@ ll2= LinkedList()
 
 for name in names_1:
     ll1.add_to_head(name)
- 
+
 for name in names_2:
     ll2.add_to_head(name)
 
@@ -115,7 +120,7 @@ def commonNodesSet(hd1,hd2):
     c2=ll2.head
     count=0
     map_=set()
-  
+
 
     while c1:
         map_.add(c1.value)
@@ -127,10 +132,10 @@ def commonNodesSet(hd1,hd2):
             global duplicates
             count+=1
             duplicates.append(c2.value)
-            
-            
+
+
         c2=c2.next_node
-        
+
 
     return (f'dups {duplicates},count {count}')
 
@@ -148,7 +153,7 @@ print(commonNodesSet(ll1,ll2))
 #         duplicates.append(name)
 # duplicates.append('tucker')
 # ************************************************************************************************   |    |
-#*****************************************************************************************fastest   \,/  \,/
+# *****************************************************************************************fastest   \,/  \,/
 
 # create a set() from names_1
 # create a linkedlist from names_2
@@ -156,39 +161,22 @@ print(commonNodesSet(ll1,ll2))
 
 # .0265secs => 64 duplicates
 
-# list1set=set()
+# list1set = set()
 # for name in names_1:
 #     list1set.add(name)
 
-# list2=LinkedList()
+# list2 = LinkedList()
 # for name in names_2:
-#     list2.add_to_head(Node(name))
-
-# while list2.head.value:
-#     if list2.head.value in list1set:
-#         print(list2.head.value)
-#         # duplicates.insert(list2.head)
-#     list2.head=list2.head.next_node
-
-# list2=LinkedList()
-# for name in names_2:
-#     list2.add_to_head(Node(name))
-#     if name in list1set:
-#         duplicates.insert(-1,name)
+#     list2.add_to_head(name)
+# crrnt = list2.head
+# while crrnt:
+#     if crrnt.value in list1set:
+#         print(crrnt.value)
+#         duplicates.append(crrnt.value)
+#     crrnt = crrnt.next_node
 
 
-# while list2.head.value  is not None:
-#     if list2.head in list1set:
-#         print(list2.head.value)
-#     #     duplicates.insert(list2.head.value)
-#     list2.head=list2.head.get_next()
-#     # return
-
-# current2= list2.head.value 
-# print("list2.head",current2)
-#*****************************************************************************************fastest ^^^  ^^^
-
-
+# *****************************************************************************************fastest ^^^  ^^^
 
 
 # Replace the nested for loops below with your improvements
@@ -204,23 +192,20 @@ print(commonNodesSet(ll1,ll2))
 # structures, but you may not import any additional libraries that you did not write yourself.
 
 
-
-# **************************** |    |  ***************************************************************************
-#*******************fastest   \,/  \,/ ***************************************************************************
+# ******************** |    |  ***************************************************************************
+# *******************  \,/  \,/ ***************************************************************************
 
 # add the lists together
 # use the count
 # if count =2+ append to the list
 
-# 7.8929s==> 247  duplicates
+# 7.8929s==> 247  duplicates? negative
 
 # names_3=names_1 +(names_2)
 
 # for name in names_3:
 #     if names_3.count(name)>1:
 #         duplicates.append(name)
-
-
 
 
 # add the lists together
@@ -235,8 +220,8 @@ print(commonNodesSet(ll1,ll2))
 #     if n3count[name]>1:
 #         duplicates.append(name)
 
-#*********************fastest /`\   /`\   ************************************************************************
-#*********************         |     |    ************************************************************************
+# *********************        /`\   /`\   ************************************************************************
+# *********************         |     |    ************************************************************************
 # names3=[name for name in names_3 if names_3.count(name)>1)]
 
 # # option2
@@ -267,135 +252,168 @@ print(commonNodesSet(ll1,ll2))
 #     if dup[d] > 1:
 #         duplicates.append(d)
 
-        
+
 # ************************************************************************
 # ************************************************************************
+
+
+
+
+# Structure of a linked list node
+# class Node:
+#     def __init__(self):
+#         self.data = 0
+#         self.next = None
+
+# Function to common nodes which have
+# # same value node(s) both list
+# set1=set()
+# set1=[set1.add(listItem) for listItem in names_1]
+# set1=[set1.add(listItem) for listItem in names_1]
+
+
+# ************************************************************************
+# referenced this solution
+# https://www.geeksforgeeks.org/find-the-common-nodes-in-two-singly-linked-list/
+# 31seconds 🙅🏻‍♀️👎🏻 ==> 64 duplicates
+# 2 linked lists
+
+# ll1 = LinkedList()
+# ll2 = LinkedList()
+
+# for name in names_1:
+#     ll1.add_to_head(name)
+
+# for name in names_2:
+#     ll2.add_to_head(name)
+
+
+# def commonNodesSet(ll1, ll2):
+#     c2 = ll2.head
+#     count = 0
+
+#     while c2:
+
+#         if ll1.contains( c2.value):
+
+#             global duplicates
+#             count += 1
+#             duplicates.append(c2.value)
+
+#         c2 = c2.next_node
+
+# commonNodesSet(ll1,ll2)
+
+# def countCommonNodes(head1, head2):
+
+#     # List A
+#     current1 = head1
+
+#     # List B
+#     current2 = head2
+
+#     # Set count = 0
+#     count = 0
+
+#     # Create unordered_set
+#     map_=set()
+
+#     # Traverse list A till the end of list
+#     while (current1 != None) :
+
+#         # Add list data in map_
+#         map_.add(current1.data)
+
+#         # Increase current pointer of list A
+#         current1 = current1.next
+
+#     while (current2 != None) :
+
+#         # Traverse list B till the end of list
+#         # if data match then increase count
+#         if ((current2.data) in map_):
+#             count = count + 1
+
+#         # Increase current pointer of list B
+#         current2 = current2.next
+
+#     # Return count
+#     return count
+
+# # Utility function to add a node at the beginning
+# def push(head_ref,new_data):
+#     new_node = Node()
+#     new_node.data = new_data
+#     new_node.next = head_ref
+#     head_ref = new_node
+#     return head_ref
+
+# # Utility function to print a linked list
+# def printList(head):
+#     while (head != None) :
+#         print(head.data, end = " ")
+#         head = head.next
+
+# # Driver program to test above functions
+# head1 = None
+# head2 = None
+
+# # Create following linked list
+# # List A = 3 . 4 . 12 . 10 . 17
+# head1 = push(head1, 17)
+# head1 = push(head1, 10)
+# head1 = push(head1, 12)
+# head1 = push(head1, 4)
+# head1 = push(head1, 3)
+
+# # List B = 10 . 4 . 8 . 575 . 34 . 12
+# head2 = push(head2, 12)
+# head2 = push(head2, 34)
+# head2 = push(head2, 575)
+# head2 = push(head2, 8)
+# head2 = push(head2, 4)
+# head2 = push(head2, 10)
+
+# # Print list A
+# print("Given Linked List A: ")
+# printList(head1)
+
+# # Print list B
+# print( "\nGiven Linked List B: ")
+# printList(head2)
+
+# # Call function for count common node
+# count = countCommonNodes(head1, head2)
+
+# # Print number of common node in both list
+# print("\nNumber of common node in both list is = " , count)
+
+# # # This code is contributed by Arnab Kundu
+# # Output:
+# # Given Linked List A:
+# # 3 4 12 10 17
+# # Given Linked List B:
+# # 10 4 8 575 34 12
+# # Number of common node in both list is = 3
+# Time Complexity: O(N)
+# Space Complexity: O(N)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
-
-
-
-
-
-
-
-
-
-
-  
-# Structure of a linked list node 
-# class Node:  
-#     def __init__(self): 
-#         self.data = 0
-#         self.next = None
-  
-# Function to common nodes which have 
-# # same value node(s) both list 
-# set1=set()
-# set1=[set1.add(listItem) for listItem in names_1]
-# set1=[set1.add(listItem) for listItem in names_1]
-
-
-
-
-
-
-
-
-# def countCommonNodes(head1, head2): 
-  
-#     # List A 
-#     current1 = head1 
-  
-#     # List B 
-#     current2 = head2 
-  
-#     # Set count = 0 
-#     count = 0
-  
-#     # Create unordered_set 
-#     map_=set() 
-  
-#     # Traverse list A till the end of list 
-#     while (current1 != None) : 
-  
-#         # Add list data in map_ 
-#         map_.add(current1.data) 
-  
-#         # Increase current pointer of list A 
-#         current1 = current1.next
-      
-#     while (current2 != None) : 
-  
-#         # Traverse list B till the end of list 
-#         # if data match then increase count 
-#         if ((current2.data) in map_): 
-#             count = count + 1
-  
-#         # Increase current pointer of list B 
-#         current2 = current2.next
-      
-#     # Return count 
-#     return count 
-  
-# # Utility function to add a node at the beginning  
-# def push(head_ref,new_data): 
-#     new_node = Node() 
-#     new_node.data = new_data 
-#     new_node.next = head_ref 
-#     head_ref = new_node 
-#     return head_ref 
-  
-# # Utility function to print a linked list 
-# def printList(head): 
-#     while (head != None) : 
-#         print(head.data, end = " ") 
-#         head = head.next
-      
-# # Driver program to test above functions  
-# head1 = None
-# head2 = None
-  
-# # Create following linked list  
-# # List A = 3 . 4 . 12 . 10 . 17 
-# head1 = push(head1, 17) 
-# head1 = push(head1, 10) 
-# head1 = push(head1, 12) 
-# head1 = push(head1, 4) 
-# head1 = push(head1, 3) 
-  
-# # List B = 10 . 4 . 8 . 575 . 34 . 12 
-# head2 = push(head2, 12) 
-# head2 = push(head2, 34) 
-# head2 = push(head2, 575) 
-# head2 = push(head2, 8) 
-# head2 = push(head2, 4) 
-# head2 = push(head2, 10) 
-  
-# # Print list A 
-# print("Given Linked List A: ") 
-# printList(head1) 
-  
-# # Print list B 
-# print( "\nGiven Linked List B: ") 
-# printList(head2) 
-  
-# # Call function for count common node 
-# count = countCommonNodes(head1, head2) 
-  
-# # Print number of common node in both list 
-# print("\nNumber of common node in both list is = " , count) 
-  
-# # # This code is contributed by Arnab Kundu 
-# # Output:
-# # Given Linked List A: 
-# # 3 4 12 10 17 
-# # Given Linked List B: 
-# # 10 4 8 575 34 12 
-# # Number of common node in both list is = 3
-# Time Complexity: O(N)
-# Space Complexity: O(N)
