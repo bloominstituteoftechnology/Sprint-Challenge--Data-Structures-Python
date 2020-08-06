@@ -89,7 +89,7 @@ class RingBuffer:
             #when buffer is full self.oldest travels along the ring always one ahead of the last added value
             f'self.oldest={self.oldest} self.current={self.current}'
             del self.current[self.oldest]
-            self.current.insert(value,self.current[self.oldest])
+            self.current.insert(int(self.oldest),(value))
             self.oldest+=1
             if self.oldest>self.capacity:
                 self.oldest-=self.capacity
