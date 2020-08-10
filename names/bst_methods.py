@@ -19,8 +19,15 @@ class BSTNode:
     def contains(self, target):
         if self.value == target:
             return True
+            
         if self.value >= target:
             if self.right is None:
                 return False
             else:
                 return self.right.contain(target)
+        
+        if self.value < target:
+            if self.left is None:
+                return False
+            else:
+                return self.left.contains(target)
