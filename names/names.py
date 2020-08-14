@@ -53,23 +53,23 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 
-list_names1 = LinkedList()
+# list_names1 = LinkedList()
 
-for name in names_1:
-    list_names1.add_to_head(name)
+# for name in names_1:
+#     list_names1.add_to_head(name)
 
-list_names2 = LinkedList()
+# list_names2 = LinkedList()
 
-for name in names_2:
-    list_names2.add_to_head(name)
-    if list_names1.contains(name):
-        duplicates.append(name)
+# for name in names_2:
+#     list_names2.add_to_head(name)
+#     if list_names1.contains(name):
+#         duplicates.append(name)
 
 # Replace the nested for loops below with your improvements
-# for name_1 in names_1:
-#     for name_2 in names_2:
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
+for name_1 in names_1:
+    for name_2 in names_2:
+        if name_1 == name_2:
+            duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
