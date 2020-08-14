@@ -57,3 +57,10 @@ class LinkedList:
 
         #use this to make it none after while? unsure if is the best, but works
         self.head = self.prev 
+
+    #def reverse_list(self, node, prev=None):
+    #    if node:
+    #        self.reverse_list(node.next_node, node)
+    #        node.set_next(prev)
+    #    else:
+    #        self.head = prev

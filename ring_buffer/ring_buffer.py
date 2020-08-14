@@ -2,7 +2,7 @@ class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
         self.size = 0
-        self.data = [None for i in range(capacity)]
+        self.data = [None] * capacity
         #data is to fill in Nones rn
 
     def append(self, item):
