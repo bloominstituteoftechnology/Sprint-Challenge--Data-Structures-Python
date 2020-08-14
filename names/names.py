@@ -1,4 +1,5 @@
 import time
+from singly_linked_list import LinkedList
 
 start_time = time.time()
 
@@ -13,10 +14,27 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+def search(arr, target):
+    middle_idx = int(len(arr) / 2)
+    idx = 0
+    while idx < middle_idx:
+        if arr[idx] == target:
+            return True
+        idx += 1
+    while middle_idx < len(arr):
+        if arr[middle_idx] == target:
+            return True
+        middle_idx += 1
+    return False
+
+for name_2 in names_2:
+    if search(names_1, name_2):
+        duplicates.append(name_2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
