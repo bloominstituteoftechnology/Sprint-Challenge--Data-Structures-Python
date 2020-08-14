@@ -154,7 +154,7 @@ class BSTNode:
 
             fn(current.value)
 
-    # Part 2 -----------------------
+    # Part 2 -------------
 
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
