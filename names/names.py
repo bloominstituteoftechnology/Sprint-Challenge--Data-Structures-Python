@@ -21,10 +21,21 @@ duplicates = []
 
 from binary_search_tree import BSTNode
 
-#wrap into list of nodes 'names'
+#mvp code commented below
+
+##wrap into list of nodes 'names'
+#for name_1 in names_1:
+#    names = BSTNode(name_1)
+##unnested loop, if it contains, add
+#for name_2 in names_2:
+#    if names.contains(name_2):
+#        duplicates.append(name_2)
+
+#stretch attempt
+
 for name_1 in names_1:
-    names = BSTNode(name_1)
-#unnested loop, if it contains, add
+    names = [BSTNode(name_1)]
+
 for name_2 in names_2:
     if names.contains(name_2):
         duplicates.append(name_2)
