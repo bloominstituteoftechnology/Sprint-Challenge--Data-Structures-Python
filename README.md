@@ -32,7 +32,7 @@ A ring buffer is a non-growable buffer with a fixed size. When the ring buffer i
 
 Implement this behavior in the RingBuffer class. RingBuffer has two methods, `append` and `get`. The `append` method adds the given element to the buffer. The `get` method returns all of the elements in the buffer in a list in their given order. It should not return any `None` values in the list even if they are present in the ring buffer.
 
-For example:
+For example*:*
 
 ```python
 buffer = RingBuffer(3)
