@@ -14,4 +14,15 @@ class RingBuffer:
         	self.index = 0
 
     def get(self):
-        pass
+        return self.storage
+
+buffer = RingBuffer(3)
+buffer.get()
+buffer.append("Joe")
+buffer.append("Heriberto")
+buffer.append("Sean")
+print(buffer.get())
+
+buffer.append("James")
+buffer.append("David")
+print(buffer.get())
