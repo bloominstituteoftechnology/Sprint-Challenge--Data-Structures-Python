@@ -5,7 +5,7 @@ class RingBufferTests(unittest.TestCase):
     def setUp(self):
         self.capacity = 5
         self.buffer = RingBuffer(self.capacity)
-    
+
     def test_new_buffer_has_appropriate_capacity(self):
         self.assertEqual(self.buffer.capacity, self.capacity)
 
