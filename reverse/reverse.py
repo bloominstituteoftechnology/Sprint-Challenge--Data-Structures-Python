@@ -39,11 +39,21 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev): 
+        #set prev to none
+        #make new node reversal point head
         self.prev = None
-        node= self.head 
+        node = self.head 
+        
+        #while theres something in the list
         while(node is not None): 
+            #alias the next node as next
             next = node.next_node
+            #link the new head to the next node as a prev
             node.next_node = self.prev 
-            self.prev = node 
+            #make the prev the new head
+            self.prev = node
+            #move along to each 
             node = next
+
+        #use this to make it none after while? unsure if is the best, but works
         self.head = self.prev 
