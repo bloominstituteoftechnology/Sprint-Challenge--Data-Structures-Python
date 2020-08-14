@@ -5,7 +5,12 @@ class RingBuffer:
         self.data = []
 
     def append(self, item):
-      self.data.append(item) 
+
+        if self.capacity == len(self.data):
+            
+     
+        else:
+            self.data.append(item)        
   
 
     def get(self):
