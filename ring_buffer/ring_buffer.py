@@ -1,9 +1,12 @@
 class RingBuffer:
+    newList = []
     def __init__(self, capacity):
-        pass
+        if self.capacity > 1000:
+            self.capacity = True
 
     def append(self, item):
-        pass
+        if self.capacity == True:
+            self.append.item
 
     def get(self):
-        pass
+        print(newList)
