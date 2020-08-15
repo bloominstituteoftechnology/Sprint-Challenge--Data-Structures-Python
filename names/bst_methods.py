@@ -10,7 +10,7 @@ class BSTNode:
                 self.left = BSTNode(value)
             else:
                 self.left.insert(value)
-        elif value >= self.value:
+        if value >= self.value:
             if self.right is None:
                 self.right = BSTNode(value)
             else:
@@ -19,15 +19,13 @@ class BSTNode:
     def contains(self, target):
         if self.value == target:
             return True
-            
-        if self.value >= target:
-            if self.right is None:
+        if self.value > target:
+            if not self.right:
                 return False
             else:
-                return self.right.contain(target)
-        
-        if self.value < target:
-            if self.left is None:
+                return self.right.contains(target)
+        else:
+            if not self.left:
                 return False
             else:
                 return self.left.contains(target)
