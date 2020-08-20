@@ -2,7 +2,7 @@ class RingBuffer:
     def __init__(self, capacity):
         self.data = []
         self.capacity = capacity
-        self.index = 0
+        self.current = 0
 
 
 # The append method adds the given element to the buffer
@@ -11,29 +11,25 @@ class RingBuffer:
 
 
     def append(self, item):
-        # dont PANIC --- calm down!! Youve got this.
         # okay first we need to see if we can append to the current capaity
         if len(self.data) < self.capacity:
             self.data.append(item)
-            # adding an element when the this is full replaces the 1st one and 2nd repleaces the 2nd one
 
-        # append the item and remove the first item
+        elif self.current == self.capacity:
+
+            self.current = 0
+            self.data[self.current] = item
+
         else:
-            self.data.pop(0)
-            self.data.append(item)
+            self.data[self.current] = item
+        self.current += 1
 
     def get(self):
         return self.data
 
-        # if len(self.data) >= self.capacity:
-        # we need to make it so that adds in order by index. so that when the first one is added in it is then 0 then #2 becomes 1
-
-        # ughh i have no idea how to do that.
-
 
 buffer = RingBuffer(3)
 
-# nice working! proud of myself? who knows
 
 buffer.get()   # should return []
 
@@ -60,3 +56,17 @@ buffer.append('j')
 
 
 buffer.get()   # should return ['h', 'i', 'j']
+
+
+# Write out our algorithm as pseudocode.
+
+# the FUCKING PROBOLEM
+# bitches have ran out of cap
+# when a new things gets added in we need to ake out the oldest thing
+# which it should alays be the one at index 0 RIGHT????
+
+# PSEUDOCODE
+
+
+# Change each line of pseudocode into actual code.
+# Test out our code and see if it is returning the outputs that we would expect.
