@@ -47,12 +47,13 @@ class NamesBST:
             else:
                 return self.right.contains(target)
         if target < self.value:
-            if self.left is none:
+            if self.left is None:
                 return False
             else:
                 return self.left.contains(target)         
                 
-name_search_tree = NamesBST(names_1[0])
+names_search_tree = NamesBST(names_1[0])
+
 for name in names_1:
     names_search_tree.insert(name)
     
