@@ -37,9 +37,29 @@ class NamesBST:
                 self.right = NamesBST(value)
             else:
                 self.right.insert(value)
+    
+    def contains (self, target):
+        if target == self.value:
+            return True
+        if target >= self.value:
+            if self.right is None:
+                return False
+            else:
+                return self.right.contains(target)
+        if target < self.value:
+            if self.left is none:
+                return False
+            else:
+                return self.left.contains(target)         
                 
-                
-
+name_search_tree = NamesBST(names_1[0])
+for name in names_1:
+    names_search_tree.insert(name)
+    
+for name in names_2:
+    if names_search_tree.contains(name):
+        duplicates.append(name)
+        
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
