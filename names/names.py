@@ -13,10 +13,24 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+#
+# Original: 10.36 seconds
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+#
+# Method 1: 1.94 seconds
+# for name in names_1:
+#     if name in names_2:
+#         duplicates.append(name)
+#
+# Method 2: 1.89
+# duplicates = [name for name in names_1 if name in names_2]
+#
+# Method 3: 0.00647 seconds
+name_set = set(names_1)
+duplicates = list(name_set - name_set.difference(set(names_2)))
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
