@@ -1,4 +1,5 @@
-from ring_buffer_dll import DoublyLinkedList
+from doubly_linked_list import DoublyLinkedList
+
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
@@ -23,14 +24,14 @@ class RingBuffer:
         list_buffer_contents.append(cur.value)
 
         if cur.next:
-            next_node = cur.next_node
+            next_node = cur.next
         else:
             next_node = self.storage.head
 
         while next_node is not cur:
             list_buffer_contents.append(next_node.value)
             if next_node.next:
-                next_node = next_node.next_node
+                next_node = next_node.next
             else:
                 next_node = self.storage.head
 
