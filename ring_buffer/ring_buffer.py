@@ -44,8 +44,7 @@ class RingBuffer:
             self.storage.add_to_tail(item)
 
 
-    def get(self):
-#############################################  
+    def get(self):  
         list_buffer = []
        
         Begin = self.storage.head
