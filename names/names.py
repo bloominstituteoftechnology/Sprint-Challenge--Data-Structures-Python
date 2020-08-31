@@ -14,7 +14,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 #
-# Original: 10.36 seconds
+# Original: 10.36 seconds -- O(n**2) Quadratic
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
