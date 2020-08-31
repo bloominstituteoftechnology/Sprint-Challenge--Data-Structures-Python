@@ -26,7 +26,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #     if name in names_2:
 #         duplicates.append(name)
 #
-# Method 2: 1.89 <-- stretch method. Names only in lists
+# Method 2: 1.89 seconds <-- stretch method. Names only in lists
 # duplicates = [name for name in names_1 if name in names_2]
 #
 # Method 3: 0.00647 seconds <-- Best method if sets are available
