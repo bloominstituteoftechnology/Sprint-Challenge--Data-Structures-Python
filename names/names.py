@@ -41,6 +41,8 @@ for n in names_2:
         duplicates.append(n) 
 # new intersect search is O(n log n)
 
+bst.in_order_print(bst)
+
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
