@@ -40,5 +40,11 @@ class LinkedListTests(unittest.TestCase):
     self.assertEqual(self.list.head.get_next().value, 2)
     self.assertEqual(self.list.head.get_next().get_next().value, 3)
     
+
+  '''
+  python reverse/test_reverse.py
+  '''
+
+
 if __name__ == '__main__':
   unittest.main()
