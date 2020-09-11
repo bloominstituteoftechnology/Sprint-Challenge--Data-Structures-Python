@@ -10,28 +10,23 @@ RingBuffer has two methods, append and get. The append method adds the given ele
 The get method returns all of the elements in the buffer in a list in their given order. 
 It should not return any None values in the list even if they are present in the ring buffer.
 """
-from queue import Queue
-
-
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.stored = 0
-        self.storage = Queue()
+        self.storage = []
+        self.oldest_data = 0
 
     def append(self, item):
-        # print(f"{self.stored} : {self.capacity}")
-        if self.stored >= self.capacity:
-            self.storage.dequeue()
-            self.storage.enqueue(item)
+
+        if len(self.storage) < self.capacity:
+            self.storage.append(item)
         else:
-            self.storage.enqueue(item)
-            self.stored += 1
+            self.storage[self.oldest_data] = item
+            if self.oldest_data < len(self.storage) -1:
+                self.oldest_data += 1
+            else:
+                self.oldest_data = 0
 
+# Return the list
     def get(self):
-        temp = self.storage
-        rtn = []
-        while len(temp) != 0:
-            rtn.append(temp.dequeue())
-
-        return rtn
+        return self.storage
