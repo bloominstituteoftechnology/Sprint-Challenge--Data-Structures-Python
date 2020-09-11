@@ -18,7 +18,23 @@ class RingBuffer:
             self.tail += 1
 
     def append(self, item):
-        pass
+        if len(self.q) == self.capacity:
+            tail_item = self.q[self.tail]
+            self.q.remove(tail_item)
+            self.q.insert(self.tail, item)
+            self.iterate_tail()
+        else:
+            self.q.insert(self.tail, item)
+            self.iterate_tail()
 
     def get(self):
-        pass
+        start = self.head
+        self.iterate_head()
+        return_list = list()
+        while self.head != start:
+            item = self.q[self.head]
+            if item:
+                return_list.append(item)
+            self.iterate_head()
+        return return_list
+
