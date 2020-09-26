@@ -22,24 +22,20 @@ class BST:
             if self.right is None:
              self.right = node
             else:
-             self.right.insert(value)
+             self.right.insert(value) 
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
+       
+        if target == self.value:
+            return True
         
-        while self is not None:
-            if self.value is target:
-                return True
-            if target < self.value:
-                if self.left:
-                    return self.left.contains(target)
-                else:
-                    False
-            elif target > self.value:
-                if self.right:
-                    return self.right.contains(target)
-                else:
-                    return False
-
-        return False
+        elif target < self.value and self.left:
+            return self.left.contains(target)
+        
+        elif target > self.value and self.right:
+            return self.right.contains(target)
+     
+        else:
+            return False
