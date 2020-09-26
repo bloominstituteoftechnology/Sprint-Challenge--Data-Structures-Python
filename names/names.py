@@ -1,4 +1,5 @@
 import time
+from singly_linked_list import LinkedList
 
 start_time = time.time()
 
@@ -18,7 +19,24 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-duplicates = [name for name in names_1 if name in names_2]
+#########
+# Using comprehensions
+# duplicates = [name for name in names_1 if name in names_2]
+
+########
+# Using Linked List
+
+# create a new list
+names_1_list = LinkedList()
+
+# put names_1 in list
+for name in names_1:
+    names_1_list.add_to_head(name)
+
+# Check to see if each item of list 2 is in list 1
+for name in names_2:
+    if names_1_list.contains(name):
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
