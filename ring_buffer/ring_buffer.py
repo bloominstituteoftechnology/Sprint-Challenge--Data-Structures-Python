@@ -22,7 +22,12 @@ class RingBuffer:
         return len(self.q)
         
     def append(self, item):
-        pass
+        if self.size() == self.capacity:
+            self.q[self.tail] = item
+            self.iterate_tail()
+        else:
+            self.q.append(item)
+            self.iterate_tail()
 
     def get(self):
-        pass
+        return self.q
