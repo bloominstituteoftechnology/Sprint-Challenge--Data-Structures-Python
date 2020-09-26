@@ -17,7 +17,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 bst = BinarySearchTree()
 
 for name_1 in names_1:
-    bst.insert(names_1)
+    bst.insert(name_1)
     
 for name_2 in names_2:
     if bst.contains(name_2):
@@ -34,11 +34,11 @@ print (f"runtime: {end_time - start_time} seconds")
 
 start_time = time.time()
 
-f = open('names_1.text', 'r')
+f = open('names_1.txt', 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-f = open('names_2.text', 'r')
+f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n") # List containing 10000 names
 f.close()
 
