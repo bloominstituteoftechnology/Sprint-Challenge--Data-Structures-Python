@@ -11,7 +11,7 @@ class BinarySearchTree:
         if self.isEmpty():
             self.root_node = BSTNode(value)
         else:
-            self.root_node = insert(value)
+            self.root_node.insert(value)
             
     def contains(self, target):
         if self.isEmpty():
@@ -34,7 +34,7 @@ class BSTNode:
             if self.left is None:
                 self.left = BSTNode(value)
             else:
-                self.left = insert(value)
+                self.left.insert(value)
         elif value >= self.value:
             if not self.right:
                 self.right = BSTNode(value)
