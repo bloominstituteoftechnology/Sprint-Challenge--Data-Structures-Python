@@ -1,5 +1,7 @@
 import time
 
+from BSTNode import BSTNode
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -17,7 +19,14 @@ l_names2 = []
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
+# bst = BSTNode(names_1[0])
 
+# for name in names_1[1:]:
+#     bst.insert(name)
+# for name in names_2:
+#     bst.insert(name)
+
+#Using sets
 for name_1 in names_1:
     l_names1.append(name_1)
 for name_2 in names_2:
@@ -29,8 +38,11 @@ set_2 = set(l_names2)
 duplicates = list(set_1.intersection(set_2))
 
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n")
-print(f"{', '.join(duplicates)}\n\n")
+# print (f"{len(duplicates)} duplicates:\n\n")
+# print(f"{', '.join(duplicates)}\n\n")
+
+print(bst.in_order_print())
+
 print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
