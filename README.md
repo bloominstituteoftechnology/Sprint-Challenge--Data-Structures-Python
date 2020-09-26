@@ -96,3 +96,4 @@ While credit will be given for a functional solution, only optimal solutions wil
 
 #### Passing the Sprint
 Score ranges for a 1, 2, and 3 are shown in the rubric above. For a student to have _passed_ a sprint challenge, they need to earn an **at least 2** for all items on the rubric.
+<!-- Initial Commit  -->
