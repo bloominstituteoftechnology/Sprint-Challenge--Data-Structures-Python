@@ -18,25 +18,35 @@ class LinkedList:
 
     def add_to_head(self, value):
         node = Node(value)
-
         if self.head is not None:
             node.set_next(self.head)
-
         self.head = node
 
     def contains(self, value):
         if not self.head:
             return False
-
         current = self.head
 
         while current:
             if current.get_value() == value:
                 return True
-
             current = current.get_next()
-
         return False
 
-    def reverse_list(self, node, prev):
-        pass
+    def reverse_list(self):
+        prev = None
+        current = self.head
+        while current:
+            next = current.next_node
+            current.next_node = prev
+            prev = current
+            current = next
+        self.head = prev
+
+    def __str__(self):
+        str = ""
+        current = self.head
+        while current:
+            str += f"{current.value.value}"
+            current = current.next_node
+        return str
