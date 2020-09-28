@@ -15,8 +15,8 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-# Replace the nested for loops below with your improvements
-# Ivan Here --- I think Binary Search Tree is perfect for this.
+# Ivan Here --- The original code is O(n^2) complexity due to nested for loops. 
+# I think Binary Search Tree is perfect for this.
 # I will import it and use 'contains' method:
 
 from bin_search_tree import BSTNode
@@ -29,6 +29,7 @@ for name in names_2:
     if bst.contains(name):
         duplicates.append(name)
 
+# This now runs with a runtime on my machine of ~.1 seconds.
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
