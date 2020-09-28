@@ -5,8 +5,7 @@ class RingBuffer:
         self.storage = []
         # initialize ring buffer size to zero
         self.size = 0
-        # instantiate the tail and head to insert and remove oldest and newest
-        self.tail = -1  # to equal newest element
+        # instantiate head to update
         self.head = 0  # to equal oldest element
 
 # https://www.oreilly.com/library/view/python-cookbook/0596001673/ch05s19.html
@@ -34,8 +33,7 @@ class RingBuffer:
         # returns all of the elements in the buffer in a list
         return self.storage
 
-    # added enqueue to insert values at end of RingBuffer.
-
+    # Added enqueue to insert values at end of RingBuffer.
     def enqueue(self, value):
         # inserts the value at the end of the storage
         self.storage.append(value)
