@@ -11,7 +11,14 @@ class RingBuffer:
 
 
     def append(self, item):
-        pass
+        # first check if the storage is full
+        if self.size == self.capacity
+            # if full enqueue the item to the tail
+
+            # decrease the size 
+
+            # otherwise enqueue the item
 
     def get(self):
-        pass
+        # returns all of the elements in the buffer in a list
+        return self.storage
