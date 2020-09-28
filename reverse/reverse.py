@@ -56,12 +56,22 @@ class LinkedList:
         #             new_head = current
         # self.head = new_head
 
-        list = []
+        # list = []
+        # current = self.head
+        # while current.next_node:
+        #     list.append(current.value)
+        #     current = current.next_node
+        # while len(list) > 0:
+        #     # still not there, but close. I bet if I sleep on it I'll get it.
+        #     # need to tweak this:
+        #     current.next_node = Node(list.pop())
+
+        # okay, need a previous variable. works now!
+        prev = None
         current = self.head
-        while current.next_node:
-            list.append(current.value)
-            current = current.next_node
-        while len(list) > 0:
-            # still not there, but close. I bet if I sleep on it I'll get it.
-            # need to tweak this:
-            current.next_node = Node(list.pop())
+        while current:
+            next = current.next_node
+            current.next_node = prev
+            prev = current
+            current = next
+        self.head = prev
