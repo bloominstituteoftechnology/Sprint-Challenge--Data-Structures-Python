@@ -5,17 +5,20 @@ class RingBuffer:
         self.storage = []
         self.counter = 0
 
-    def is_full(self, capacity):
-        if len(self.storage) > capacity:
+    def is_full(self):
+        if len(self.storage) >= self.capacity:
             self.full = True
 
     def append(self, item):
         if not self.full:
             self.storage.append(item)
+            self.is_full()
         else:
-            self.storage[self.counter]
-            self.counter = (self.counter + 1) % self.capacity
-        self.is_full(self.capacity)
+            self.storage[self.counter] = item
+            self.counter += 1
+            if self.counter >= self.capacity:
+                self.counter = self.counter % self.capacity
+
 
     def get(self):
         if self.full:
