@@ -39,4 +39,23 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        pass
+        # if no node is passed then do nothing
+        if node is None:
+            return
+        
+        # check if passed in node is the last node
+        if node.get_next() == None:
+            # if it is then make it the head node
+            self.head = node
+
+            # change next node to prev node
+            self.head.next_node = prev
+            return
+
+        # call our reverse function again on the new last node
+        # which, before we shfited our entire list above, was
+        # the second to last node
+        self.reverse_list(node.get_next(), node)
+
+        # shift the pointer so the tree stays organized
+        node.next_node = prev
