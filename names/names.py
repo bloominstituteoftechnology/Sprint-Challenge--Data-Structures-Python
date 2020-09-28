@@ -14,6 +14,8 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Nested for-loops is an O(n^3) run time
+
+#This is just over a second on my machine
 names1_queue = Queue()
 
 for name in names_1:
@@ -35,3 +37,13 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+start_time = time.time()
+
+duplicates = [x for x in names_2 if x in names_1]
+#this is O(n^2), which is better than initial but not good
+
+
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
