@@ -1,4 +1,5 @@
 import time
+from name_tree import NameNode
 
 start_time = time.time()
 
@@ -13,13 +14,36 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+# -------- OLD TIME COMPLEXITY: O(n^3) ------------
+# O(n) time complexity
+# for name_1 in names_1:
+      # O(n) time complexity
+#     for name_2 in names_2:
+          # O(n) time complexity
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+# O(n) * O(n) * O(n) ---> O(n^3) 
+# Average time: 5.8 seconds
+
+
+# -------- NEW TIME COMPLEXITY: O(n) ----------
+root = NameNode(names_1[0])
+
+# O(n) time complexity
+for index in range(1, (len(names_1) - 1), 1):
+    root.insert(names_1[index])
+
+# O(n) time complexity
+for name in names_2:
+    # O(log n) time complexity
+    if root.contains(name):
+        duplicates.append(name)
+# O(n) + O(n) + O(log n) ---> O(2n) + O(log n) ---> O(2n) ---> O(n)
+# Average time: 0.13 seconds
 
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"{len(duplicates)} duplicates:\n{', '.join(duplicates)}\n")
 print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
