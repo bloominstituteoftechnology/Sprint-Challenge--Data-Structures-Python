@@ -12,9 +12,7 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
-bst = BSTNode('')
-
-start = BSTNode(names_1[0])
+bst = BSTNode(names_1[0])
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
@@ -22,7 +20,12 @@ start = BSTNode(names_1[0])
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+for x in names_1:
+    bst.insert(x)
 
+for y in names_2:
+    if bst.contains(y):
+        duplicates.append(y)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
