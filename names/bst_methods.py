@@ -17,15 +17,37 @@ class BSTNode:
                 self.right.insert(value)
 
     def contains(self, target):
-        if self.value == target:
+        if target == self.value:
             return True
-        if self.value > target:
+        elif target >= self.value:
             if not self.right:
                 return False
             else:
                 return self.right.contains(target)
-        else:
+        elif target < self.value:
             if not self.left:
                 return False
             else:
                 return self.left.contains(target)
+
+
+
+            # pass
+        # look at root, if root is taget return true
+        # if target == self.value:
+        #     return True
+        # # if value is less than node
+        # elif target < self.value:
+        #     # go left
+        #     if self.left != None:
+        #         # return if found
+        #         return self.left.contains(target)
+        # # if value is greater or equal to node
+        # elif target >= self.value:
+        #     # go right
+        #     if self.right != None:
+        #         # return if found
+        #         return self.right.contains(target)
+        # # else return false
+        # else:
+        #     return False
