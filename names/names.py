@@ -12,7 +12,7 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
-bst = BSTNode(names_1[0])
+bst = BSTNode('bert')
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:

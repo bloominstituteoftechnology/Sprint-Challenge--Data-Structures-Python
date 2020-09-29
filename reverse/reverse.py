@@ -41,6 +41,7 @@ class LinkedList:
     def reverse_list(self, node, prev):
         if self.head == None:
             return None
+        
 
         current = self.head
         while current != None:
