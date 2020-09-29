@@ -5,7 +5,7 @@ class RingBufferTests(unittest.TestCase):
     def setUp(self):
         self.capacity = 5
         self.buffer = RingBuffer(self.capacity)
-    
+
     def test_new_buffer_has_appropriate_capacity(self):
         self.assertEqual(self.buffer.capacity, self.capacity)
 
@@ -28,7 +28,7 @@ class RingBufferTests(unittest.TestCase):
         self.buffer.append('d')
         self.buffer.append('e')
         self.buffer.append('f')
-        self.assertEqual(self.buffer.get(), ['f', 'b', 'c', 'd', 'e'])
+        self.assertEqual(self.buffer.get(), ['b', 'c', 'd', 'e','f'])
 
     def test_adding_many_elements_to_full_buffer(self):
         self.buffer.append('a')
@@ -40,7 +40,7 @@ class RingBufferTests(unittest.TestCase):
         self.buffer.append('g')
         self.buffer.append('h')
         self.buffer.append('i')
-        self.assertEqual(self.buffer.get(), ['f', 'g', 'h', 'i', 'e'])
+        self.assertEqual(self.buffer.get(), ['e', 'f', 'g', 'h','i'])
 
     def test_adding_50_elements_to_buffer(self):
         for i in range(50):
