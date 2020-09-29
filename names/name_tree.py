@@ -6,7 +6,7 @@ class BSTNode:
         
     def __str__(self):
         if self.left and self.right:
-            return(f"Node: {self.value}, Left: {Self.right}, Right: {self.right}")
+            return(f"Node: {self.value}, Left: {self.right}, Right: {self.right}")
         elif self.left is not None and self.right is None:
             return(f"Node: {self.value}, Left: {self.left}, Right: None")
         elif self.left is None and self.right is not None:
