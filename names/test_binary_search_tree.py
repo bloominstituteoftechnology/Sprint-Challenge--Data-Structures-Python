@@ -4,7 +4,7 @@ import sys
 import io
 from binary_search_tree import BSTNode
 
-class BinarySearchTreeTests(unittest.TestCase):
+class BSTNOdeTests(unittest.TestCase):
     def setUp(self):
         self.bst = BSTNode(5)
 
@@ -77,11 +77,11 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.bst.insert(4)
         self.bst.insert(2)
 
-        self.bst.in_order_print(self.bst)
-
         output = sys.stdout.getvalue()
         self.assertEqual(output, "1\n2\n3\n4\n5\n6\n7\n8\n")
 
+        self.bst.in_order_print(self.bst)
+        
         sys.stdout = io.StringIO()
         self.bst.bft_print(self.bst)
         output = sys.stdout.getvalue()
