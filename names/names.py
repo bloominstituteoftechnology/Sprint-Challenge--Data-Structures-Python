@@ -14,7 +14,7 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-
+# n log(n)
 first_list = BSTNode(names_1[0])
 next(iter(names_1))
 
@@ -25,7 +25,7 @@ for name in names_2:
     if first_list.contains(name):
         duplicates.append(name)
 
-
+# n*n
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
