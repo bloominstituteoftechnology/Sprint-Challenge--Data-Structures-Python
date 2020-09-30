@@ -81,7 +81,7 @@ class BSTNOdeTests(unittest.TestCase):
         self.assertEqual(output, "1\n2\n3\n4\n5\n6\n7\n8\n")
 
         self.bst.in_order_print(self.bst)
-        
+
         sys.stdout = io.StringIO()
         self.bst.bft_print(self.bst)
         output = sys.stdout.getvalue()
