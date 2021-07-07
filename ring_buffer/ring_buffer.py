@@ -1,9 +1,36 @@
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.buffer = list()
+        self.count = 0
+        # self.full = False
+
+    def __str__(self):
+        return f"{self.buffer}"
 
     def append(self, item):
-        pass
+        # Refactored Solution
+        if len(self.buffer) < self.capacity:
+            self.buffer.append(item)
+        else:
+            self.buffer[self.count] = item
+            self.count += 1
+        if self.count is self.capacity:
+            self.count = 0
+
+        # First Solution
+
+        # if len(self.buffer) is self.capacity:
+        #     self.full = True
+        # if self.full is True:
+
+        #     self.buffer.pop(self.count)
+        #     self.buffer.insert(self.count, item)
+        #     self.count += 1
+        #     if self.count is self.capacity:
+        #         self.count = 0
+        # if len(self.buffer) < self.capacity:
+        #     self.buffer.append(item)
 
     def get(self):
-        pass
+        return self.buffer

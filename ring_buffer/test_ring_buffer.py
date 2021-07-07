@@ -1,6 +1,7 @@
 import unittest
 from ring_buffer import RingBuffer
 
+
 class RingBufferTests(unittest.TestCase):
     def setUp(self):
         self.capacity = 5
