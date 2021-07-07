@@ -1,22 +1,39 @@
 import time
+# Import Binary Search
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
-f = open('names_1.txt', 'r')
+f = open('names/names_1.txt', 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-f = open('names_2.txt', 'r')
+f = open('names/names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
+'''
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
             duplicates.append(name_1)
+'''
+# Above takes roughly 7 secs - 0(n^2)
+
+# Starting in middle of alphabet
+bst = BinarySearchTree('N')
+
+for name in names_1:
+    bst.insert(name)
+
+for name in names_2:
+    if bst.contains(name):
+        duplicates.append(name)
+
+#BST method runtime: 0.1453089714050293 seconds - 0(n * log(n))
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
